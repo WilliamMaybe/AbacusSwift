@@ -1,0 +1,304 @@
+/* 
+  Localizable.strings
+  AbacusSwift
+
+  Created by williamzhang on 15/11/3.
+  Copyright © 2015年 William Zhang. All rights reserved.
+*/
+
+// ERROR
+"setMail"   = "請先設置郵箱";
+"cantPhone" = "無法打開撥號程序";
+
+// 时间
+"Months"    = "月";
+"Years"     = "年";
+"Month"     = "月";
+"Year"      = "年";
+
+// 加载
+"LoadFail"  = "载入失败";
+"reset"     = "重設";
+"back"      = "上一頁";
+"Done"      = "確定";
+
+// 底部栏标题
+"Abacus"        = "華瑞信貸";
+"Repayment"     = "還款額";
+"Stamp_Duty"    = "印花稅";
+"Checklist"     = "清單";
+"Contact_Us"    = "聯繫我們";
+
+// 变换语言
+"Remind"    = "警告";
+"Content"   = "妳確定要將本應用語言轉換成英語嗎？";
+"Cancel"    = "取消";
+
+"Abacus_Home_Loans" = "華瑞信貸";
+
+// Abacus 列表大标题
+"Abacus_Title" = "貸款種類";
+
+// Abacus Loan 标题
+"Abacus_Loan_Title_1" = "房屋貸款";
+"Abacus_Loan_Title_2" = "商業貸款";
+
+// Abacus Loan ItemButton 切换语言
+"Abacus_Button_Text" = "ENG";
+
+// Repayment 标题
+"Repayment_Title_1" = "貸款額";
+"Repayment_Title_2" = "期限";
+"Repayment_Title_3" = "利率";
+"Repayment_Title_4" = "還款週期";
+"Repayment_Title_5" = "還款方式";
+
+// Repayment Frequency 选项
+"Repayment_Frequency_1" = "月還";
+"Repayment_Frequency_2" = "兩週還";
+"Repayment_Frequency_3" = "週還";
+
+// Repayment Type 选项
+"Repayment_Type_1" = "本金與利息";
+"Repayment_Type_2" = "利息";
+
+// Repayment Graph 1 frequency 标题
+"Repayment_Graph_1_Frequency_1" = "每月";
+"Repayment_Graph_1_Frequency_2" = "每兩週";
+"Repayment_Graph_1_Frequency_3" = "每週";
+
+// Repayment Graph 1 title
+"Repayment_Graph_1_Title" = "總結";
+"Repayment_Graph_1_SubTitle_1" = "應付利息";
+"Repayment_Graph_1_SubTitle_2" = "本金";
+
+// Repayment Graph 2 title
+"Repayment_Graph_2_Title" = "細節";
+"Repayment_Graph_2_SubTitle" = "貸款還款額";
+"Repayment_Graph_2_Interest" = "利息";
+
+// Repayment Graph 3 extra title
+"Repayment_Graph_3_Extra" = "額外還款";
+"Repayment_Graph_3_Original" = "原本餘額";
+"Repayment_Graph_3_AfterExtra" = "額外還款後餘額";
+
+// Repayment Graph 3 ExtraView title
+"Repayment_Graph_3_ExtraView_Title_1" = "時間節省";
+"Repayment_Graph_3_ExtraView_Title_2" = "節省利息";
+
+"Repayment_Graph_3_ExtraView_Title_Min_Month" = "每月最低還款額";
+"Repayment_Graph_3_ExtraView_Title_Inc_Month" = "實際還款額";
+"Repayment_Graph_3_ExtraView_Title_Min_Fortnight" = "每兩週最低還款額";
+"Repayment_Graph_3_ExtraView_Title_Inc_Fortnight" = "實際還款額";
+"Repayment_Graph_3_ExtraView_Title_Min_Week" = "每週最低還款額";
+"Repayment_Graph_3_ExtraView_Title_Inc_Week" = "實際還款額";
+
+"Repayment_email" = "\n\n\nAbacus Home Loans I 1300 Count on us\n電話: 1300 26 8686\n網站: www.AbacusHomeLoans.com.au\n電郵: app@abacushomeloans.com.au\n\n使用條款\n\n\n本計算機結果只供參考用途，一切條款及細則以銀行最後批核及政府條款為準。計算所得之結果沒有考慮任何費用及手續費。華瑞信貸不會對此計算結果負上任何責任。\n\n假如您是合資格申請英聯邦首次置業獎勵計劃 (FHOS) 及印花稅補貼，詳細資料可以參閱相關地區政府部門：\n\n首都領地ACT (02) 6207 0028 - 昆士蘭QLD 1300 300 734\n- 新南威爾斯NSW (02) 9689 6200 \n- 塔斯馬尼亞TAS (03) 6233 3722\n- 北領地NT (08) 8999 7949 \n- 維多利亞VIC 132 161\n- 南澳大利亞SA (08) 8226 3750 \n- 西澳大利亞WA (08) 9222 8866\n\n\n*以上條款均以英文為準";
+
+"Repayment_email_title" = "房貸還款";
+"Repayment_email_result" = "結果";
+"Repayment_email_totalcost" = "貸款總額";
+"Repayment_email_totalinterest" = "利息總額";
+
+// Stamp Duty 标题
+"StampDuty_Title_1" = "省份/州份";
+"StampDuty_Title_2" = "物業價值";
+"StampDuty_Title_3" = "自住物業";
+"StampDuty_Title_4" = "First Home Buyer";
+
+// Stamp Duty pickerstate选项缩写
+"StampDuty_Picker_1" = "首都领地";
+"StampDuty_Picker_2" = "新南威爾斯";
+"StampDuty_Picker_3" = "北領地";
+"StampDuty_Picker_4" = "昆士蘭";
+"StampDuty_Picker_5" = "南澳大利亚";
+"StampDuty_Picker_6" = "塔斯馬尼亞";
+"StampDuty_Picker_7" = "維多利亞";
+"StampDuty_Picker_8" = "西澳大利亚";
+
+// Stamp Duty pickerstate选项全称
+"StampDuty_Picker_Full_1" = "首都领地";
+"StampDuty_Picker_Full_2" = "新南威爾斯";
+"StampDuty_Picker_Full_3" = "北領地";
+"StampDuty_Picker_Full_4" = "昆士蘭";
+"StampDuty_Picker_Full_5" = "南澳大利亚";
+"StampDuty_Picker_Full_6" = "塔斯馬尼亞";
+"StampDuty_Picker_Full_7" = "維多利亞";
+"StampDuty_Picker_Full_8" = "西澳大利亚";
+
+// Stamp Duty 图表1
+"StampDuty_Graph_1_SubTitle" = "費用";
+"StampDuty_Graph_1_StampDuty" = "印花稅";
+"StampDuty_Graph_1_TransferFee" = "過戶費";
+"StampDuty_Graph_1_Registration" = "登記費";
+"StampDuty_Graph_1_Total" = "總共";
+"StampDuty_Graph_1_Concession" = "印花稅相關事宜，請參閱以下相關政府部門之鏈接：";
+"StampDuty_Graph_1_Disclaimer" = "使用條款";
+"StampDuty_Graph_1_Disclaimer_Content" = "本計算機結果只供參考用途，一切條款及細則以銀行最後批核及政府條款為準。計算所得之結果沒考慮任何費用及手續費。\n華瑞信貸不會對此計算結果負上任何責任。\n以上條款均以英文為準。";
+
+// Stamp Duty 图表2
+"StampDuty_Graph_2_SubTitle" = "省份/州份對比";
+
+"StampDuty_Email" = "\n\n\nAbacus Home Loans I 1300 Count on us\n電話: 1300 26 8686\n網站: www.AbacusHomeLoans.com.au\n電郵: app@abacushomeloans.com.au\n\n使用條款\n\n\n本計算機結果只供參考用途，一切條款及細則以銀行最後批核及政府條款為準。計算所得之結果沒有考慮任何費用及手續費。華瑞信貸不會對此計算結果負上任何責任。\n\n假如您是合資格申請英聯邦首次置業獎勵計劃 (FHOS) 及印花稅補貼，詳細資料可以參閱相關地區政府部門：\n\n首都領地ACT (02) 6207 0028 - 昆士蘭QLD 1300 300 734\n- 新南威爾斯NSW (02) 9689 6200 \n- 塔斯馬尼亞TAS (03) 6233 3722\n- 北領地NT (08) 8999 7949 \n- 維多利亞VIC 132 161\n- 南澳大利亞SA (08) 8226 3750\n - 西澳大利亞WA (08) 9222 8866\n\n\n*以上條款均以英文為準";
+
+"StampDuty_Email_SubTitle" = "購買細節";
+"StampDuty_Email_Price" = "購入價";
+"StampDuty_Email_GovermentFees" = "政府費用";
+
+// checklist 标题
+"Checklist_Title_1" = "貸款所需文件清單";
+"Checklist_Title_2" = "搬家籌備清單";
+"Checklist_Title_3" = "全批後貸款流程清單";
+
+// checklist home 标题
+"Checklist_Home_Title_1" = "Income";
+"Checklist_Home_Title_2" = "Assets";
+"Checklist_Home_Title_3" = "Liabilities";
+"Checklist_Home_Title_4" = "Other";
+"Checklist_Home_Title_5" = "Proof of Identity";
+
+// checklist home select
+"Checklist_Home_Select_1_1" = "Two recent payslips";
+"Checklist_Home_Select_1_2" = "Letter from employer stating postion,commencement date,gross income,net income,if still on probation,year to date,regular overtime and allowances";
+"Checklist_Home_Select_1_3" = "copy of employment contact";
+"Checklist_Home_Select_1_4" = "Last year's group certificate";
+"Checklist_Home_Select_1_5" = "Last 2 year's tax returns(if company/family trust applicable,you will require company tax returns,ATO assessment notice,memorandum and articles of association,copy of trust or deed)";
+"Checklist_Home_Select_1_6" = "Copy of tenancy agreement or rental statement for all owned investment properties or a letter from a real estate office to admin the estimated proposed rental income";
+
+"Checklist_Home_Select_2_1" = "One recent month transation account statement";
+"Checklist_Home_Select_2_2" = "Deposit paid receipt";
+"Checklist_Home_Select_2_3" = "Statutory declaration(if any part of the deposit is a gift),stating the amount of the gift and that it is non-repayable";
+"Checklist_Home_Select_2_4" = "Rates notice on any existing owned properties";
+
+"Checklist_Home_Select_3_1" = "Copy of loans statements for 6 months on any existing mortgages(if refinance)";
+"Checklist_Home_Select_3_2" = "Copy of 1 months credit card and personal loans statements and statements from any other borrowings/if refinance,copy for 3 months of credit card and personal loan statements";
+
+"Checklist_Home_Select_4_1" = "Copy of purchase contract(front page)";
+"Checklist_Home_Select_4_2" = "Copy of plans,specifications and fixed price contract(contruction/renovations)";
+"Checklist_Home_Select_4_3" = "Cheque for establishment fees - if required";
+
+"Checklist_Home_Select_5_1" = "Drivers Licence - 40 points";
+"Checklist_Home_Select_5_2" = "Passport or birth certificate - 70 points visa page if foreign passport";
+
+// checklist moving 标题
+"Checklist_Moving_Title_1" = "Disconnect Utilities";
+"Checklist_Moving_Title_2" = "Redirect";
+"Checklist_Moving_Title_3" = "Advise friends,business & associates of your new address";
+"Checklist_Moving_Title_4" = "Getting ready to move";
+"Checklist_Moving_Title_5" = "Plan ahead for your new home";
+"Checklist_Moving_Title_6" = "Final Check";
+
+// checklist moving 问题
+"Checklist_Moving_Question_1" = "You should be disconnected from your utilities.Notify relevant services at least 48 hours in advance.You may be able to redirect these services to your new address,so it's all ready when you arrive";
+"Checklist_Moving_Question_2" = "";
+"Checklist_Moving_Question_3" = "Go through your address book and send out change of address cards.You can buy these from the post office or have them cheaply printed at your local instant printer.Alternatively,you can email your new address to people";
+"Checklist_Moving_Question_4" = "";
+"Checklist_Moving_Question_5" = "";
+"Checklist_Moving_Question_6" = "";
+
+// checklist moving select
+"Checklist_Moving_Select_1_1" = "Gas";
+"Checklist_Moving_Select_1_2" = "Water";
+"Checklist_Moving_Select_1_3" = "Electricity";
+"Checklist_Moving_Select_1_4" = "Telephone";
+
+"Checklist_Moving_Select_2_1" = "Bills";
+"Checklist_Moving_Select_2_2" = "Magazine Subscriptions";
+"Checklist_Moving_Select_2_3" = "Phone Number (if applicable)";
+"Checklist_Moving_Select_2_4" = "Mail";
+"Checklist_Moving_Select_2_5" = "Internet Connection";
+
+"Checklist_Moving_Select_3_1" = "Friends";
+"Checklist_Moving_Select_3_2" = "Family";
+"Checklist_Moving_Select_3_3" = "Work";
+"Checklist_Moving_Select_3_4" = "Sporting Groups";
+"Checklist_Moving_Select_3_5" = "Doctor";
+"Checklist_Moving_Select_3_6" = "Dentist";
+"Checklist_Moving_Select_3_7" = "Banks";
+"Checklist_Moving_Select_3_8" = "Accountant/Solicitor";
+"Checklist_Moving_Select_3_9" = "Tax office";
+"Checklist_Moving_Select_3_10" = "Road Authority for Drivers Licence and Registration";
+"Checklist_Moving_Select_3_11" = "Credit cards";
+"Checklist_Moving_Select_3_12" = "Electoral commission";
+"Checklist_Moving_Select_3_13" = "Insurance";
+
+"Checklist_Moving_Select_4_1" = "Get quotes from removalists and book the one most suited to your needs";
+"Checklist_Moving_Select_4_2" = "Pack fragile items yourself";
+"Checklist_Moving_Select_4_3" = "Arrange insurance for goods in transit(your removalist may cover this)";
+"Checklist_Moving_Select_4_4" = "Mark each carton with the room number it's intended for";
+"Checklist_Moving_Select_4_5" = "Mark items to be handled with special care";
+"Checklist_Moving_Select_4_6" = "Prepare floor plan of your new house and number rooms for boxes";
+"Checklist_Moving_Select_4_7" = "Defrost the fridge and freezer";
+"Checklist_Moving_Select_4_8" = "Pack jewellery and valuables and take them yourself or arrange a special carrier";
+"Checklist_Moving_Select_4_9" = "Throw out rubbish in sealed bags";
+"Checklist_Moving_Select_4_10" = "Water the garden for one last time";
+"Checklist_Moving_Select_4_11" = "Don't forget the pets";
+
+
+
+"Checklist_Moving_Select_5_1" = "Prepare to have the carpets cleaned";
+"Checklist_Moving_Select_5_2" = "Prepare for utilities to be connected";
+"Checklist_Moving_Select_5_3" = "Prepare to clean cupboards and bathrooms";
+"Checklist_Moving_Select_5_4" = "Arrange house and contents insurance";
+
+"Checklist_Moving_Select_6_1" = "Turn off the water,gas,electricity";
+"Checklist_Moving_Select_6_2" = "Lock up securely,leaving some ventilation";
+"Checklist_Moving_Select_6_3" = "Check all cupboards,storerooms,sheds and under the house";
+"Checklist_Moving_Select_6_4" = "Hand over keys to agent or new owner";
+
+// checklist pre-settle 标题
+"Checklist_Presettle_Title_1" = "轉貸";
+"Checklist_Presettle_Title_2" = "物業購買";
+
+// checklist pre-settle 子标题
+"Checklist_Presettle_SubTitle_1" = "當收到有關貸款全批下來的消息後， 閣下將需要完成以下程序：";
+"Checklist_Presettle_SubTitle_2" = "當收到有關貸款全批下來的消息後， 閣下將需要完成以下程序：";
+
+// checklist pre-settle select
+"Checklist_Presettle_Select_1_1" = "當閣下轉貸到別的銀行或是其他信貸機構時，閣下需要填妥房產解除抵押表格，並遞交給貸款本身所在的銀行。";
+"Checklist_Presettle_Select_1_2" = "收到貸款文件。";
+"Checklist_Presettle_Select_1_3" = "在貸款文件上簽名。";
+"Checklist_Presettle_Select_1_4" = "準備一份保險文件副本，文件要顯示最新的銀行或其他信貸機構為第一信貸人，並要符合信貸文件列出的最低保險要求(假如是同一個信貸機構，只需要一份新的保險副本)。";
+"Checklist_Presettle_Select_1_5" = "保留貸款文件客戶副本。";
+"Checklist_Presettle_Select_1_6" = "郵寄第二步到第五步至信貸銀行或其他信貸機構。";
+"Checklist_Presettle_Select_1_7" = "成交前三天需要聯繫律師了解付款細節。";
+
+"Checklist_Presettle_Select_2_1" = "收到貸款文件。";
+"Checklist_Presettle_Select_2_2" = "在貸款文件上簽名。";
+"Checklist_Presettle_Select_2_3" = "準備一份保險副本，文件要顯示最新的銀行或其他信貸機構為第一信貸人，並要符合信貸文件列出的最低保險要求。";
+"Checklist_Presettle_Select_2_4" = "保留貸款文件客戶副本。";
+"Checklist_Presettle_Select_2_5" = "郵寄第二步到第三步至信貸銀行或其他信貸機構。";
+"Checklist_Presettle_Select_2_6" = "如是首次置業人士，請確定律師是否有安排印花稅的減免。";
+"Checklist_Presettle_Select_2_7" = "成交前三天需要聯繫律師了解付款細節。";
+
+// contact us 标题
+"ContactUs_Title_1" = "電話";
+"ContactUs_Title_2" = "傳真";
+"ContactUs_Title_3" = "電郵";
+"ContactUs_Title_4" = "關注\n我們";
+
+// contact us 标题栏内容
+"ContactUs_Content_1" = "1300 26 8686";
+"ContactUs_Content_2" = "(02) 9423 4630";
+"ContactUs_Content_3" = "app@abacushomeloans.com.au";
+
+// contact us 地图界面标题
+"ContactUs_Map_Title_1" = "華瑞信貸悉尼總部";
+"ContactUs_Map_Title_2" = "華瑞信貸墨爾本分部";
+"ContactUs_Map_Title_3" = "華瑞信貸堪培拉分部";
+
+// contact us 地图界面电话
+"ContactUs_Map_Phone_1" = "(02) 8006 5516";
+"ContactUs_Map_Phone_2" = "(03) 9005 1737";
+"ContactUs_Map_Phone_3" = "(02) 6176 0303";
+
+// contact us 地图界面地址
+"ContactUs_Map_Address_1" = "Suite 502   Level 5 451 Pitt Street  SYDNEY NSW 2000";
+"ContactUs_Map_Address_2" = "Suite 3   Level 1  190 Queen Street  MELBOURNE VIC 3000";
+"ContactUs_Map_Address_3" = "Suite 2  Dickson Chambers  25 Dickson Place DICKSON ACT 2602";
+
+// APP评分
+"If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!" = "如果你喜歡使用%@，你介意花一點時間給它評分嗎？不會超過一分鐘。感謝您的支持！";
+"Rate %@" = "給%@評分";
+"No, Thanks" = "不，謝謝";
+"Remind me later" = "稍後提醒我";

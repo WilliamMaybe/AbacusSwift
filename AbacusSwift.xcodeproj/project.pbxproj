@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8265C353A6207276B413912B /* Pods_AbacusSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3195AA27E0044402D16F4 /* Pods_AbacusSwift.framework */; };
+		C59C2B441BE8B29F0040855F /* UIImage+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B431BE8B29F0040855F /* UIImage+Util.swift */; };
+		C59C2B461BE8B89B0040855F /* AbacusHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B451BE8B89B0040855F /* AbacusHomeViewController.swift */; };
+		C59C2B481BE8B8B40040855F /* RepaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B471BE8B8B40040855F /* RepaymentViewController.swift */; };
+		C59C2B4A1BE8B8C10040855F /* StampDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B491BE8B8C10040855F /* StampDutyViewController.swift */; };
+		C59C2B4C1BE8B8CE0040855F /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B4B1BE8B8CE0040855F /* CheckListViewController.swift */; };
+		C59C2B4E1BE8B8DA0040855F /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B4D1BE8B8DA0040855F /* ContactUsViewController.swift */; };
+		C5B50D8A1BE88E04007DB454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50D891BE88E04007DB454 /* AppDelegate.swift */; };
+		C5B50D8C1BE88E04007DB454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50D8B1BE88E04007DB454 /* ViewController.swift */; };
+		C5B50D8F1BE88E04007DB454 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B50D8D1BE88E04007DB454 /* Main.storyboard */; };
+		C5B50D911BE88E04007DB454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B50D901BE88E04007DB454 /* Assets.xcassets */; };
+		C5B50D941BE88E04007DB454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B50D921BE88E04007DB454 /* LaunchScreen.storyboard */; };
+		C5B50D9F1BE88E04007DB454 /* AbacusSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50D9E1BE88E04007DB454 /* AbacusSwiftTests.swift */; };
+		C5B50DAA1BE88E04007DB454 /* AbacusSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50DA91BE88E04007DB454 /* AbacusSwiftUITests.swift */; };
+		C5B50DBA1BE88EE4007DB454 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50DB91BE88EE4007DB454 /* TabBarController.swift */; };
+		C5B50DC21BE89042007DB454 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50DC11BE89042007DB454 /* BaseNavigationViewController.swift */; };
+		C5B50DC41BE89051007DB454 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50DC31BE89051007DB454 /* BaseViewController.swift */; };
+		C5B50DCA1BE891F8007DB454 /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50DC91BE891F8007DB454 /* UIColor+Util.swift */; };
+		C5B50DCC1BE89EB5007DB454 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50DCB1BE89EB5007DB454 /* UIView+Util.swift */; };
+		C5BD06661BE8BC0E006AC24A /* MyLocalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD06651BE8BC0E006AC24A /* MyLocalDefine.swift */; };
+		C5BD06691BE8BC21006AC24A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5BD066B1BE8BC21006AC24A /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5B50D9B1BE88E04007DB454 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5B50D7E1BE88E04007DB454 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5B50D851BE88E04007DB454;
+			remoteInfo = AbacusSwift;
+		};
+		C5B50DA61BE88E04007DB454 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5B50D7E1BE88E04007DB454 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5B50D851BE88E04007DB454;
+			remoteInfo = AbacusSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		92F120514D3682B065D7FC03 /* Pods-AbacusSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		B5064017118B5AE9CAD1D384 /* Pods-AbacusSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift.release.xcconfig"; sourceTree = "<group>"; };
+		C59C2B431BE8B29F0040855F /* UIImage+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Util.swift"; sourceTree = "<group>"; };
+		C59C2B451BE8B89B0040855F /* AbacusHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbacusHomeViewController.swift; sourceTree = "<group>"; };
+		C59C2B471BE8B8B40040855F /* RepaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepaymentViewController.swift; sourceTree = "<group>"; };
+		C59C2B491BE8B8C10040855F /* StampDutyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampDutyViewController.swift; sourceTree = "<group>"; };
+		C59C2B4B1BE8B8CE0040855F /* CheckListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
+		C59C2B4D1BE8B8DA0040855F /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		C5B50D861BE88E04007DB454 /* AbacusSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbacusSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5B50D891BE88E04007DB454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C5B50D8B1BE88E04007DB454 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C5B50D8E1BE88E04007DB454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C5B50D901BE88E04007DB454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5B50D931BE88E04007DB454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C5B50D951BE88E04007DB454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5B50D9A1BE88E04007DB454 /* AbacusSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AbacusSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5B50D9E1BE88E04007DB454 /* AbacusSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbacusSwiftTests.swift; sourceTree = "<group>"; };
+		C5B50DA01BE88E04007DB454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5B50DA51BE88E04007DB454 /* AbacusSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AbacusSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5B50DA91BE88E04007DB454 /* AbacusSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbacusSwiftUITests.swift; sourceTree = "<group>"; };
+		C5B50DAB1BE88E04007DB454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5B50DB91BE88EE4007DB454 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C5B50DC11BE89042007DB454 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		C5B50DC31BE89051007DB454 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C5B50DC91BE891F8007DB454 /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
+		C5B50DCB1BE89EB5007DB454 /* UIView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		C5BD06651BE8BC0E006AC24A /* MyLocalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLocalDefine.swift; sourceTree = "<group>"; };
+		C5BD066C1BE8BC2D006AC24A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C5BD066D1BE8BC3B006AC24A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		EAD3195AA27E0044402D16F4 /* Pods_AbacusSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbacusSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C5B50D831BE88E04007DB454 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8265C353A6207276B413912B /* Pods_AbacusSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5B50D971BE88E04007DB454 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5B50DA21BE88E04007DB454 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAF9B4CCCFEA5F4018E24C13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAD3195AA27E0044402D16F4 /* Pods_AbacusSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5B50D7D1BE88E04007DB454 = {
+			isa = PBXGroup;
+			children = (
+				C5B50D881BE88E04007DB454 /* AbacusSwift */,
+				C5B50D9D1BE88E04007DB454 /* AbacusSwiftTests */,
+				C5B50DA81BE88E04007DB454 /* AbacusSwiftUITests */,
+				C5B50D871BE88E04007DB454 /* Products */,
+				D0AB2C63351B35FCEAACBEDD /* Pods */,
+				BAF9B4CCCFEA5F4018E24C13 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C5B50D871BE88E04007DB454 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5B50D861BE88E04007DB454 /* AbacusSwift.app */,
+				C5B50D9A1BE88E04007DB454 /* AbacusSwiftTests.xctest */,
+				C5B50DA51BE88E04007DB454 /* AbacusSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5B50D881BE88E04007DB454 /* AbacusSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C5B50D891BE88E04007DB454 /* AppDelegate.swift */,
+				C5B50D8B1BE88E04007DB454 /* ViewController.swift */,
+				C5B50DB91BE88EE4007DB454 /* TabBarController.swift */,
+				C5BD06641BE8BB8A006AC24A /* Internationalization */,
+				C5B50DBC1BE88FD9007DB454 /* AbacusHome */,
+				C5B50DBD1BE88FEA007DB454 /* Repayment */,
+				C5B50DBE1BE88FF3007DB454 /* StampDuty */,
+				C5B50DBF1BE88FFB007DB454 /* CheckList */,
+				C5B50DC01BE89000007DB454 /* ContactUs */,
+				C5B50DBB1BE88F5F007DB454 /* BaseClass */,
+				C5B50DC51BE89083007DB454 /* Utility */,
+				C5B50D8D1BE88E04007DB454 /* Main.storyboard */,
+				C5B50D901BE88E04007DB454 /* Assets.xcassets */,
+				C5B50D921BE88E04007DB454 /* LaunchScreen.storyboard */,
+				C5B50D951BE88E04007DB454 /* Info.plist */,
+			);
+			path = AbacusSwift;
+			sourceTree = "<group>";
+		};
+		C5B50D9D1BE88E04007DB454 /* AbacusSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5B50D9E1BE88E04007DB454 /* AbacusSwiftTests.swift */,
+				C5B50DA01BE88E04007DB454 /* Info.plist */,
+			);
+			path = AbacusSwiftTests;
+			sourceTree = "<group>";
+		};
+		C5B50DA81BE88E04007DB454 /* AbacusSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C5B50DA91BE88E04007DB454 /* AbacusSwiftUITests.swift */,
+				C5B50DAB1BE88E04007DB454 /* Info.plist */,
+			);
+			path = AbacusSwiftUITests;
+			sourceTree = "<group>";
+		};
+		C5B50DBB1BE88F5F007DB454 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				C5B50DC11BE89042007DB454 /* BaseNavigationViewController.swift */,
+				C5B50DC31BE89051007DB454 /* BaseViewController.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		C5B50DBC1BE88FD9007DB454 /* AbacusHome */ = {
+			isa = PBXGroup;
+			children = (
+				C59C2B451BE8B89B0040855F /* AbacusHomeViewController.swift */,
+			);
+			path = AbacusHome;
+			sourceTree = "<group>";
+		};
+		C5B50DBD1BE88FEA007DB454 /* Repayment */ = {
+			isa = PBXGroup;
+			children = (
+				C59C2B471BE8B8B40040855F /* RepaymentViewController.swift */,
+			);
+			path = Repayment;
+			sourceTree = "<group>";
+		};
+		C5B50DBE1BE88FF3007DB454 /* StampDuty */ = {
+			isa = PBXGroup;
+			children = (
+				C59C2B491BE8B8C10040855F /* StampDutyViewController.swift */,
+			);
+			path = StampDuty;
+			sourceTree = "<group>";
+		};
+		C5B50DBF1BE88FFB007DB454 /* CheckList */ = {
+			isa = PBXGroup;
+			children = (
+				C59C2B4B1BE8B8CE0040855F /* CheckListViewController.swift */,
+			);
+			path = CheckList;
+			sourceTree = "<group>";
+		};
+		C5B50DC01BE89000007DB454 /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				C59C2B4D1BE8B8DA0040855F /* ContactUsViewController.swift */,
+			);
+			path = ContactUs;
+			sourceTree = "<group>";
+		};
+		C5B50DC51BE89083007DB454 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C5B50DC81BE890EA007DB454 /* Util */,
+				C5B50DC61BE8909E007DB454 /* Category */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C5B50DC61BE8909E007DB454 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C5B50DC91BE891F8007DB454 /* UIColor+Util.swift */,
+				C5B50DCB1BE89EB5007DB454 /* UIView+Util.swift */,
+				C59C2B431BE8B29F0040855F /* UIImage+Util.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C5B50DC81BE890EA007DB454 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C5BD06641BE8BB8A006AC24A /* Internationalization */ = {
+			isa = PBXGroup;
+			children = (
+				C5BD06651BE8BC0E006AC24A /* MyLocalDefine.swift */,
+				C5BD066B1BE8BC21006AC24A /* Localizable.strings */,
+			);
+			path = Internationalization;
+			sourceTree = "<group>";
+		};
+		D0AB2C63351B35FCEAACBEDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92F120514D3682B065D7FC03 /* Pods-AbacusSwift.debug.xcconfig */,
+				B5064017118B5AE9CAD1D384 /* Pods-AbacusSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C5B50D851BE88E04007DB454 /* AbacusSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5B50DAE1BE88E04007DB454 /* Build configuration list for PBXNativeTarget "AbacusSwift" */;
+			buildPhases = (
+				34BA7EAE14B7773DA211747E /* Check Pods Manifest.lock */,
+				C5B50D821BE88E04007DB454 /* Sources */,
+				C5B50D831BE88E04007DB454 /* Frameworks */,
+				C5B50D841BE88E04007DB454 /* Resources */,
+				4CEE38D1BC000AA7468CF42A /* Embed Pods Frameworks */,
+				60BD6EBA35592F7CECF66510 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AbacusSwift;
+			productName = AbacusSwift;
+			productReference = C5B50D861BE88E04007DB454 /* AbacusSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C5B50D991BE88E04007DB454 /* AbacusSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5B50DB11BE88E04007DB454 /* Build configuration list for PBXNativeTarget "AbacusSwiftTests" */;
+			buildPhases = (
+				C5B50D961BE88E04007DB454 /* Sources */,
+				C5B50D971BE88E04007DB454 /* Frameworks */,
+				C5B50D981BE88E04007DB454 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5B50D9C1BE88E04007DB454 /* PBXTargetDependency */,
+			);
+			name = AbacusSwiftTests;
+			productName = AbacusSwiftTests;
+			productReference = C5B50D9A1BE88E04007DB454 /* AbacusSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C5B50DA41BE88E04007DB454 /* AbacusSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5B50DB41BE88E04007DB454 /* Build configuration list for PBXNativeTarget "AbacusSwiftUITests" */;
+			buildPhases = (
+				C5B50DA11BE88E04007DB454 /* Sources */,
+				C5B50DA21BE88E04007DB454 /* Frameworks */,
+				C5B50DA31BE88E04007DB454 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5B50DA71BE88E04007DB454 /* PBXTargetDependency */,
+			);
+			name = AbacusSwiftUITests;
+			productName = AbacusSwiftUITests;
+			productReference = C5B50DA51BE88E04007DB454 /* AbacusSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C5B50D7E1BE88E04007DB454 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "William Zhang";
+				TargetAttributes = {
+					C5B50D851BE88E04007DB454 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					C5B50D991BE88E04007DB454 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = C5B50D851BE88E04007DB454;
+					};
+					C5B50DA41BE88E04007DB454 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = C5B50D851BE88E04007DB454;
+					};
+				};
+			};
+			buildConfigurationList = C5B50D811BE88E04007DB454 /* Build configuration list for PBXProject "AbacusSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				"zh-Hant",
+			);
+			mainGroup = C5B50D7D1BE88E04007DB454;
+			productRefGroup = C5B50D871BE88E04007DB454 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5B50D851BE88E04007DB454 /* AbacusSwift */,
+				C5B50D991BE88E04007DB454 /* AbacusSwiftTests */,
+				C5B50DA41BE88E04007DB454 /* AbacusSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C5B50D841BE88E04007DB454 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5B50D941BE88E04007DB454 /* LaunchScreen.storyboard in Resources */,
+				C5BD06691BE8BC21006AC24A /* Localizable.strings in Resources */,
+				C5B50D911BE88E04007DB454 /* Assets.xcassets in Resources */,
+				C5B50D8F1BE88E04007DB454 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5B50D981BE88E04007DB454 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5B50DA31BE88E04007DB454 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34BA7EAE14B7773DA211747E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4CEE38D1BC000AA7468CF42A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60BD6EBA35592F7CECF66510 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C5B50D821BE88E04007DB454 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59C2B481BE8B8B40040855F /* RepaymentViewController.swift in Sources */,
+				C59C2B4C1BE8B8CE0040855F /* CheckListViewController.swift in Sources */,
+				C5B50DCC1BE89EB5007DB454 /* UIView+Util.swift in Sources */,
+				C5B50DC41BE89051007DB454 /* BaseViewController.swift in Sources */,
+				C5BD06661BE8BC0E006AC24A /* MyLocalDefine.swift in Sources */,
+				C5B50DBA1BE88EE4007DB454 /* TabBarController.swift in Sources */,
+				C5B50D8C1BE88E04007DB454 /* ViewController.swift in Sources */,
+				C5B50D8A1BE88E04007DB454 /* AppDelegate.swift in Sources */,
+				C59C2B4E1BE8B8DA0040855F /* ContactUsViewController.swift in Sources */,
+				C5B50DC21BE89042007DB454 /* BaseNavigationViewController.swift in Sources */,
+				C5B50DCA1BE891F8007DB454 /* UIColor+Util.swift in Sources */,
+				C59C2B441BE8B29F0040855F /* UIImage+Util.swift in Sources */,
+				C59C2B461BE8B89B0040855F /* AbacusHomeViewController.swift in Sources */,
+				C59C2B4A1BE8B8C10040855F /* StampDutyViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5B50D961BE88E04007DB454 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5B50D9F1BE88E04007DB454 /* AbacusSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5B50DA11BE88E04007DB454 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5B50DAA1BE88E04007DB454 /* AbacusSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5B50D9C1BE88E04007DB454 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5B50D851BE88E04007DB454 /* AbacusSwift */;
+			targetProxy = C5B50D9B1BE88E04007DB454 /* PBXContainerItemProxy */;
+		};
+		C5B50DA71BE88E04007DB454 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5B50D851BE88E04007DB454 /* AbacusSwift */;
+			targetProxy = C5B50DA61BE88E04007DB454 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C5B50D8D1BE88E04007DB454 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5B50D8E1BE88E04007DB454 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C5B50D921BE88E04007DB454 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5B50D931BE88E04007DB454 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C5BD066B1BE8BC21006AC24A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5BD066C1BE8BC2D006AC24A /* en */,
+				C5BD066D1BE8BC3B006AC24A /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C5B50DAC1BE88E04007DB454 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C5B50DAD1BE88E04007DB454 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C5B50DAF1BE88E04007DB454 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F120514D3682B065D7FC03 /* Pods-AbacusSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AbacusSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C5B50DB01BE88E04007DB454 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5064017118B5AE9CAD1D384 /* Pods-AbacusSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AbacusSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C5B50DB21BE88E04007DB454 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AbacusSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AbacusSwift.app/AbacusSwift";
+			};
+			name = Debug;
+		};
+		C5B50DB31BE88E04007DB454 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AbacusSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AbacusSwift.app/AbacusSwift";
+			};
+			name = Release;
+		};
+		C5B50DB51BE88E04007DB454 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AbacusSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AbacusSwift;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C5B50DB61BE88E04007DB454 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AbacusSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AbacusSwift;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C5B50D811BE88E04007DB454 /* Build configuration list for PBXProject "AbacusSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5B50DAC1BE88E04007DB454 /* Debug */,
+				C5B50DAD1BE88E04007DB454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5B50DAE1BE88E04007DB454 /* Build configuration list for PBXNativeTarget "AbacusSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5B50DAF1BE88E04007DB454 /* Debug */,
+				C5B50DB01BE88E04007DB454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5B50DB11BE88E04007DB454 /* Build configuration list for PBXNativeTarget "AbacusSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5B50DB21BE88E04007DB454 /* Debug */,
+				C5B50DB31BE88E04007DB454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5B50DB41BE88E04007DB454 /* Build configuration list for PBXNativeTarget "AbacusSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5B50DB51BE88E04007DB454 /* Debug */,
+				C5B50DB61BE88E04007DB454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C5B50D7E1BE88E04007DB454 /* Project object */;
+}

@@ -1,0 +1,302 @@
+/* 
+  Localizable.strings
+  AbacusSwift
+
+  Created by williamzhang on 15/11/3.
+  Copyright © 2015年 William Zhang. All rights reserved.
+*/
+
+"setMail"   = "Please set the account of email first";
+"cantPhone" = "Your device is not support this function";
+
+// 时间
+"Months"    = "Months";
+"Years"     = "Years";
+"Month"     = "Month";
+"Year"      = "Year";
+
+// 加载
+"LoadFail"  = "load failed";
+"reset"     = "Reset";
+"back"      = "Back";
+"Done"      = "Done";
+
+// 底部栏标题
+"Abacus"        = "Abacus";
+"Repayment"     = "Repayment";
+"Stamp_Duty"    = "Stamp Duty";
+"Checklist"     = "CheckList";
+"Contact_Us"    = "Contact Us";
+
+// 变换语言
+"Remind"    = "Remind";
+"Content"   = "Would you like to change the Application language to Chinese,Traditonal?";
+"Cancel"    = "Cancel";
+
+"Abacus_Home_Loans" = "Abacus Home Loans";
+// Abacus 列表大标题
+"Abacus_Title" = "Loan Types";
+
+// Abacus Loan 标题
+"Abacus_Loan_Title_1" = "Residential Loans";
+"Abacus_Loan_Title_2" = "Commercial Loans";
+
+// Abacus Loan ItemButton 切换语言
+"Abacus_Button_Text" = "中文";
+
+// Repayment 标题
+"Repayment_Title_1" = "Loan Amount";
+"Repayment_Title_2" = "Loan Term";
+"Repayment_Title_3" = "Interest Rate";
+"Repayment_Title_4" = "Repayment Frequency";
+"Repayment_Title_5" = "Repayment Type";
+
+// Repayment Frequency 选项
+"Repayment_Frequency_1" = "Monthly";
+"Repayment_Frequency_2" = "Fortnightly";
+"Repayment_Frequency_3" = "Weekly";
+
+// Repayment Type 选项
+"Repayment_Type_1" = "Principal & Interest";
+"Repayment_Type_2" = "Interest Only";
+
+// Repayment Graph 1 frequency 标题
+"Repayment_Graph_1_Frequency_1" = "Per Month";
+"Repayment_Graph_1_Frequency_2" = "Fortnightly";
+"Repayment_Graph_1_Frequency_3" = "Weekly";
+
+// Repayment Graph 1 title
+"Repayment_Graph_1_Title" = "Summary";
+"Repayment_Graph_1_SubTitle_1" = "Interest Payable";
+"Repayment_Graph_1_SubTitle_2" = "Principal";
+
+// Repayment Graph 2 title
+"Repayment_Graph_2_Title" = "Details";
+"Repayment_Graph_2_SubTitle" = "Loan payment";
+"Repayment_Graph_2_Interest" = "Interest";
+
+// Repayment Graph 3 extra title
+"Repayment_Graph_3_Extra" = "Extra Payment";
+"Repayment_Graph_3_Original" = "Original Balance";
+"Repayment_Graph_3_AfterExtra" = "Balance after extra repayment";
+
+// Repayment Graph 3 ExtraView title
+"Repayment_Graph_3_ExtraView_Title_1" = "Time saved";
+"Repayment_Graph_3_ExtraView_Title_2" = "Interest saved";
+
+"Repayment_Graph_3_ExtraView_Title_Min_Month" = "Minimum monthly repayments";
+"Repayment_Graph_3_ExtraView_Title_Inc_Month" = "Increased monthly repayments";
+"Repayment_Graph_3_ExtraView_Title_Min_Fortnight" = "Minimum fortnightly repayments";
+"Repayment_Graph_3_ExtraView_Title_Inc_Fortnight" = "Increased fortnightly repayments";
+"Repayment_Graph_3_ExtraView_Title_Min_Week" = "Minimum weekly repayments";
+"Repayment_Graph_3_ExtraView_Title_Inc_Week" = "Increased weekly repayments";
+
+"Repayment_email" = "\n\n\nAbacus Home Loans I 1300 Count on us\nT: 1300 26 8686\nW: www.AbacusHomeLoans.com.au\nM: app@abacushomeloans.com.au\n\nDisclaimer\n\n\nThe results from these calculators are an approximate guide only. These calculators, or the results generated, do not constitute any agreement by any lender to provide credit. The calculations do not take into account any fees and charges that a lender may levy. Abacus Home Loans are not responsible for the calculator or its calculations and make no representations either expressly or impliedly concerning the calculator or calculations. Abacus Home Loans accepts no liability whatsoever in relation to the calculator or calculations.\n\nYou may be eligible for the Federal Government First Home Owner Scheme (FHOS) or stamp duty concessions. For more information, please contact your local State or Territorial Revenue Office:\n\n- ACT (02) 6207 0028\n - QLD 1300 300 734\n- NSW (02) 9689 6200 \n- TAS (03) 6233 3722\n- NT (08) 8999 7949 \n- VIC 132 161\n- SA (08) 8226 3750\n - WA (08) 9222 8866";
+
+"Repayment_email_title" = "Home Loan Repayments Summary";
+"Repayment_email_result" = "Results";
+"Repayment_email_totalcost" = "Total cost of loan";
+"Repayment_email_totalinterest" = "Total interest payable";
+
+// Stamp Duty 标题
+"StampDuty_Title_1" = "State/Territory";
+"StampDuty_Title_2" = "Property Value";
+"StampDuty_Title_3" = "Live In Property";
+"StampDuty_Title_4" = "First Home Buyer";
+
+// Stamp Duty pickerstate选项缩写
+"StampDuty_Picker_1" = "ACT";
+"StampDuty_Picker_2" = "NSW";
+"StampDuty_Picker_3" = "NT";
+"StampDuty_Picker_4" = "QLD";
+"StampDuty_Picker_5" = "SA";
+"StampDuty_Picker_6" = "TAS";
+"StampDuty_Picker_7" = "VIC";
+"StampDuty_Picker_8" = "WA";
+
+// Stamp Duty pickerstate选项全称
+"StampDuty_Picker_Full_1" = "Australian Capital Territory";
+"StampDuty_Picker_Full_2" = "New South Wales";
+"StampDuty_Picker_Full_3" = "Northern Territory";
+"StampDuty_Picker_Full_4" = "Queensland";
+"StampDuty_Picker_Full_5" = "South Australia";
+"StampDuty_Picker_Full_6" = "Tasmania";
+"StampDuty_Picker_Full_7" = "Victoria";
+"StampDuty_Picker_Full_8" = "Western Australia";
+
+// Stamp Duty 图表1
+"StampDuty_Graph_1_SubTitle" = "Fees & Charges";
+"StampDuty_Graph_1_StampDuty" = "Stamp Duty";
+"StampDuty_Graph_1_TransferFee" = "TransferFee";
+"StampDuty_Graph_1_Registration" = "Registration";
+"StampDuty_Graph_1_Total" = "Total";
+"StampDuty_Graph_1_Concession" = "To assess your Stamp duty obligations, we ask that you use the relevant state OSR link provided below:";
+"StampDuty_Graph_1_Disclaimer" = "DISCLAIMER";
+"StampDuty_Graph_1_Disclaimer_Content" = "Whilst every effort has been made to ensure the accuracy of this and other calculators provided, the results should be used as an indication only. They are neither a quote nor a pre-qualification for a home loan nor a complete assessment of your stamp duty obligations.\nUse these calculators as a guide only and not as a substitute for professional advice The use of this web site constitutes acceptance of our Terms of Use and Privacy Policy.";
+
+// Stamp Duty 图表2
+"StampDuty_Graph_2_SubTitle" = "States Comparison";
+
+"StampDuty_Email" = "\n\n\nAbacus Home Loans I 1300 Count on us\nT: 1300 26 8686\nW: www.AbacusHomeLoans.com.au\nM: app@abacushomeloans.com.au\n\nDisclaimer\n\n\nThe results from these calculators are an approximate guide only. These calculators, or the results generated, do not constitute any agreement by any lender to provide credit. The calculations do not take into account any fees and charges that a lender may levy. Abacus Home Loans are not responsible for the calculator or its calculations and make no representations either expressly or impliedly concerning the calculator or calculations. Abacus Home Loans accepts no liability whatsoever in relation to the calculator or calculations.\n\nYou may be eligible for the Federal Government First Home Owner Scheme (FHOS) or stamp duty concessions. For more information, please contact your local State or Territorial Revenue Office:\n\n- ACT (02) 6207 0028\n - QLD 1300 300 734\n- NSW (02) 9689 6200 \n- TAS (03) 6233 3722\n- NT (08) 8999 7949\n - VIC 132 161\n- SA (08) 8226 3750\n - WA (08) 9222 8866";
+
+"StampDuty_Email_SubTitle" = "Purchase Details";
+"StampDuty_Email_Price" = "Purchase Price";
+"StampDuty_Email_GovermentFees" = "Government Fees";
+
+// checklist 标题
+"Checklist_Title_1" = "Require Documents Checklist";
+"Checklist_Title_2" = "Moving Checklist";
+"Checklist_Title_3" = "Pre-settlement Checklist";
+
+// checklist home 标题
+"Checklist_Home_Title_1" = "Income";
+"Checklist_Home_Title_2" = "Assets";
+"Checklist_Home_Title_3" = "Liabilities";
+"Checklist_Home_Title_4" = "Other";
+"Checklist_Home_Title_5" = "Proof of Identity";
+
+// checklist home select
+"Checklist_Home_Select_1_1" = "Two recent payslips";
+"Checklist_Home_Select_1_2" = "Letter from employer stating postion,commencement date,gross income,net income,if still on probation,year to date,regular overtime and allowances";
+"Checklist_Home_Select_1_3" = "Copy of employment contact";
+"Checklist_Home_Select_1_4" = "Last year's group certificate";
+"Checklist_Home_Select_1_5" = "Last 2 year's tax returns(if company/family trust applicable,you will require company tax returns,ATO assessment notice,memorandum and articles of association,copy of trust or deed)";
+"Checklist_Home_Select_1_6" = "Copy of tenancy agreement or rental statement for all owned investment properties or a letter from a real estate office to admin the estimated proposed rental income";
+
+"Checklist_Home_Select_2_1" = "One recent month transation account statement";
+"Checklist_Home_Select_2_2" = "Deposit paid receipt";
+"Checklist_Home_Select_2_3" = "Statutory declaration(if any part of the deposit is a gift),stating the amount of the gift and that it is non-repayable";
+"Checklist_Home_Select_2_4" = "Rates notice on any existing owned properties";
+
+"Checklist_Home_Select_3_1" = "Copy of loans statements for 6 months on any existing mortgage(if refinance)";
+"Checklist_Home_Select_3_2" = "Copy of 1 months credit card and personal loans statements and statements from any other borrowings/if refinance,copy for 3 months of credit card and personal loan statements";
+
+"Checklist_Home_Select_4_1" = "Copy of purchase contract(front page)";
+"Checklist_Home_Select_4_2" = "Copy of plans,specifications and fixed price contract(contruction/renovations)";
+"Checklist_Home_Select_4_3" = "Cheque for establishment fees - if required";
+
+"Checklist_Home_Select_5_1" = "Drivers Licence - 40 points";
+"Checklist_Home_Select_5_2" = "Passport or birth certificate - 70 points visa page if foreign passport";
+
+// checklist moving 标题
+"Checklist_Moving_Title_1" = "Disconnect Utilities";
+"Checklist_Moving_Title_2" = "Redirect";
+"Checklist_Moving_Title_3" = "Advise friends,business & associates of your new address";
+"Checklist_Moving_Title_4" = "Getting ready to move";
+"Checklist_Moving_Title_5" = "Plan ahead for your new home";
+"Checklist_Moving_Title_6" = "Final Check";
+
+// checklist moving 问题
+"Checklist_Moving_Question_1" = "You should be disconnected from your utilities.Notify relevant services at least 48 hours in advance.You may be able to redirect these services to your new address,so it's all ready when you arrive";
+"Checklist_Moving_Question_2" = "";
+"Checklist_Moving_Question_3" = "Go through your address book and send out change of address cards.You can buy these from the post office or have them cheaply printed at your local instant printer.Alternatively,you can email your new address to people";
+"Checklist_Moving_Question_4" = "";
+"Checklist_Moving_Question_5" = "";
+"Checklist_Moving_Question_6" = "";
+
+// checklist moving select
+"Checklist_Moving_Select_1_1" = "Gas";
+"Checklist_Moving_Select_1_2" = "Water";
+"Checklist_Moving_Select_1_3" = "Electricity";
+"Checklist_Moving_Select_1_4" = "Telephone";
+
+"Checklist_Moving_Select_2_1" = "Bills";
+"Checklist_Moving_Select_2_2" = "Magazine Subscriptions";
+"Checklist_Moving_Select_2_3" = "Phone Number (if applicable)";
+"Checklist_Moving_Select_2_4" = "Mail";
+"Checklist_Moving_Select_2_5" = "Internet Connection";
+
+"Checklist_Moving_Select_3_1" = "Friends";
+"Checklist_Moving_Select_3_2" = "Family";
+"Checklist_Moving_Select_3_3" = "Work";
+"Checklist_Moving_Select_3_4" = "Sporting Groups";
+"Checklist_Moving_Select_3_5" = "Doctor";
+"Checklist_Moving_Select_3_6" = "Dentist";
+"Checklist_Moving_Select_3_7" = "Banks";
+"Checklist_Moving_Select_3_8" = "Accountant/Solicitor";
+"Checklist_Moving_Select_3_9" = "Tax office";
+"Checklist_Moving_Select_3_10" = "Road Authority for Drivers Licence and Registration";
+"Checklist_Moving_Select_3_11" = "Credit cards";
+"Checklist_Moving_Select_3_12" = "Electoral commission";
+"Checklist_Moving_Select_3_13" = "Insurance";
+
+"Checklist_Moving_Select_4_1" = "Get quotes from removalists and book the one most suited to your needs";
+"Checklist_Moving_Select_4_2" = "Pack fragile items yourself";
+"Checklist_Moving_Select_4_3" = "Arrange insurance for goods in transit(your removalist may cover this)";
+"Checklist_Moving_Select_4_4" = "Mark each carton with the room number it's intended for";
+"Checklist_Moving_Select_4_5" = "Mark items to be handled with special care";
+"Checklist_Moving_Select_4_6" = "Prepare floor plan of your new house and number rooms for boxes";
+"Checklist_Moving_Select_4_7" = "Defrost the fridge and freezer";
+"Checklist_Moving_Select_4_8" = "Pack jewellery and valuables and take them yourself or arrange a special carrier";
+"Checklist_Moving_Select_4_9" = "Throw out rubbish in sealed bags";
+"Checklist_Moving_Select_4_10" = "Water the garden for one last time";
+"Checklist_Moving_Select_4_11" = "Don't forget the pets";
+
+
+
+"Checklist_Moving_Select_5_1" = "Prepare to have the carpets cleaned";
+"Checklist_Moving_Select_5_2" = "Prepare for utilities to be connected";
+"Checklist_Moving_Select_5_3" = "Prepare to clean cupboards and bathrooms";
+"Checklist_Moving_Select_5_4" = "Arrange house and contents insurance";
+
+"Checklist_Moving_Select_6_1" = "Turn off the water,gas,electricity";
+"Checklist_Moving_Select_6_2" = "Lock up securely,leaving some ventilation";
+"Checklist_Moving_Select_6_3" = "Check all cupboards,storerooms,sheds and under the house";
+"Checklist_Moving_Select_6_4" = "Hand over keys to agent or new owner";
+
+// checklist pre-settle 标题
+"Checklist_Presettle_Title_1" = "Refinance";
+"Checklist_Presettle_Title_2" = "Purchase";
+
+// checklist pre-settle 子标题
+"Checklist_Presettle_SubTitle_1" = "When you are notified that your loan has been unconditionally approved, the following steps need to be completed before settlement can take place:";
+"Checklist_Presettle_SubTitle_2" = "When you are notified that your loan has been unconditionally approved, the following steps need to be completed before settlement can take place:";
+
+// checklist pre-settle select
+"Checklist_Presettle_Select_1_1" = "If you are refinancing to another lender you will need to complete and return a discharge authority to your existing lender.";
+"Checklist_Presettle_Select_1_2" = "Receive mortgage documents.";
+"Checklist_Presettle_Select_1_3" = "Sign mortgage documents.";
+"Checklist_Presettle_Select_1_4" = "Organise a copy of insurance indicating the new lender as the first mortgagor and new minimum insurance requirement as indicated on the mortgage documents (if you are not changing lenders, they will still require a new copy).";
+"Checklist_Presettle_Select_1_5" = "Retain customer copy.";
+"Checklist_Presettle_Select_1_6" = "Mail steps 2 - 5 to lender.";
+"Checklist_Presettle_Select_1_7" = "Three days prior to settlement - call solicitor to find out what cheques need to be drawn. ";
+
+"Checklist_Presettle_Select_2_1" = "Receive mortgage documents.";
+"Checklist_Presettle_Select_2_2" = "Sign mortgage documents with solicitor.";
+"Checklist_Presettle_Select_2_3" = "Organise a copy of insurance indicating the new lender as the first mortgagor and the minimum insurance requirement as indicated on the mortgage documents.";
+"Checklist_Presettle_Select_2_4" = "Retain customer copy.";
+"Checklist_Presettle_Select_2_5" = "Mail steps 2 – 4 lender.";
+"Checklist_Presettle_Select_2_6" = "If you are a first home owner ensure your solicitor has organised exemption of stamp duty.";
+"Checklist_Presettle_Select_2_7" = "Three days prior to settlement – call solicitor to find out what cheques need to be drawn.";
+
+// contact us 标题
+"ContactUs_Title_1" = "Tel";
+"ContactUs_Title_2" = "Fax";
+"ContactUs_Title_3" = "Email";
+"ContactUs_Title_4" = "Follow Us";
+
+// contact us 标题栏内容
+"ContactUs_Content_1" = "1300 26 8686";
+"ContactUs_Content_2" = "(02) 9423 4630";
+"ContactUs_Content_3" = "app@abacushomeloans.com.au";
+
+// contact us 地图界面标题
+"ContactUs_Map_Title_1" = "Abacus Sydney Head Office";
+"ContactUs_Map_Title_2" = "Abacus Melbourne";
+"ContactUs_Map_Title_3" = "Abacus Canberra";
+
+// contact us 地图界面电话
+"ContactUs_Map_Phone_1" = "(02) 8006 5516";
+"ContactUs_Map_Phone_2" = "(03) 9005 1737";
+"ContactUs_Map_Phone_3" = "(02) 6176 0303";
+
+// contact us 地图界面地址
+"ContactUs_Map_Address_1" = "Suite 502   Level 5 451 Pitt Street  SYDNEY NSW 2000";
+"ContactUs_Map_Address_2" = "Suite 3   Level 1  190 Queen Street  MELBOURNE VIC 3000";
+"ContactUs_Map_Address_3" = "Suite 2  Dickson Chambers  25 Dickson Place DICKSON ACT 2602";
+
+// APP评分
+"If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!" = "If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!";
+"Rate %@" = "Rate %@";
+"No, Thanks" = "No, thanks";
+"Remind me later" = "Remind me later";
