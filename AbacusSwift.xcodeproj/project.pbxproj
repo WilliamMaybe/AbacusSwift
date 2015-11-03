@@ -28,6 +28,7 @@
 		C5B50DCC1BE89EB5007DB454 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50DCB1BE89EB5007DB454 /* UIView+Util.swift */; };
 		C5BD06661BE8BC0E006AC24A /* MyLocalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD06651BE8BC0E006AC24A /* MyLocalDefine.swift */; };
 		C5BD06691BE8BC21006AC24A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5BD066B1BE8BC21006AC24A /* Localizable.strings */; };
+		C5E7E4811BE8EAB500F26D69 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C5E7E4801BE8EAB500F26D69 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		C5BD06651BE8BC0E006AC24A /* MyLocalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLocalDefine.swift; sourceTree = "<group>"; };
 		C5BD066C1BE8BC2D006AC24A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5BD066D1BE8BC3B006AC24A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C5E7E4801BE8EAB500F26D69 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EAD3195AA27E0044402D16F4 /* Pods_AbacusSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbacusSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 		C5B50D7D1BE88E04007DB454 = {
 			isa = PBXGroup;
 			children = (
+				C5E7E4801BE8EAB500F26D69 /* README.md */,
 				C5B50D881BE88E04007DB454 /* AbacusSwift */,
 				C5B50D9D1BE88E04007DB454 /* AbacusSwiftTests */,
 				C5B50DA81BE88E04007DB454 /* AbacusSwiftUITests */,
@@ -456,6 +459,7 @@
 				C59C2B481BE8B8B40040855F /* RepaymentViewController.swift in Sources */,
 				C59C2B4C1BE8B8CE0040855F /* CheckListViewController.swift in Sources */,
 				C5B50DCC1BE89EB5007DB454 /* UIView+Util.swift in Sources */,
+				C5E7E4811BE8EAB500F26D69 /* README.md in Sources */,
 				C5B50DC41BE89051007DB454 /* BaseViewController.swift in Sources */,
 				C5BD06661BE8BC0E006AC24A /* MyLocalDefine.swift in Sources */,
 				C5B50DBA1BE88EE4007DB454 /* TabBarController.swift in Sources */,

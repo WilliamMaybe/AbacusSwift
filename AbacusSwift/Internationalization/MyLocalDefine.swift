@@ -43,8 +43,8 @@ class InternationalControl {
     }
 }
 
-func localStringFromKey(key: String) {
-    
+func localStringFromKey(key: String) -> String {
+    return "false Data"
 }
 
 let SETMAIL    = "setMail"

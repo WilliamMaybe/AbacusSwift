@@ -14,13 +14,13 @@ class AbacusHomeViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(ABACUS_BUTTON_TEXT), style: .Plain, target: self, action: Selector("clickToChangeLanguage"))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Button Click
+    func clickToChangeLanguage() {
+        
     }
-    
 
     /*
     // MARK: - Navigation

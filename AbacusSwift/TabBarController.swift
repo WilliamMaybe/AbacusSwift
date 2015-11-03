@@ -22,16 +22,42 @@ class TabBarController: UITabBarController {
     }
     
     private func initTab() {
+        let arrayTitle = [
+            localStringFromKey(ABACUS),
+            localStringFromKey(REPAYMENT),
+            localStringFromKey(STAMPDUTY),
+            localStringFromKey(CHECKLIST),
+            localStringFromKey(CONTACTUS)
+        ]
         
+        let arrayImageName       = ["tabbar_home",  "tabbar_repayment", "tabbar_stampDuty", "tabbar_checkList", "tabbar_contactUs"]
+        
+        var arrayItem = [UITabBarItem] ()
+        for var i = 0; i < arrayTitle.count; i++ {
+            let imageName = arrayImageName[i]
+            let imageSelectName = imageName + "Select"
+            
+            let item = UITabBarItem(
+                title: arrayTitle[i],
+                image: UIImage(named: imageName)?.imageWithRenderingMode(.AlwaysOriginal),
+                selectedImage: UIImage(named: imageSelectName)?.imageWithRenderingMode(.AlwaysOriginal)
+            )
+            item.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.themeGreen()], forState: .Selected)
+            
+            arrayItem.append(item)
+        }
+        
+        let homeNVC      = BaseNavigationViewController(rootViewController:AbacusHomeViewController())
+        homeNVC.tabBarItem = arrayItem[0]
+        let repaymentNVC = BaseNavigationViewController(rootViewController: RepaymentViewController())
+        repaymentNVC.tabBarItem = arrayItem[1]
+        let stampDutyNVC = BaseNavigationViewController(rootViewController: StampDutyViewController())
+        stampDutyNVC.tabBarItem = arrayItem[2]
+        let checkListNVC = BaseNavigationViewController(rootViewController: CheckListViewController())
+        checkListNVC.tabBarItem = arrayItem[3]
+        let contactUsNVC = BaseNavigationViewController(rootViewController: ContactUsViewController())
+        contactUsNVC.tabBarItem = arrayItem[4]
+        
+        viewControllers = [homeNVC, repaymentNVC, stampDutyNVC, checkListNVC, contactUsNVC]
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
