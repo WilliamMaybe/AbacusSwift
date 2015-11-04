@@ -6,6 +6,8 @@
   Copyright © 2015年 William Zhang. All rights reserved.
 */
 
+"homeLogo" = "homeLogo_cn";
+
 // ERROR
 "setMail"   = "請先設置郵箱";
 "cantPhone" = "無法打開撥號程序";

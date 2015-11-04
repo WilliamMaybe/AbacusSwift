@@ -18,7 +18,7 @@ class BaseNavigationViewController: UINavigationController {
         
         navigationBar.titleTextAttributes = [
             NSForegroundColorAttributeName:UIColor.whiteColor(),
-            NSFontAttributeName:UIFont.boldSystemFontOfSize(22)]
+            NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 22)!]
         
         navigationBar.translucent = false
     }

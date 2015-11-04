@@ -12,7 +12,7 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor.whiteColor()
     }
 

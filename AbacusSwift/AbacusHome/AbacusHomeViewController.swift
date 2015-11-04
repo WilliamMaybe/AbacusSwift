@@ -7,29 +7,119 @@
 //  home主页
 
 import UIKit
+import SnapKit
 
-class AbacusHomeViewController: BaseViewController {
+class AbacusHomeViewController: BaseViewController ,UITableViewDelegate, UITableViewDataSource {
+
+    private lazy var scrollView: UIScrollView     = {
+        let lazyScrollView = UIScrollView()
+        lazyScrollView.backgroundColor = UIColor.whiteColor()
+        
+        return lazyScrollView
+    }()
+    private lazy var headerImageView: UIImageView = { return UIImageView(image: UIImage(named: "home_header")) }()
+    private lazy var tableView: UITableView = {
+        let lazyTableView = UITableView(frame: CGRect.zero, style: .Grouped)
+        lazyTableView.backgroundColor = UIColor.whiteColor()
+        lazyTableView.bounces = false
+        lazyTableView.delegate = self
+        lazyTableView.dataSource = self
+        return lazyTableView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(ABACUS_BUTTON_TEXT), style: .Plain, target: self, action: Selector("clickToChangeLanguage"))
+        
+        navigationItem.titleView = UIImageView(image: UIImage(named: localStringFromKey(HOMELOGO)))
+        
+        initComponents()
+    }
+    
+    private func initComponents() {
+        scrollView.backgroundColor = UIColor.whiteColor()
+        view.addSubview(scrollView)
+        scrollView.snp_makeConstraints { (make) -> Void in
+            make.left.right.top.equalTo(view)
+            make.bottom.equalTo(bottomLayoutGuide)
+        }
+        
+        let contentView = UIView()
+        contentView.backgroundColor = UIColor.redColor()
+        scrollView.addSubview(contentView)
+        contentView.snp_makeConstraints { (make) -> Void in
+            make.left.right.equalTo(view)
+            make.top.bottom.equalTo(scrollView)
+            make.bottom.greaterThanOrEqualTo(view)
+        }
+
+        contentView.addSubview(headerImageView)
+        contentView.addSubview(tableView)
+        
+        headerImageView.snp_makeConstraints { (make) -> Void in
+            make.left.right.top.equalTo(contentView)
+            make.height.equalTo(CGRectGetWidth(view.frame) * 631 / 640)
+        }
+        
+        tableView.snp_makeConstraints { (make) -> Void in
+            make.left.right.equalTo(headerImageView)
+            make.top.equalTo(headerImageView.snp_bottom)
+            make.bottom.equalTo(contentView)
+        }
     }
 
     // MARK: - Button Click
-    func clickToChangeLanguage() {
+    private func clickToChangeLanguage() {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - UITableView Delegate & DataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
-    */
-
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 45
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 22, height: 45)))
+        headerView.backgroundColor = UIColor.whiteColor()
+        
+        let headerLabel = UILabel()
+        headerLabel.text = localStringFromKey(ABACUS_TITLE)
+        headerLabel.font = UIFont.boldSystemFontOfSize(17)
+        headerLabel.textColor = UIColor.themeGreen()
+        headerLabel.textAlignment = .Center
+        
+        headerView.addSubview(headerLabel)
+        headerLabel.snp_makeConstraints { (make) -> Void in
+            make.edges.equalTo(headerView)
+        }
+        
+        return headerView
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let identifier = "identifier"
+        var cell = tableView.dequeueReusableCellWithIdentifier(identifier)
+        if cell == nil {
+            cell = UITableViewCell(style: .Default, reuseIdentifier: identifier)
+            cell!.accessoryType = .DisclosureIndicator
+            cell!.textLabel!.textColor = UIColor.themeGreen()
+        }
+        
+        cell!.textLabel?.text = localStringFromKey((indexPath.row == 0 ? ABACUS_LOAN_TITLE_1 : ABACUS_LOAN_TITLE_2))
+        return cell!
+    }
 }

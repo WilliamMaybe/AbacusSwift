@@ -8,19 +8,28 @@
 
 import Foundation
 
+private let userDefault = NSUserDefaults.standardUserDefaults()
+private let languageKey = "userLanguageKey"
+
 class InternationalControl {
     private struct staticBundle {
         static var bundle: NSBundle?
     }
     
-    let userDefault = NSUserDefaults.standardUserDefaults()
-    let languageKey = "userLanguage"
-    
     /**
      改变当前语言
      */
-    func changeLanguage() {
+    class func changeLanguage() {
+        initLanguage()
+        var languageWillChange = "en"
+        if checkIfIsEnglish() {
+            languageWillChange = "zh-Hant"
+        }
         
+        configureBundle(languageWillChange)
+        
+        userDefault.setObject(languageWillChange, forKey: languageKey)
+        userDefault.synchronize()
     }
     
     /**
@@ -28,24 +37,50 @@ class InternationalControl {
      
      - returns: true or false
      */
-    func checkIfIsEnglish() -> Bool {
-        return false
+    class func checkIfIsEnglish() -> Bool {
+        initLanguage()
+        return "en" == userDefault.objectForKey(languageKey) as! String
     }
     
     /**
     初始化语言
     */
-    private func initLanguage() {
-        let language: String? = userDefault.valueForKey(languageKey) as? String
-        if language == nil {
+    private class func initLanguage() {
+        var language = userDefault.valueForKey(languageKey) as? String
+        if language != nil {
+            if staticBundle.bundle == nil {
+                configureBundle(language!)
+            }
             
+            return
         }
+        
+        let languages = userDefault.objectForKey("AppleLanguages") as? Array <String>
+        language = languages![0]
+        
+        var current = "en"
+        if language!.containsString("zh") {
+            current = "zh-Hant"
+        }
+        
+        configureBundle(current)
+        
+        userDefault.setObject(current, forKey: languageKey)
+        userDefault.synchronize()
+    }
+    
+    private class func configureBundle(name: String) {
+        let path = NSBundle.mainBundle().pathForResource(name, ofType: "lproj")
+        staticBundle.bundle = NSBundle(path: path!)
     }
 }
 
 func localStringFromKey(key: String) -> String {
-    return "false Data"
+    InternationalControl.initLanguage()
+    return InternationalControl.staticBundle.bundle!.localizedStringForKey(key, value: "", table: nil)
 }
+
+let HOMELOGO = "homeLogo"
 
 let SETMAIL    = "setMail"
 let CANTPHONE  = "cantPhone"

@@ -6,6 +6,8 @@
   Copyright © 2015年 William Zhang. All rights reserved.
 */
 
+"homeLogo" = "homeLogo_en";
+
 "setMail"   = "Please set the account of email first";
 "cantPhone" = "Your device is not support this function";
 
