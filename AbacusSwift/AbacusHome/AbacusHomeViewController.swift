@@ -31,7 +31,7 @@ class AbacusHomeViewController: BaseViewController ,UITableViewDelegate, UITable
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(ABACUS_BUTTON_TEXT), style: .Plain, target: self, action: Selector("clickToChangeLanguage"))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(ABACUS_BUTTON_TEXT), style: .Plain, target: self, action: "clickToChangeLanguage")
         
         navigationItem.titleView = UIImageView(image: UIImage(named: localStringFromKey(HOMELOGO)))
         
@@ -43,16 +43,14 @@ class AbacusHomeViewController: BaseViewController ,UITableViewDelegate, UITable
         view.addSubview(scrollView)
         scrollView.snp_makeConstraints { (make) -> Void in
             make.left.right.top.equalTo(view)
-            make.bottom.equalTo(bottomLayoutGuide)
+            make.bottom.equalTo(snp_bottomLayoutGuideTop)
         }
         
         let contentView = UIView()
-        contentView.backgroundColor = UIColor.redColor()
         scrollView.addSubview(contentView)
         contentView.snp_makeConstraints { (make) -> Void in
             make.left.right.equalTo(view)
             make.top.bottom.equalTo(scrollView)
-            make.bottom.greaterThanOrEqualTo(view)
         }
 
         contentView.addSubview(headerImageView)
@@ -67,12 +65,21 @@ class AbacusHomeViewController: BaseViewController ,UITableViewDelegate, UITable
             make.left.right.equalTo(headerImageView)
             make.top.equalTo(headerImageView.snp_bottom)
             make.bottom.equalTo(contentView)
+            make.height.equalTo(70 + 90)
         }
     }
 
     // MARK: - Button Click
-    private func clickToChangeLanguage() {
+    @objc private func clickToChangeLanguage() {
+        let alertVC = UIAlertController(title: localStringFromKey(REMIND), message: localStringFromKey(CONTENT), preferredStyle: .Alert)
+        alertVC.addAction(UIAlertAction(title: localStringFromKey(CANCEL), style: .Cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: localStringFromKey(DONE), style: .Default, handler: { (action) -> Void in
+            InternationalControl.changeLanguage()
+            let delegate = UIApplication.sharedApplication().delegate
+            delegate?.window??.rootViewController = TabBarController()
+        }))
         
+        presentViewController(alertVC, animated: true, completion: nil)
     }
 
     // MARK: - UITableView Delegate & DataSource
@@ -121,5 +128,9 @@ class AbacusHomeViewController: BaseViewController ,UITableViewDelegate, UITable
         
         cell!.textLabel?.text = localStringFromKey((indexPath.row == 0 ? ABACUS_LOAN_TITLE_1 : ABACUS_LOAN_TITLE_2))
         return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

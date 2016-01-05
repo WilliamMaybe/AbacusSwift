@@ -180,24 +180,10 @@ let STAMPDUTY_TITLE_3  = "StampDuty_Title_3"
 let STAMPDUTY_TITLE_4  = "StampDuty_Title_4"
 
 // Stamp Duty pickerstate选项缩写
-let STAMPDUTY_PICKER_1  = "StampDuty_Picker_1"
-let STAMPDUTY_PICKER_2  = "StampDuty_Picker_2"
-let STAMPDUTY_PICKER_3  = "StampDuty_Picker_3"
-let STAMPDUTY_PICKER_4  = "StampDuty_Picker_4"
-let STAMPDUTY_PICKER_5  = "StampDuty_Picker_5"
-let STAMPDUTY_PICKER_6  = "StampDuty_Picker_6"
-let STAMPDUTY_PICKER_7  = "StampDuty_Picker_7"
-let STAMPDUTY_PICKER_8  = "StampDuty_Picker_8"
+let STAMPDUTY_PICKER  = "StampDuty_Picker_"
 
 // Stamp Duty pickerstate选项全称
-let STAMPDUTY_PICKER_FULL_1  = "StampDuty_Picker_Full_1"
-let STAMPDUTY_PICKER_FULL_2  = "StampDuty_Picker_Full_2"
-let STAMPDUTY_PICKER_FULL_3  = "StampDuty_Picker_Full_3"
-let STAMPDUTY_PICKER_FULL_4  = "StampDuty_Picker_Full_4"
-let STAMPDUTY_PICKER_FULL_5  = "StampDuty_Picker_Full_5"
-let STAMPDUTY_PICKER_FULL_6  = "StampDuty_Picker_Full_6"
-let STAMPDUTY_PICKER_FULL_7  = "StampDuty_Picker_Full_7"
-let STAMPDUTY_PICKER_FULL_8  = "StampDuty_Picker_Full_8"
+let STAMPDUTY_PICKER_FULL  = "StampDuty_Picker_Full_"
 
 // Stamp Duty 图表1
 let STAMPDUTY_GRAPH_1_SUBTITLE            = "StampDuty_Graph_1_SubTitle"

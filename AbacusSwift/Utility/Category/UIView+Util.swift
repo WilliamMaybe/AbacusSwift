@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIView {
-    
     /// 需扩张的尺寸
     public var expandSize: CGSize {
         get {
@@ -24,7 +23,9 @@ extension UIView {
             objc_setAssociatedObject(self, &AssociatedKeys.expandSizeKey, NSValue(CGSize: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     };
+}
 
+extension UIView {
     private struct AssociatedKeys {
         static var expandSizeKey = "wz_expandSize"
     }
@@ -54,7 +55,7 @@ extension UIView {
     }
     
     
-    func wz_intrinsicContentSize() -> CGSize {
+    private func wz_intrinsicContentSize() -> CGSize {
         var size = self.wz_intrinsicContentSize();
         size.width += self.expandSize.width
         size.height += self.expandSize.height
