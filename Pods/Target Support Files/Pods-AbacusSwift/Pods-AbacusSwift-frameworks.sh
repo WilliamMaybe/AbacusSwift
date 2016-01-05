@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-AbacusSwift/Alamofire.framework"
+  install_framework "Pods-AbacusSwift/Moya.framework"
   install_framework "Pods-AbacusSwift/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-AbacusSwift/Alamofire.framework"
+  install_framework "Pods-AbacusSwift/Moya.framework"
   install_framework "Pods-AbacusSwift/SnapKit.framework"
 fi

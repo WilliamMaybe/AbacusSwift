@@ -7,6 +7,7 @@ target 'AbacusSwift' do
 
 pod 'SnapKit', '~> 0.16.0'
 pod 'Alamofire', '~> 3.1.0'
+pod 'Moya', '~> 4.1.0'
 
 end
 
