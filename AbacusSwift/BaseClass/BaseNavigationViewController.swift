@@ -21,6 +21,8 @@ class BaseNavigationViewController: UINavigationController {
             NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 22)!]
         
         navigationBar.translucent = false
+        
+        navigationBar.backItem?.title = localStringFromKey(BACK)
     }
 
     override func didReceiveMemoryWarning() {

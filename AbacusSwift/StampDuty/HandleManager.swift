@@ -44,6 +44,8 @@ let stampDutyURL = [
 
 enum stampDutyType: Int {
     case act ,nsw ,nt ,qld ,sa ,tas ,vic ,wa
+    
+    
 }
 
 class stampDutyModel {

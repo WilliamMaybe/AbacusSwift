@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class AbacusHomeViewController: BaseViewController ,UITableViewDelegate, UITableViewDataSource {
+class AbacusHomeViewController: BaseViewController {
 
     private lazy var scrollView: UIScrollView     = {
         let lazyScrollView = UIScrollView()
@@ -81,8 +81,10 @@ class AbacusHomeViewController: BaseViewController ,UITableViewDelegate, UITable
         
         presentViewController(alertVC, animated: true, completion: nil)
     }
+}
 
-    // MARK: - UITableView Delegate & DataSource
+// MARK: - UITableView Delegate & DataSource
+extension AbacusHomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -132,5 +134,8 @@ class AbacusHomeViewController: BaseViewController ,UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let loanVC = AbacusHomeLoanTypeViewController(loanTypes:LoanTypes(rawValue: indexPath.row)!)
+        loanVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(loanVC, animated: true)
     }
 }

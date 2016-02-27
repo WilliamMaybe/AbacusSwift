@@ -13,10 +13,13 @@
 		C50BD5171C035E94001938FC /* StampDutyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BD5161C035E94001938FC /* StampDutyDetailView.swift */; };
 		C50BD5191C03606E001938FC /* UIFont+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BD5181C03606E001938FC /* UIFont+Util.swift */; };
 		C50C66581C32D495000CDF4E /* StampDutyComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50C66571C32D495000CDF4E /* StampDutyComparisonView.swift */; };
+		C51814871C665D2300BC9A7A /* LoanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51814861C665D2300BC9A7A /* LoanService.swift */; };
 		C51EBBC51BEF2E3A00FA0BC1 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51EBBC41BEF2E3A00FA0BC1 /* TextFieldTableViewCell.swift */; };
 		C51EBBCB1BEF4A9000FA0BC1 /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51EBBCA1BEF4A9000FA0BC1 /* String+Util.swift */; };
+		C5224A191C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5224A181C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift */; };
 		C542C77D1BF2224500C3AA35 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C542C77C1BF2224500C3AA35 /* SwitchTableViewCell.swift */; };
 		C542C7801BF2299600C3AA35 /* PickerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C542C77F1BF2299600C3AA35 /* PickerStateView.swift */; };
+		C571E4FD1C42BA8200D82E31 /* Dictionary+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C571E4FC1C42BA8200D82E31 /* Dictionary+Category.swift */; };
 		C59C2B441BE8B29F0040855F /* UIImage+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B431BE8B29F0040855F /* UIImage+Util.swift */; };
 		C59C2B461BE8B89B0040855F /* AbacusHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B451BE8B89B0040855F /* AbacusHomeViewController.swift */; };
 		C59C2B481BE8B8B40040855F /* RepaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B471BE8B8B40040855F /* RepaymentViewController.swift */; };
@@ -65,10 +68,13 @@
 		C50BD5161C035E94001938FC /* StampDutyDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampDutyDetailView.swift; sourceTree = "<group>"; };
 		C50BD5181C03606E001938FC /* UIFont+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Util.swift"; sourceTree = "<group>"; };
 		C50C66571C32D495000CDF4E /* StampDutyComparisonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampDutyComparisonView.swift; sourceTree = "<group>"; };
+		C51814861C665D2300BC9A7A /* LoanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanService.swift; sourceTree = "<group>"; };
 		C51EBBC41BEF2E3A00FA0BC1 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		C51EBBCA1BEF4A9000FA0BC1 /* String+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
+		C5224A181C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbacusHomeLoanTypeViewController.swift; sourceTree = "<group>"; };
 		C542C77C1BF2224500C3AA35 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		C542C77F1BF2299600C3AA35 /* PickerStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerStateView.swift; sourceTree = "<group>"; };
+		C571E4FC1C42BA8200D82E31 /* Dictionary+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Category.swift"; sourceTree = "<group>"; };
 		C59C2B431BE8B29F0040855F /* UIImage+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Util.swift"; sourceTree = "<group>"; };
 		C59C2B451BE8B89B0040855F /* AbacusHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbacusHomeViewController.swift; sourceTree = "<group>"; };
 		C59C2B471BE8B8B40040855F /* RepaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepaymentViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +158,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		C571E4F91C42B9D100D82E31 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C51814861C665D2300BC9A7A /* LoanService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		C5B50D7D1BE88E04007DB454 = {
 			isa = PBXGroup;
 			children = (
@@ -228,7 +242,9 @@
 		C5B50DBC1BE88FD9007DB454 /* AbacusHome */ = {
 			isa = PBXGroup;
 			children = (
+				C571E4F91C42B9D100D82E31 /* Service */,
 				C59C2B451BE8B89B0040855F /* AbacusHomeViewController.swift */,
+				C5224A181C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift */,
 			);
 			path = AbacusHome;
 			sourceTree = "<group>";
@@ -285,6 +301,7 @@
 				C59C2B431BE8B29F0040855F /* UIImage+Util.swift */,
 				C51EBBCA1BEF4A9000FA0BC1 /* String+Util.swift */,
 				C50BD5181C03606E001938FC /* UIFont+Util.swift */,
+				C571E4FC1C42BA8200D82E31 /* Dictionary+Category.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -499,12 +516,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5224A191C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift in Sources */,
 				C59C2B481BE8B8B40040855F /* RepaymentViewController.swift in Sources */,
 				C59C2B4C1BE8B8CE0040855F /* CheckListViewController.swift in Sources */,
 				C542C7801BF2299600C3AA35 /* PickerStateView.swift in Sources */,
 				C5B50DCC1BE89EB5007DB454 /* UIView+Util.swift in Sources */,
 				C5053DDE1C0734230019EF9F /* Define.swift in Sources */,
 				C5053DE01C074A3E0019EF9F /* HandleManager.swift in Sources */,
+				C51814871C665D2300BC9A7A /* LoanService.swift in Sources */,
 				C51EBBC51BEF2E3A00FA0BC1 /* TextFieldTableViewCell.swift in Sources */,
 				C51EBBCB1BEF4A9000FA0BC1 /* String+Util.swift in Sources */,
 				C542C77D1BF2224500C3AA35 /* SwitchTableViewCell.swift in Sources */,
@@ -518,6 +537,7 @@
 				C50BD5171C035E94001938FC /* StampDutyDetailView.swift in Sources */,
 				C50C66581C32D495000CDF4E /* StampDutyComparisonView.swift in Sources */,
 				C59C2B4E1BE8B8DA0040855F /* ContactUsViewController.swift in Sources */,
+				C571E4FD1C42BA8200D82E31 /* Dictionary+Category.swift in Sources */,
 				C5B50DC21BE89042007DB454 /* BaseNavigationViewController.swift in Sources */,
 				C5B50DCA1BE891F8007DB454 /* UIColor+Util.swift in Sources */,
 				C59C2B441BE8B29F0040855F /* UIImage+Util.swift in Sources */,
