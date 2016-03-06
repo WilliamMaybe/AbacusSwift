@@ -11,10 +11,9 @@ import Foundation
 private let userDefault = NSUserDefaults.standardUserDefaults()
 private let languageKey = "userLanguageKey"
 
+private var bundle: NSBundle?
+
 class InternationalControl {
-    private struct staticBundle {
-        static var bundle: NSBundle?
-    }
     
     /**
      改变当前语言
@@ -42,13 +41,21 @@ class InternationalControl {
         return "en" == userDefault.objectForKey(languageKey) as! String
     }
     
+    class func currentBundle() -> NSBundle {
+        initLanguage()
+        return bundle!
+    }
+}
+
+// MARK: - Private Method
+extension InternationalControl {
     /**
-    初始化语言
-    */
+     初始化语言
+     */
     private class func initLanguage() {
         var language = userDefault.valueForKey(languageKey) as? String
         if language != nil {
-            if staticBundle.bundle == nil {
+            if bundle == nil {
                 configureBundle(language!)
             }
             
@@ -71,13 +78,12 @@ class InternationalControl {
     
     private class func configureBundle(name: String) {
         let path = NSBundle.mainBundle().pathForResource(name, ofType: "lproj")
-        staticBundle.bundle = NSBundle(path: path!)
+        bundle = NSBundle(path: path!)
     }
 }
 
 func localStringFromKey(key: String) -> String {
-    InternationalControl.initLanguage()
-    return InternationalControl.staticBundle.bundle!.localizedStringForKey(key, value: "", table: nil)
+    return InternationalControl.currentBundle().localizedStringForKey(key, value: "", table: nil)
 }
 
 let HOMELOGO = "homeLogo"

@@ -21,8 +21,6 @@ class BaseNavigationViewController: UINavigationController {
             NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 22)!]
         
         navigationBar.translucent = false
-        
-        navigationBar.backItem?.title = localStringFromKey(BACK)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +28,10 @@ class BaseNavigationViewController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func pushViewController(viewController: UIViewController, animated: Bool) {
+        viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: localStringFromKey(BACK), style: .Plain, target: nil, action: nil)
+        super.pushViewController(viewController, animated: true)
+    }
     /*
     // MARK: - Navigation
 

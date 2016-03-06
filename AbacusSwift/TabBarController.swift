@@ -30,7 +30,7 @@ class TabBarController: UITabBarController {
             localStringFromKey(CONTACTUS)
         ]
         
-        let arrayImageName       = ["tabbar_home",  "tabbar_repayment", "tabbar_stampDuty", "tabbar_checkList", "tabbar_contactUs"]
+        let arrayImageName = ["tabbar_home",  "tabbar_repayment", "tabbar_stampDuty", "tabbar_checkList", "tabbar_contactUs"]
         
         var arrayItem = [UITabBarItem] ()
         for var i = 0; i < arrayTitle.count; i++ {
@@ -53,11 +53,19 @@ class TabBarController: UITabBarController {
         repaymentNVC.tabBarItem = arrayItem[1]
         let stampDutyNVC = BaseNavigationViewController(rootViewController: StampDutyViewController())
         stampDutyNVC.tabBarItem = arrayItem[2]
-        let checkListNVC = BaseNavigationViewController(rootViewController: CheckListViewController())
+        let checkListNVC = checkListNaviVC()
         checkListNVC.tabBarItem = arrayItem[3]
         let contactUsNVC = BaseNavigationViewController(rootViewController: ContactUsViewController())
         contactUsNVC.tabBarItem = arrayItem[4]
         
         viewControllers = [homeNVC, repaymentNVC, stampDutyNVC, checkListNVC, contactUsNVC]
+    }
+}
+
+extension TabBarController {
+    private func checkListNaviVC() -> UIViewController {
+        let sb = UIStoryboard(name: "CheckList", bundle: InternationalControl.currentBundle())
+        let vc = sb.instantiateViewControllerWithIdentifier("CheckListNaviVC")
+        return vc
     }
 }
