@@ -111,7 +111,7 @@ func handleMoney(pendModel: stampDutyModel) -> stampDutyResultModel {
             result.stampduty = (money / 100 * rate[0]) > 20 ? (money / 100 * rate[0]) : 20
         }
         else {
-            for (var i = 4; i >= 0; i--) {
+            for i in (0...4).reverse() {
                 if money <= amount[i] {
                     continue
                 }
@@ -143,7 +143,7 @@ func handleMoney(pendModel: stampDutyModel) -> stampDutyResultModel {
         if money <= amount[0] {
             result.stampduty = money / 100 * rate[0];
         } else {
-            for (var i = 5; i >= 0; i--) {
+            for i in (0...5).reverse() {
                 if money <= amount[i] {
                     continue
                 }
@@ -215,7 +215,7 @@ func handleMoney(pendModel: stampDutyModel) -> stampDutyResultModel {
         if (money <= amount[0]) {
             result.stampduty = pendModel.isLive ? (money / 100 * rate[0]) : 0
         } else {
-            for (var i = amount.count - 1; i >= 0; i--) {
+            for i in (0..<amount.count).reverse() {
                 if (money <= amount[i]) {
                     continue
                 }
@@ -257,7 +257,7 @@ func handleMoney(pendModel: stampDutyModel) -> stampDutyResultModel {
         if (money <= amount[0]) {
             result.stampduty = money / 100 * rate[0]
         } else {
-            for (var i = 7; i >= 0; i-- ) {
+            for i in (0...7).reverse() {
                 if (money <= amount[i]) {
                     continue
                 }
@@ -288,7 +288,7 @@ func handleMoney(pendModel: stampDutyModel) -> stampDutyResultModel {
         if (money <= amount[0]) {
             result.stampduty = 50
         } else {
-            for (var i = 5; i >= 0; i--) {
+            for i in (0...5).reverse() {
                 if (money <= amount[i]) {
                     continue
                 }
@@ -363,7 +363,7 @@ func handleMoney(pendModel: stampDutyModel) -> stampDutyResultModel {
         if (money <= amount[0]) {
             result.stampduty = money / 100 * rate[0]
         } else {
-            for (var i = amount.count - 1; i >= 0; i--) {
+            for i in (0..<amount.count).reverse() {
                 if (money <= amount[i]) {
                     continue
                 }

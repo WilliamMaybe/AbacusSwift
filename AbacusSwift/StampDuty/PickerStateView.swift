@@ -21,7 +21,7 @@ class PickerStateView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         let lazyToolBar = UIToolbar()
         
         let flexible = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "clickToDone")
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(PickerStateView.clickToDone))
         doneButton.tintColor = UIColor.themeGreen()
         
         lazyToolBar.setItems([flexible ,doneButton], animated: false)

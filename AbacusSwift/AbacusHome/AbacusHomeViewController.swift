@@ -31,7 +31,7 @@ class AbacusHomeViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(ABACUS_BUTTON_TEXT), style: .Plain, target: self, action: "clickToChangeLanguage")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(ABACUS_BUTTON_TEXT), style: .Plain, target: self, action: #selector(AbacusHomeViewController.clickToChangeLanguage))
         
         navigationItem.titleView = UIImageView(image: UIImage(named: localStringFromKey(HOMELOGO)))
         

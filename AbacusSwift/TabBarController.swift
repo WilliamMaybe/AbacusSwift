@@ -33,7 +33,7 @@ class TabBarController: UITabBarController {
         let arrayImageName = ["tabbar_home",  "tabbar_repayment", "tabbar_stampDuty", "tabbar_checkList", "tabbar_contactUs"]
         
         var arrayItem = [UITabBarItem] ()
-        for var i = 0; i < arrayTitle.count; i++ {
+        for i in 0..<arrayTitle.count {
             let imageName = arrayImageName[i]
             let imageSelectName = imageName + "Select"
             
@@ -64,7 +64,7 @@ class TabBarController: UITabBarController {
 
 extension TabBarController {
     private func checkListNaviVC() -> UIViewController {
-        let sb = UIStoryboard(name: "CheckList", bundle: InternationalControl.currentBundle())
+        let sb = UIStoryboard(name: "CheckList", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("CheckListNaviVC")
         return vc
     }

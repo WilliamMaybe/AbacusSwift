@@ -13,7 +13,7 @@ class SwitchTableViewCell: UITableViewCell {
     private lazy var aswitch: UISwitch = {
         let lazySwitch = UISwitch()
         lazySwitch.onTintColor = UIColor.themeGreen()
-        lazySwitch.addTarget(self, action: "clickToSwitch", forControlEvents: .TouchUpInside)
+        lazySwitch.addTarget(self, action: #selector(SwitchTableViewCell.clickToSwitch), forControlEvents: .TouchUpInside)
         return lazySwitch
     }()
     

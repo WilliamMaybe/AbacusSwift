@@ -22,7 +22,7 @@ class AbacusHomeLoanTypeViewController: UITableViewController {
     private lazy var moreButton: UIButton = {
         let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: self.view.frame.width, height: 50)))
         
-        button.addTarget(self, action: "loadNextPage", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(AbacusHomeLoanTypeViewController.loadNextPage), forControlEvents: .TouchUpInside)
         button.setTitleColor(UIColor.grayColor(), forState: .Normal)
         button.titleLabel?.font = UIFont.systemFontOfSize(14)
         
@@ -43,7 +43,7 @@ class AbacusHomeLoanTypeViewController: UITableViewController {
         var titleTranslate = ""
         
         refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: "pullToRefresh", forControlEvents: .ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(AbacusHomeLoanTypeViewController.pullToRefresh), forControlEvents: .ValueChanged)
         
         tableView.backgroundColor = UIColor.themeGray()
         
@@ -86,7 +86,7 @@ extension AbacusHomeLoanTypeViewController {
         let requestType = (loanType == .Residential) ? Loan.Residential(page) : .Commercial(page)
         
         requestType.request(success: { (loanArray, total) -> Void in
-            self.page++
+            self.page += 1
             if page == 0 {
                 self.dataArray.removeAll()
                 self.page = 1

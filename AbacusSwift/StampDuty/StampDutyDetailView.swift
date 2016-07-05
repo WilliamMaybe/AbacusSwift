@@ -183,7 +183,7 @@ class StampDutyDetailView: UIView {
                 NSUnderlineStyleAttributeName:NSUnderlineStyle.StyleSingle.rawValue
             ])
         lazyButton.setAttributedTitle(attriString, forState: .Normal)
-        lazyButton.addTarget(self, action: "clickToDisclaimer", forControlEvents: .TouchUpInside)
+        lazyButton.addTarget(self, action: #selector(StampDutyDetailView.clickToDisclaimer), forControlEvents: .TouchUpInside)
         return lazyButton
     }()
     
@@ -198,7 +198,7 @@ class StampDutyDetailView: UIView {
     private lazy var grantButton: UIButton = {
         let lazyButton = UIButton()
         lazyButton.titleLabel?.numberOfLines = 0
-        lazyButton.addTarget(self, action: "clickToGrant", forControlEvents: .TouchUpInside)
+        lazyButton.addTarget(self, action: #selector(StampDutyDetailView.clickToGrant), forControlEvents: .TouchUpInside)
         return lazyButton
     }()
     

@@ -65,8 +65,8 @@ class StampDutyViewController: BaseViewController {
         super.viewDidLoad()
 
         title = localStringFromKey(STAMPDUTY)
-        navigationItem.leftBarButtonItem  = UIBarButtonItem(title: localStringFromKey(RESET), style: .Plain, target: self, action: "clickToReset")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "clickToMail")
+        navigationItem.leftBarButtonItem  = UIBarButtonItem(title: localStringFromKey(RESET), style: .Plain, target: self, action: #selector(StampDutyViewController.clickToReset))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(StampDutyViewController.clickToMail))
         
         initComponents()
     }

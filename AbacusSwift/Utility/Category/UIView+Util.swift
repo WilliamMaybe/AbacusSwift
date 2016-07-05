@@ -40,8 +40,8 @@ extension UIView {
         }
         
         dispatch_once(&Static.token) {
-            let originalSelector = Selector("intrinsicContentSize")
-            let swizzledSelector = Selector("wz_intrinsicContentSize")
+            let originalSelector = #selector(UIView.intrinsicContentSize)
+            let swizzledSelector = #selector(UIView.wz_intrinsicContentSize)
             
             let originalMethod = class_getClassMethod(self, originalSelector)
             let swizzledMethod = class_getClassMethod(self, swizzledSelector)
@@ -55,7 +55,7 @@ extension UIView {
     }
     
     
-    private func wz_intrinsicContentSize() -> CGSize {
+    @objc private func wz_intrinsicContentSize() -> CGSize {
         var size = self.wz_intrinsicContentSize();
         size.width += self.expandSize.width
         size.height += self.expandSize.height

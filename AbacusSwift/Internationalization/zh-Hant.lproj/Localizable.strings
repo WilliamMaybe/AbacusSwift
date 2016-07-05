@@ -160,6 +160,8 @@
 "Checklist_Home_Title_5" = "Proof of Identity";
 
 // checklist home select
+"checklist_presettle_select_1" = "1.   If you are refinancing to another lender you will need to complete and return a discharge authority to your existing lender.\n2.   Receive mortgage documents.\n3.   Sign mortgage documents.\n4.   Organise a copy of insurance indicating the new lender as the first mortgagor and new minimum insurance requirement as indicated on the\ mortgage documents (if you are not changing lenders, they will still require a new copy).\n5.   Retain customer copy.\n6.   Mail steps 2 - 5 to lender.\n7.   Three days prior to settlement - call solicitor to find out what cheques need to be drawn. ";
+
 "Checklist_Home_Select_1_1" = "Two recent payslips";
 "Checklist_Home_Select_1_2" = "Letter from employer stating postion,commencement date,gross income,net income,if still on probation,year to date,regular overtime and allowances";
 "Checklist_Home_Select_1_3" = "copy of employment contact";
@@ -257,21 +259,8 @@
 "Checklist_Presettle_SubTitle_2" = "當收到有關貸款全批下來的消息後， 閣下將需要完成以下程序：";
 
 // checklist pre-settle select
-"Checklist_Presettle_Select_1_1" = "當閣下轉貸到別的銀行或是其他信貸機構時，閣下需要填妥房產解除抵押表格，並遞交給貸款本身所在的銀行。";
-"Checklist_Presettle_Select_1_2" = "收到貸款文件。";
-"Checklist_Presettle_Select_1_3" = "在貸款文件上簽名。";
-"Checklist_Presettle_Select_1_4" = "準備一份保險文件副本，文件要顯示最新的銀行或其他信貸機構為第一信貸人，並要符合信貸文件列出的最低保險要求(假如是同一個信貸機構，只需要一份新的保險副本)。";
-"Checklist_Presettle_Select_1_5" = "保留貸款文件客戶副本。";
-"Checklist_Presettle_Select_1_6" = "郵寄第二步到第五步至信貸銀行或其他信貸機構。";
-"Checklist_Presettle_Select_1_7" = "成交前三天需要聯繫律師了解付款細節。";
-
-"Checklist_Presettle_Select_2_1" = "收到貸款文件。";
-"Checklist_Presettle_Select_2_2" = "在貸款文件上簽名。";
-"Checklist_Presettle_Select_2_3" = "準備一份保險副本，文件要顯示最新的銀行或其他信貸機構為第一信貸人，並要符合信貸文件列出的最低保險要求。";
-"Checklist_Presettle_Select_2_4" = "保留貸款文件客戶副本。";
-"Checklist_Presettle_Select_2_5" = "郵寄第二步到第三步至信貸銀行或其他信貸機構。";
-"Checklist_Presettle_Select_2_6" = "如是首次置業人士，請確定律師是否有安排印花稅的減免。";
-"Checklist_Presettle_Select_2_7" = "成交前三天需要聯繫律師了解付款細節。";
+"checklist_presettle_select_1" = "1.   當閣下轉貸到別的銀行或是其他信貸機構時，閣下需要填妥房產解除抵押表格，並遞交給貸款本身所在的銀行。\n2.   收到貸款文件。\n3.   在貸款文件上簽名。\n4.   準備一份保險文件副本，文件要顯示最新的銀行或其他信貸機構為第一信貸人，並要符合信貸文件列出的最低保險要求(假如是同一個信貸機構，只需要一份新的保險副本)。\n5.   保留貸款文件客戶副本。\n6.   郵寄第二步到第五步至信貸銀行或其他信貸機構。\n7.   成交前三天需要聯繫律師了解付款細節。";
+"checklist_presettle_select_2" = "1.   收到貸款文件。\n2.   在貸款文件上簽名。\n3.   準備一份保險副本，文件要顯示最新的銀行或其他信貸機構為第一信貸人，並要符合信貸文件列出的最低保險要求。\n4.   保留貸款文件客戶副本。\n5.   郵寄第二步到第三步至信貸銀行或其他信貸機構。\n6.   如是首次置業人士，請確定律師是否有安排印花稅的減免。\n7.   成交前三天需要聯繫律師了解付款細節。";
 
 // contact us 标题
 "ContactUs_Title_1" = "電話";

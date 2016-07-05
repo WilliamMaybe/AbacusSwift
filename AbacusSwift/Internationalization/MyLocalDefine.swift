@@ -316,21 +316,8 @@ let CHECKLIST_PRESETTLE_SUBTITLE_1  = "Checklist_Presettle_SubTitle_1"
 let CHECKLIST_PRESETTLE_SUBTITLE_2  = "Checklist_Presettle_SubTitle_2"
 
 // checklist pre-select select
-let CHECKLIST_PRESETTLE_SELECT_1_1  = "Checklist_Presettle_Select_1_1"
-let CHECKLIST_PRESETTLE_SELECT_1_2  = "Checklist_Presettle_Select_1_2"
-let CHECKLIST_PRESETTLE_SELECT_1_3  = "Checklist_Presettle_Select_1_3"
-let CHECKLIST_PRESETTLE_SELECT_1_4  = "Checklist_Presettle_Select_1_4"
-let CHECKLIST_PRESETTLE_SELECT_1_5  = "Checklist_Presettle_Select_1_5"
-let CHECKLIST_PRESETTLE_SELECT_1_6  = "Checklist_Presettle_Select_1_6"
-let CHECKLIST_PRESETTLE_SELECT_1_7  = "Checklist_Presettle_Select_1_7"
-
-let CHECKLIST_PRESETTLE_SELECT_2_1  = "Checklist_Presettle_Select_1_1"
-let CHECKLIST_PRESETTLE_SELECT_2_2  = "Checklist_Presettle_Select_2_2"
-let CHECKLIST_PRESETTLE_SELECT_2_3  = "Checklist_Presettle_Select_2_3"
-let CHECKLIST_PRESETTLE_SELECT_2_4  = "Checklist_Presettle_Select_2_4"
-let CHECKLIST_PRESETTLE_SELECT_2_5  = "Checklist_Presettle_Select_2_5"
-let CHECKLIST_PRESETTLE_SELECT_2_6  = "Checklist_Presettle_Select_2_6"
-let CHECKLIST_PRESETTLE_SELECT_2_7  = "Checklist_Presettle_Select_2_7"
+let CHECKLIST_PRESETTLE_SELECT_1   = "checklist_presettle_select_1"
+let CHECKLIST_PRESETTLE_SELECT_2   = "checklist_presettle_select_2"
 
 // contact us 标题
 let CONTACTUS_TITLE_1  = "ContactUs_Title_1"

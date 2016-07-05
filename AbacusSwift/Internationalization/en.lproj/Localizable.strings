@@ -255,21 +255,8 @@
 "Checklist_Presettle_SubTitle_2" = "When you are notified that your loan has been unconditionally approved, the following steps need to be completed before settlement can take place:";
 
 // checklist pre-settle select
-"Checklist_Presettle_Select_1_1" = "If you are refinancing to another lender you will need to complete and return a discharge authority to your existing lender.";
-"Checklist_Presettle_Select_1_2" = "Receive mortgage documents.";
-"Checklist_Presettle_Select_1_3" = "Sign mortgage documents.";
-"Checklist_Presettle_Select_1_4" = "Organise a copy of insurance indicating the new lender as the first mortgagor and new minimum insurance requirement as indicated on the mortgage documents (if you are not changing lenders, they will still require a new copy).";
-"Checklist_Presettle_Select_1_5" = "Retain customer copy.";
-"Checklist_Presettle_Select_1_6" = "Mail steps 2 - 5 to lender.";
-"Checklist_Presettle_Select_1_7" = "Three days prior to settlement - call solicitor to find out what cheques need to be drawn. ";
-
-"Checklist_Presettle_Select_2_1" = "Receive mortgage documents.";
-"Checklist_Presettle_Select_2_2" = "Sign mortgage documents with solicitor.";
-"Checklist_Presettle_Select_2_3" = "Organise a copy of insurance indicating the new lender as the first mortgagor and the minimum insurance requirement as indicated on the mortgage documents.";
-"Checklist_Presettle_Select_2_4" = "Retain customer copy.";
-"Checklist_Presettle_Select_2_5" = "Mail steps 2 – 4 lender.";
-"Checklist_Presettle_Select_2_6" = "If you are a first home owner ensure your solicitor has organised exemption of stamp duty.";
-"Checklist_Presettle_Select_2_7" = "Three days prior to settlement – call solicitor to find out what cheques need to be drawn.";
+"checklist_presettle_select_1" = "1.   If you are refinancing to another lender you will need to complete and return a discharge authority to your existing lender.\n2.   Receive mortgage documents.\n3.   Sign mortgage documents.\n4.   Organise a copy of insurance indicating the new lender as the first mortgagor and new minimum insurance requirement as indicated on the\ mortgage documents (if you are not changing lenders, they will still require a new copy).\n5.   Retain customer copy.\n6.   Mail steps 2 - 5 to lender.\n7.   Three days prior to settlement - call solicitor to find out what cheques need to be drawn. ";
+"checklist_presettle_select_2" = "1.   Receive mortgage documents.\n2.   Sign mortgage documents with solicitor.\n3.   Organise a copy of insurance indicating the new lender as the first mortgagor and the minimum insurance requirement as indicated on the mortgage documents.\n4.   Retain customer copy.\n5.   Mail steps 2 – 4 lender.\n6.   If you are a first home owner ensure your solicitor has organised exemption of stamp duty.\n7.   Three days prior to settlement – call solicitor to find out what cheques need to be drawn.";
 
 // contact us 标题
 "ContactUs_Title_1" = "Tel";

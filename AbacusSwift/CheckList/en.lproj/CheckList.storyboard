@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Require Documents Checklist-->
         <scene sceneID="uSF-rB-dpl">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="pxd-kn-9fG" customClass="CheckListRDCViewController" customModule="AbacusSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eLe-BA-yOm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="eLe-BA-yOm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lUo-mo-k1U">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckListRDCCell" id="lUo-mo-k1U" customClass="CheckListRDCCell" customModule="AbacusSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lUo-mo-k1U" id="zVA-mY-cWk">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eu-hy-sVT">
+                                            <rect key="frame" x="5" y="10.5" width="590" height="23.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.34509803921568627" green="0.46666666666666667" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6Eu-hy-sVT" firstAttribute="top" secondItem="zVA-mY-cWk" secondAttribute="top" constant="10" id="Ctr-rp-4Vz"/>
+                                        <constraint firstAttribute="trailing" secondItem="6Eu-hy-sVT" secondAttribute="trailing" constant="5" id="LVt-Mb-cAw"/>
+                                        <constraint firstAttribute="bottom" secondItem="6Eu-hy-sVT" secondAttribute="bottom" constant="10" id="Lna-Ry-b9w"/>
+                                        <constraint firstItem="6Eu-hy-sVT" firstAttribute="leading" secondItem="zVA-mY-cWk" secondAttribute="leading" constant="5" id="mFj-Bd-XKB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="0.34509803919999998" green="0.46666666670000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="contentLabel" destination="6Eu-hy-sVT" id="Cfv-wk-P5I"/>
+                                    <outlet property="selectedBackgroundView" destination="6FG-bN-Rpx" id="EGj-Di-Zat"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -28,9 +47,24 @@
                             <outlet property="delegate" destination="pxd-kn-9fG" id="0Oy-Bf-NCa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Require Documents Checklist" id="JAU-vN-oDe"/>
+                    <navigationItem key="navigationItem" title="Require Documents Checklist" id="JAU-vN-oDe">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="2r0-Ep-NwP">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="resetButtonItemClicked:" destination="pxd-kn-9fG" id="XP2-X8-kr1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resetButtomItem" destination="2r0-Ep-NwP" id="YgC-Hg-CRY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3w-Cb-wpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="6FG-bN-Rpx">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="2395" y="65"/>
         </scene>
@@ -133,7 +167,7 @@
         <scene sceneID="JQ3-8P-5od">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="IXH-Kn-J2t" customClass="CheckListMovingController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qfn-Cx-JFY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qfn-Cx-JFY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,6 +179,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="selectedBackgroundView" destination="07a-Qe-xE8" id="w2Y-1w-lsx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -155,6 +192,11 @@
                     <navigationItem key="navigationItem" title="Moving Checklist" id="r67-cM-QP1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnR-U9-WP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="07a-Qe-xE8">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="3079" y="65"/>
         </scene>
@@ -162,130 +204,72 @@
         <scene sceneID="hBY-Vu-63S">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="bsc-1M-gZF" customClass="CheckListPreSettleViewController" customModule="AbacusSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="500" sectionHeaderHeight="20" sectionFooterHeight="1" id="gQ0-p2-3Wr">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="500" sectionHeaderHeight="20" sectionFooterHeight="1" id="gQ0-p2-3Wr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <sections>
-                            <tableViewSection id="pmF-fN-drH">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CheckListPreTableViewCell" id="tKH-E2-m3F">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="500"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tKH-E2-m3F" id="kIY-vK-Ldr">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="499.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd3-UP-kBu">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="36"/>
-                                                    <string key="text">When you are notified that your loan has been unconditionally approved, the following steps need to be completed before settlement can take place:</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.34509803921568627" green="0.46666666666666667" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=regular">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jm-Dg-fV4">
-                                                    <rect key="frame" x="15" y="36" width="570" height="453.5"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment>
-                                                            <string key="content">1.   If you are refinancing to another lender you will need to complete and return a discharge authority to your existing lender.
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CheckListPreTableViewCell" id="TPI-kX-IN4" customClass="CheckListPreTableViewCell" customModule="AbacusSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="500"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TPI-kX-IN4" id="vkx-9R-Ibs">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="499.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TS-tb-JxE">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="36"/>
+                                            <string key="text">When you are notified that your loan has been unconditionally approved, the following steps need to be completed before settlement can take place:</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.34509803919999998" green="0.46666666670000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubp-pZ-OLM">
+                                            <rect key="frame" x="15" y="36" width="570" height="453.5"/>
+                                            <attributedString key="attributedText">
+                                                <fragment>
+                                                    <string key="content">1.   If you are refinancing to another lender you will need to complete and return a discharge authority to your existing lender.
 2.   Receive mortgage documents.
 3.   Sign mortgage documents.
 4.   Organise a copy of insurance indicating the new lender as the first mortgagor and new minimum insurance requirement as indicated on the mortgage documents (if you are not changing lenders, they will still require a new copy).
 5.   Retain customer copy.
 6.   Mail steps 2 - 5 to lender.
 7.   Three days prior to settlement - call solicitor to find out what cheques need to be drawn. </string>
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.34509803921568627" green="0.46666666666666667" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="15" name="Helvetica-Light"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="25" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="5Jm-Dg-fV4" secondAttribute="trailing" constant="15" id="3gI-C5-XUY"/>
-                                                <constraint firstAttribute="bottom" secondItem="5Jm-Dg-fV4" secondAttribute="bottom" constant="10" id="LBK-SB-olB"/>
-                                                <constraint firstItem="5Jm-Dg-fV4" firstAttribute="top" secondItem="Fd3-UP-kBu" secondAttribute="bottom" id="LBh-pU-kg0"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fd3-UP-kBu" secondAttribute="trailing" constant="15" id="WZp-5p-RUq"/>
-                                                <constraint firstItem="Fd3-UP-kBu" firstAttribute="leading" secondItem="kIY-vK-Ldr" secondAttribute="leading" constant="15" id="aEJ-wO-hNA"/>
-                                                <constraint firstItem="Fd3-UP-kBu" firstAttribute="top" secondItem="kIY-vK-Ldr" secondAttribute="top" id="nbM-wW-oj0"/>
-                                                <constraint firstItem="5Jm-Dg-fV4" firstAttribute="leading" secondItem="kIY-vK-Ldr" secondAttribute="leading" constant="15" id="vJU-hv-Ar1"/>
-                                            </constraints>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <mask key="constraints">
-                                                    <exclude reference="aEJ-wO-hNA"/>
-                                                    <exclude reference="nbM-wW-oj0"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="HHd-Bl-OmM">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CheckListPreTableViewCell" id="bnJ-zO-b7Q">
-                                        <rect key="frame" x="0.0" y="620" width="600" height="500"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bnJ-zO-b7Q" id="06C-do-SWs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="499.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrF-hx-wpw">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="36"/>
-                                                    <string key="text">When you are notified that your loan has been unconditionally approved, the following steps need to be completed before settlement can take place:</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.34509803919999998" green="0.46666666670000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=regular">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggm-7W-mm9">
-                                                    <rect key="frame" x="15" y="36" width="570" height="453.5"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment>
-                                                            <string key="content">1.   Receive mortgage documents.
-2.   Sign mortgage documents with solicitor.
-3.   Organise a copy of insurance indicating the new lender as the first mortgagor and the minimum insurance requirement as indicated on the mortgage documents.
-4.   Retain customer copy.
-5.   Mail steps 2 – 4 lender.
-6.   If you are a first home owner ensure your solicitor has organised exemption of stamp duty.
-7.   Three days prior to settlement – call solicitor to find out what cheques need to be drawn. </string>
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.34509803921568627" green="0.46666666666666667" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="15" name="Helvetica-Light"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="25" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ggm-7W-mm9" secondAttribute="bottom" constant="10" id="6k5-3R-r56"/>
-                                                <constraint firstItem="ggm-7W-mm9" firstAttribute="top" secondItem="RrF-hx-wpw" secondAttribute="bottom" id="8DN-sE-WEr"/>
-                                                <constraint firstItem="ggm-7W-mm9" firstAttribute="leading" secondItem="06C-do-SWs" secondAttribute="leading" constant="15" id="Hpr-iQ-FVR"/>
-                                                <constraint firstItem="RrF-hx-wpw" firstAttribute="leading" secondItem="06C-do-SWs" secondAttribute="leading" constant="15" id="Ort-BW-hbZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="ggm-7W-mm9" secondAttribute="trailing" constant="15" id="SQx-Pu-IYk"/>
-                                                <constraint firstAttribute="trailing" secondItem="RrF-hx-wpw" secondAttribute="trailing" constant="15" id="Y4u-t4-kwB"/>
-                                                <constraint firstItem="RrF-hx-wpw" firstAttribute="top" secondItem="06C-do-SWs" secondAttribute="top" id="gPb-fK-Wlp"/>
-                                            </constraints>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <mask key="constraints">
-                                                    <exclude reference="Ort-BW-hbZ"/>
-                                                    <exclude reference="gPb-fK-Wlp"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.34509803921568627" green="0.46666666666666667" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="15" name="Helvetica-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" headIndent="25" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ubp-pZ-OLM" firstAttribute="leading" secondItem="vkx-9R-Ibs" secondAttribute="leading" constant="15" id="1L9-cc-PgP"/>
+                                        <constraint firstItem="4TS-tb-JxE" firstAttribute="leading" secondItem="vkx-9R-Ibs" secondAttribute="leading" constant="15" id="6hQ-uB-D9I"/>
+                                        <constraint firstAttribute="bottom" secondItem="ubp-pZ-OLM" secondAttribute="bottom" constant="10" id="DgQ-PO-LE3"/>
+                                        <constraint firstItem="ubp-pZ-OLM" firstAttribute="top" secondItem="4TS-tb-JxE" secondAttribute="bottom" id="adF-lE-RXV"/>
+                                        <constraint firstAttribute="trailing" secondItem="ubp-pZ-OLM" secondAttribute="trailing" constant="15" id="cRG-Hy-Gu0"/>
+                                        <constraint firstAttribute="trailing" secondItem="4TS-tb-JxE" secondAttribute="trailing" constant="15" id="jsv-cY-mVD"/>
+                                        <constraint firstItem="4TS-tb-JxE" firstAttribute="top" secondItem="vkx-9R-Ibs" secondAttribute="top" id="mge-gL-TkZ"/>
+                                    </constraints>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <mask key="constraints">
+                                            <exclude reference="6hQ-uB-D9I"/>
+                                            <exclude reference="mge-gL-TkZ"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="describeLabel" destination="ubp-pZ-OLM" id="fAz-it-HOT"/>
+                                    <outlet property="titleLabel" destination="4TS-tb-JxE" id="WGt-Bs-Ugg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="bsc-1M-gZF" id="rcs-d1-PS8"/>
                             <outlet property="delegate" destination="bsc-1M-gZF" id="qTy-vi-599"/>

@@ -14,8 +14,8 @@ class RepaymentViewController: BaseViewController {
         super.viewDidLoad()
 
         title = localStringFromKey(REPAYMENT)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(RESET), style: .Plain, target: self, action: Selector("clickToReset"))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "clickToMail")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(RESET), style: .Plain, target: self, action: #selector(RepaymentViewController.clickToReset))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(RepaymentViewController.clickToMail))
         
         initComponents()
     }

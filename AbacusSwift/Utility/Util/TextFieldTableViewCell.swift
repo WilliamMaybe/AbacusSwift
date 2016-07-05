@@ -39,7 +39,7 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
         lazyTextField.clearButtonMode = .WhileEditing
         
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(self.frame), height: 40))
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: lazyTextField, action: "resignFirstResponder")
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: lazyTextField, action: #selector(UIResponder.resignFirstResponder))
         doneButton.tintColor = UIColor.themeGreen()
         toolBar.items = [UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil), doneButton]
         
