@@ -8,18 +8,50 @@
 
 import UIKit
 
+/**
+ 存储类型
+ 
+ - Require: Require description
+ - Moving:  Moving description
+ */
 enum CheckListType: Int {
     case Require = 0
     case Moving
+    
+    /**
+     添加删除存储的信息
+     
+     - parameter identifier: 待存储的信息
+     */
+    func addOrDeleteIdentifier(identifier: Int) {
+       CheckListManager.sharedInstance.addOrDeleteIdentifier(identifier, type: self)
+    }
+    
+    /**
+     获取信息
+     
+     - returns: 信息
+     */
+    func getData() -> [Int]? {
+        
+        return CheckListManager.sharedInstance.dataWithType(self)
+    }
+    
+    /**
+     重置数据
+     */
+    func resetData() {
+        CheckListManager.sharedInstance.resetData(type: self)
+    }
 }
 
 private let checkListName = "checkList.plist"
 
-class CheckListManager: NSObject {
+private class CheckListManager: NSObject {
     static let sharedInstance = CheckListManager()
     
     private var data: [Int : [Int]] = [:]
-    
+    let x = CheckListType.Require
     override init() {
         super.init()
         createFileIfNotExsit()

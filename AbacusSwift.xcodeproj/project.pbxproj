@@ -21,6 +21,7 @@
 		C5224A191C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5224A181C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift */; };
 		C542C77D1BF2224500C3AA35 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C542C77C1BF2224500C3AA35 /* SwitchTableViewCell.swift */; };
 		C542C7801BF2299600C3AA35 /* PickerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C542C77F1BF2299600C3AA35 /* PickerStateView.swift */; };
+		C54B596E1D6B500F00BDC127 /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54B596D1D6B500F00BDC127 /* UITableView+Util.swift */; };
 		C571E4FD1C42BA8200D82E31 /* Dictionary+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C571E4FC1C42BA8200D82E31 /* Dictionary+Category.swift */; };
 		C58197101C87441200A871A8 /* CheckListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581970F1C87441200A871A8 /* CheckListHeaderView.swift */; };
 		C58A584F1C82F24900550BB0 /* CheckListRDCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A584E1C82F24900550BB0 /* CheckListRDCViewController.swift */; };
@@ -84,6 +85,7 @@
 		C52703561C8F069D009C870F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/CheckList.storyboard; sourceTree = "<group>"; };
 		C542C77C1BF2224500C3AA35 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		C542C77F1BF2299600C3AA35 /* PickerStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerStateView.swift; sourceTree = "<group>"; };
+		C54B596D1D6B500F00BDC127 /* UITableView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Util.swift"; sourceTree = "<group>"; };
 		C571E4FC1C42BA8200D82E31 /* Dictionary+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Category.swift"; sourceTree = "<group>"; };
 		C581970F1C87441200A871A8 /* CheckListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListHeaderView.swift; sourceTree = "<group>"; };
 		C58A584E1C82F24900550BB0 /* CheckListRDCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListRDCViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				C51EBBCA1BEF4A9000FA0BC1 /* String+Util.swift */,
 				C50BD5181C03606E001938FC /* UIFont+Util.swift */,
 				C571E4FC1C42BA8200D82E31 /* Dictionary+Category.swift */,
+				C54B596D1D6B500F00BDC127 /* UITableView+Util.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				C59C2B4C1BE8B8CE0040855F /* CheckListViewController.swift in Sources */,
 				C542C7801BF2299600C3AA35 /* PickerStateView.swift in Sources */,
 				C504CB621D2AB89D00E86C8E /* CheckListManager.swift in Sources */,
+				C54B596E1D6B500F00BDC127 /* UITableView+Util.swift in Sources */,
 				C5B50DCC1BE89EB5007DB454 /* UIView+Util.swift in Sources */,
 				C58A58511C82F25500550BB0 /* CheckListMovingViewController.swift in Sources */,
 				C5053DDE1C0734230019EF9F /* Define.swift in Sources */,
@@ -758,7 +762,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AbacusSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.abacus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -773,7 +777,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AbacusSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.abacus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

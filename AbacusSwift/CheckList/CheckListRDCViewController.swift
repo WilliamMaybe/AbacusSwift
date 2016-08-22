@@ -62,13 +62,15 @@ class CheckListRDCViewController: UITableViewController {
         }
     }
     
+    private let dataHandle = CheckListType.Require
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = localStringFromKey(CHECKLIST_TITLE_1)
         resetButtomItem.title = localStringFromKey(RESET)
 
-        tableView.registerClass(CheckListHeaderView.self, forHeaderFooterViewReuseIdentifier: String(CheckListHeaderView))
+        tableView.registerHeaderFooterViewClass(CheckListHeaderView.self)
         
         tableView.estimatedSectionHeaderHeight = 30
         tableView.sectionHeaderHeight          = UITableViewAutomaticDimension
@@ -77,13 +79,13 @@ class CheckListRDCViewController: UITableViewController {
         dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) {
             self.tableView.editing = true
             self.tableView.reloadData()
-            self.selectedData = CheckListManager.sharedInstance.dataWithType(.Require)!
+            self.selectedData = self.dataHandle.getData()!
         }
     }
     
     @IBAction func resetButtonItemClicked(sender: AnyObject) {
         selectedData = [Int]()
-        CheckListManager.sharedInstance.resetData(type: .Require)
+        dataHandle.resetData()
     }
 }
 
@@ -126,13 +128,13 @@ extension CheckListRDCViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let checkListManager = CheckListManager.sharedInstance
-        checkListManager.addOrDeleteIdentifier(indexPath.row + indexPath.section * 10, type: .Require)
+        selectedData.append(indexPath.row + indexPath.section * 10)
+        dataHandle.addOrDeleteIdentifier(indexPath.row + indexPath.section * 10)
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let checkListManager = CheckListManager.sharedInstance
-        checkListManager.addOrDeleteIdentifier(indexPath.row + indexPath.section * 10, type: .Require)
+        selectedData = selectedData.filter { $0 != indexPath.row + indexPath.section * 10 }
+        dataHandle.addOrDeleteIdentifier(indexPath.row + indexPath.section * 10)
     }
 }
 

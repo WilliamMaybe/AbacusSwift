@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -166,21 +166,39 @@
         <!--Moving Checklist-->
         <scene sceneID="JQ3-8P-5od">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="IXH-Kn-J2t" customClass="CheckListMovingController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qfn-Cx-JFY">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="IXH-Kn-J2t" customClass="CheckListMovingViewController" customModule="AbacusSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Qfn-Cx-JFY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="e41-fv-ETE">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckListMoveCell" id="RFG-pf-Win" customClass="CheckListMoveCell" customModule="AbacusSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e41-fv-ETE" id="H4D-0r-W1U">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RFG-pf-Win" id="sWo-mb-grD">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUH-nA-eRE">
+                                            <rect key="frame" x="5" y="10.5" width="590" height="23.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.34509803919999998" green="0.46666666670000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eUH-nA-eRE" firstAttribute="leading" secondItem="sWo-mb-grD" secondAttribute="leading" constant="5" id="GyS-fz-JNS"/>
+                                        <constraint firstAttribute="trailing" secondItem="eUH-nA-eRE" secondAttribute="trailing" constant="5" id="Vt1-go-NVt"/>
+                                        <constraint firstItem="eUH-nA-eRE" firstAttribute="top" secondItem="sWo-mb-grD" secondAttribute="top" constant="10" id="fJO-aA-VXE"/>
+                                        <constraint firstAttribute="bottom" secondItem="eUH-nA-eRE" secondAttribute="bottom" constant="10" id="rx5-D5-weM"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="0.34509803919999998" green="0.46666666670000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="selectedBackgroundView" destination="07a-Qe-xE8" id="w2Y-1w-lsx"/>
+                                    <outlet property="bottomConstraint" destination="rx5-D5-weM" id="ZF1-e8-Frv"/>
+                                    <outlet property="contentLabel" destination="eUH-nA-eRE" id="Gcz-2Z-cnm"/>
+                                    <outlet property="selectedBackgroundView" destination="07a-Qe-xE8" id="DDe-HN-G1E"/>
+                                    <outlet property="topConstraint" destination="fJO-aA-VXE" id="fHF-Ve-BYc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -189,7 +207,16 @@
                             <outlet property="delegate" destination="IXH-Kn-J2t" id="QwS-tg-eBd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Moving Checklist" id="r67-cM-QP1"/>
+                    <navigationItem key="navigationItem" title="Moving Checklist" id="r67-cM-QP1">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="CSO-4c-aEx">
+                            <connections>
+                                <action selector="resetItemClicked:" destination="IXH-Kn-J2t" id="ghQ-qc-7Gz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resetButtonItem" destination="CSO-4c-aEx" id="19j-h7-B59"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnR-U9-WP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="07a-Qe-xE8">
