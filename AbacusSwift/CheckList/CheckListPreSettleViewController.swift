@@ -15,27 +15,27 @@ class CheckListPreSettleViewController: UITableViewController {
     
     private lazy var sectionTitles =
     [
-        localStringFromKey(CHECKLIST_PRESETTLE_TITLE_1),
-        localStringFromKey(CHECKLIST_PRESETTLE_TITLE_2)
+        CHECKLIST_PRESETTLE_TITLE_1(),
+        CHECKLIST_PRESETTLE_TITLE_2()
     ]
     
     private lazy var datas =
     [
         [
-            titleKey : localStringFromKey(CHECKLIST_PRESETTLE_SUBTITLE_1),
-            describeKey : localStringFromKey(CHECKLIST_PRESETTLE_SELECT_1)
+            titleKey : CHECKLIST_PRESETTLE_SUBTITLE_1(),
+            describeKey : CHECKLIST_PRESETTLE_SELECT_1()
         ],
         
         [
-            titleKey : localStringFromKey(CHECKLIST_PRESETTLE_SUBTITLE_2),
-            describeKey : localStringFromKey(CHECKLIST_PRESETTLE_SELECT_2)
+            titleKey : CHECKLIST_PRESETTLE_SUBTITLE_2(),
+            describeKey : CHECKLIST_PRESETTLE_SELECT_2()
         ]
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = localStringFromKey(CHECKLIST_TITLE_3)
+        title = CHECKLIST_TITLE_3()
 
         tableView.registerClass(CheckListHeaderView.self, forHeaderFooterViewReuseIdentifier: String(CheckListHeaderView))
         tableView.estimatedSectionHeaderHeight = 30

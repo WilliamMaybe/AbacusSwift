@@ -12,38 +12,38 @@ class CheckListRDCViewController: UITableViewController {
 
     @IBOutlet private weak var resetButtomItem: UIBarButtonItem!
     
-    private let titleArray = [localStringFromKey(CHECKLIST_HOME_TITLE_1),
-                              localStringFromKey(CHECKLIST_HOME_TITLE_2),
-                              localStringFromKey(CHECKLIST_HOME_TITLE_3),
-                              localStringFromKey(CHECKLIST_HOME_TITLE_4),
-                              localStringFromKey(CHECKLIST_HOME_TITLE_5)]
+    private let titleArray = [CHECKLIST_HOME_TITLE_1(),
+                              CHECKLIST_HOME_TITLE_2(),
+                              CHECKLIST_HOME_TITLE_3(),
+                              CHECKLIST_HOME_TITLE_4(),
+                              CHECKLIST_HOME_TITLE_5()]
     private let contentArray = [
         [
-            localStringFromKey(CHECKLIST_HOME_SELECT_1_1),
-            localStringFromKey(CHECKLIST_HOME_SELECT_1_2),
-            localStringFromKey(CHECKLIST_HOME_SELECT_1_3),
-            localStringFromKey(CHECKLIST_HOME_SELECT_1_4),
-            localStringFromKey(CHECKLIST_HOME_SELECT_1_5),
-            localStringFromKey(CHECKLIST_HOME_SELECT_1_6)
+            CHECKLIST_HOME_SELECT_1_1(),
+            CHECKLIST_HOME_SELECT_1_2(),
+            CHECKLIST_HOME_SELECT_1_3(),
+            CHECKLIST_HOME_SELECT_1_4(),
+            CHECKLIST_HOME_SELECT_1_5(),
+            CHECKLIST_HOME_SELECT_1_6()
         ],
         [
-            localStringFromKey(CHECKLIST_HOME_SELECT_2_1),
-            localStringFromKey(CHECKLIST_HOME_SELECT_2_2),
-            localStringFromKey(CHECKLIST_HOME_SELECT_2_3),
-            localStringFromKey(CHECKLIST_HOME_SELECT_2_4)
+            CHECKLIST_HOME_SELECT_2_1(),
+            CHECKLIST_HOME_SELECT_2_2(),
+            CHECKLIST_HOME_SELECT_2_3(),
+            CHECKLIST_HOME_SELECT_2_4()
         ],
         [
-            localStringFromKey(CHECKLIST_HOME_SELECT_3_1),
-            localStringFromKey(CHECKLIST_HOME_SELECT_3_2),
+            CHECKLIST_HOME_SELECT_3_1(),
+            CHECKLIST_HOME_SELECT_3_2(),
         ],
         [
-            localStringFromKey(CHECKLIST_HOME_SELECT_4_1),
-            localStringFromKey(CHECKLIST_HOME_SELECT_4_2),
-            localStringFromKey(CHECKLIST_HOME_SELECT_4_3),
+            CHECKLIST_HOME_SELECT_4_1(),
+            CHECKLIST_HOME_SELECT_4_2(),
+            CHECKLIST_HOME_SELECT_4_3(),
         ],
         [
-            localStringFromKey(CHECKLIST_HOME_SELECT_5_1),
-            localStringFromKey(CHECKLIST_HOME_SELECT_5_2),
+            CHECKLIST_HOME_SELECT_5_1(),
+            CHECKLIST_HOME_SELECT_5_2(),
         ]
     ]
     
@@ -67,8 +67,8 @@ class CheckListRDCViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = localStringFromKey(CHECKLIST_TITLE_1)
-        resetButtomItem.title = localStringFromKey(RESET)
+        title                 = CHECKLIST_TITLE_1()
+        resetButtomItem.title = RESET()
 
         tableView.registerHeaderFooterViewClass(CheckListHeaderView.self)
         

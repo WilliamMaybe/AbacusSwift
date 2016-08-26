@@ -112,8 +112,8 @@ class StampDutyDetailView: UIView {
     @objc private func clickToDisclaimer() {
         let appDelegate = UIApplication.sharedApplication().delegate
         
-        let alertVC = UIAlertController(title: nil, message: localStringFromKey(STAMPDUTY_GRAPH_1_DISCLAIMER_CONTENT), preferredStyle: .Alert)
-        alertVC.addAction(UIAlertAction(title: localStringFromKey(DONE), style: .Default, handler: nil))
+        let alertVC = UIAlertController(title: nil, message: STAMPDUTY_GRAPH_1_DISCLAIMER_CONTENT(), preferredStyle: .Alert)
+        alertVC.addAction(UIAlertAction(title: DONE(), style: .Default, handler: nil))
         appDelegate?.window??.rootViewController?.presentViewController(alertVC, animated: true, completion: nil)
     }
     
@@ -126,8 +126,8 @@ class StampDutyDetailView: UIView {
     }
     
 // MARK: - Interface Method
-    func setDataWithModel(result: stampDutyResultModel) {
-        titleLabel.text = result.fullStateName
+    func setData(result: stampDutyType) {
+        titleLabel.text = result.pickerFullTitle
         
         let dict = [
             NSFontAttributeName:UIFont.font_hn_regular(15)!,
@@ -135,10 +135,9 @@ class StampDutyDetailView: UIView {
             NSUnderlineStyleAttributeName:NSUnderlineStyle.StyleSingle .rawValue
         ]
         
-        grantURL = stampDutyURL[result.type.rawValue]
-        let grant = NSMutableAttributedString(string: localStringFromKey(STAMPDUTY_GRAPH_1_CONCESSION) + "\n" + grantURL!, attributes: dict)
+        let grant = NSMutableAttributedString(string: STAMPDUTY_GRAPH_1_CONCESSION() + "\n" + result.url, attributes: dict)
         
-        let range = NSMakeRange(0, localStringFromKey(STAMPDUTY_GRAPH_1_CONCESSION).characters.count)
+        let range = NSMakeRange(0, STAMPDUTY_GRAPH_1_CONCESSION().characters.count)
         grant.addAttribute(NSFontAttributeName, value: UIFont.font_hn_regular(13)!, range: range)
         grantButton.setAttributedTitle(grant, forState: .Normal)
         
@@ -176,7 +175,7 @@ class StampDutyDetailView: UIView {
     private lazy var disclaimerButton: UIButton = {
         let lazyButton = UIButton()
         let attriString = NSAttributedString(
-            string: localStringFromKey(STAMPDUTY_GRAPH_1_DISCLAIMER),
+            string: STAMPDUTY_GRAPH_1_DISCLAIMER(),
             attributes: [
                 NSFontAttributeName:UIFont.font_hn_light(12)!,
                 NSForegroundColorAttributeName:UIColor.themeGreen(),
@@ -191,7 +190,7 @@ class StampDutyDetailView: UIView {
         let lazyLabel = UILabel()
         lazyLabel.font = UIFont.font_hn_bold(12)
         lazyLabel.textColor = UIColor.themeGreen()
-        lazyLabel.text = localStringFromKey(STAMPDUTY_GRAPH_1_SUBTITLE)
+        lazyLabel.text = STAMPDUTY_GRAPH_1_SUBTITLE()
         return lazyLabel
     }()
     
@@ -202,10 +201,10 @@ class StampDutyDetailView: UIView {
         return lazyButton
     }()
     
-    private lazy var stampDutyLabel: UILabel = self.createLabel(localStringFromKey(STAMPDUTY_GRAPH_1_STAMPDUTY))
-    private lazy var transferLabel: UILabel  = self.createLabel(localStringFromKey(STAMPDUTY_GRAPH_1_TRANSFERFEE))
-    private lazy var registLabel: UILabel    = self.createLabel(localStringFromKey(STAMPDUTY_GRAPH_1_REGISTRATION))
-    private lazy var totalLabel: UILabel     = self.createLabel(localStringFromKey(STAMPDUTY_GRAPH_1_TOTAL))
+    private lazy var stampDutyLabel: UILabel = self.createLabel(STAMPDUTY_GRAPH_1_STAMPDUTY())
+    private lazy var transferLabel: UILabel  = self.createLabel(STAMPDUTY_GRAPH_1_TRANSFERFEE())
+    private lazy var registLabel: UILabel    = self.createLabel(STAMPDUTY_GRAPH_1_REGISTRATION())
+    private lazy var totalLabel: UILabel     = self.createLabel(STAMPDUTY_GRAPH_1_TOTAL())
     
     private lazy var stampDutyMoneyLabel: UILabel = self.createMoneyLabel()
     private lazy var transferMoneyLabel: UILabel  = self.createMoneyLabel()

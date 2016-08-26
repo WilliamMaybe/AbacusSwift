@@ -139,7 +139,7 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
             data = data / 100
         case .term:
             data = Double(text) ?? 0
-            textField.text = "\(Int(data)) \(localStringFromKey(YEARS)))"
+            textField.text = "\(Int(data)) \(YEARS)))"
         }
         
         finishedClosure?(data)

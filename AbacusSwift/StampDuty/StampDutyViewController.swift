@@ -20,15 +20,22 @@ class StampDutyViewController: BaseViewController {
     }()
     
     private lazy var pickerView: PickerStateView = {
-        let lazyPickerView = PickerStateView()
+        let lazyPickerView = PickerStateView(pickers: self.stampdutyEnum)
         lazyPickerView.selectedIndex { (index) -> Void in
             self.stateChanged(index)
         }
         return lazyPickerView
     }()
     
-    private lazy var pickerTitle     = stampDutyPickerTitleArray(false)
-    private lazy var pickerFullTitle = stampDutyPickerTitleArray(true)
+    private var stampdutyEnum = [stampDutyType.act(stampDutyModel()),
+                                 .nsw(stampDutyModel()),
+                                 .nt(stampDutyModel()),
+                                 .qld(stampDutyModel()),
+                                 .sa(stampDutyModel()),
+                                 .tas(stampDutyModel()),
+                                 .vic(stampDutyModel()),
+                                 .wa(stampDutyModel())
+                                ]
     
     private lazy var scrollView: UIScrollView = {
         let lazyScroll = UIScrollView()
@@ -49,10 +56,12 @@ class StampDutyViewController: BaseViewController {
     }()
     
     private lazy var detailView: StampDutyDetailView         = StampDutyDetailView()
-    private lazy var comparisonView: StampDutyComparisonView = StampDutyComparisonView()
+    private lazy var comparisonView: StampDutyComparisonView = {
+        return StampDutyComparisonView(lineCount: self.stampdutyEnum.count)
+    }()
     
     /// 选中的省份Index(初始化为0)
-    private var selectedStateIndex = 0
+    private lazy var selectedIndex = 0
     /// 初始价格
     private var propertyValue: Double = 600_000
     /// 是否自住
@@ -64,8 +73,8 @@ class StampDutyViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = localStringFromKey(STAMPDUTY)
-        navigationItem.leftBarButtonItem  = UIBarButtonItem(title: localStringFromKey(RESET), style: .Plain, target: self, action: #selector(StampDutyViewController.clickToReset))
+        title = STAMPDUTY()
+        navigationItem.leftBarButtonItem  = UIBarButtonItem(title: RESET(), style: .Plain, target: self, action: #selector(StampDutyViewController.clickToReset))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(StampDutyViewController.clickToMail))
         
         initComponents()
@@ -135,20 +144,21 @@ class StampDutyViewController: BaseViewController {
         switch index {
         case 0:
             var cell = cells.firstCell
-            if (cell == nil) {
-                cell = UITableViewCell(style: .Value1, reuseIdentifier: nil)
-                cell?.textLabel?.textColor = UIColor.themeGreen()
-                cell?.textLabel?.text = localStringFromKey(STAMPDUTY_TITLE_1)
-                cell?.detailTextLabel?.textColor = UIColor.themeGreen()
-                cell?.detailTextLabel?.font = UIFont.font_hn_light(15)
-            }
+            if (cell != nil) { return cell }
+            
+            cell = UITableViewCell(style: .Value1, reuseIdentifier: nil)
+            cell?.textLabel?.textColor = UIColor.themeGreen()
+            cell?.textLabel?.text = STAMPDUTY_TITLE_1()
+            cell?.detailTextLabel?.textColor = UIColor.themeGreen()
+            cell?.detailTextLabel?.font = UIFont.font_hn_light(15)
+            
             return cell
             
         case 1:
             var cell = cells.secondCell
             if (cell == nil) {
                 cell = TextFieldTableViewCell(style: .Default, reuseIdentifier: nil)
-                cell?.titleLabel.text = localStringFromKey(STAMPDUTY_TITLE_2)
+                cell?.titleLabel.text = STAMPDUTY_TITLE_2()
             }
             return cell
             
@@ -156,7 +166,7 @@ class StampDutyViewController: BaseViewController {
             var cell = cells.thirdCell
             if (cell == nil) {
                 cell = SwitchTableViewCell(style: .Default, reuseIdentifier: nil)
-                cell?.textLabel?.text = localStringFromKey(STAMPDUTY_TITLE_3)
+                cell?.textLabel?.text = STAMPDUTY_TITLE_3()
             }
             return cell
             
@@ -179,19 +189,21 @@ class StampDutyViewController: BaseViewController {
         UIView.animateWithDuration(0.5) { () -> Void in
             self.view.layoutIfNeeded()
         }
-        selectedStateIndex = index
+        selectedIndex = index
         tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .None)
         calculator()
     }
     
     private func calculator() {
-        let selectedModel = stampDutyModel()
-        selectedModel.type = stampDutyType(rawValue: selectedStateIndex)!
-        selectedModel.money = propertyValue
-        selectedModel.isLive = isLiveIn
+        stampdutyEnum.forEach { (body) in
+            var tmp = body
+            tmp.money  = propertyValue
+            tmp.isLive = isLiveIn
+            tmp.calculate()
+        }
         
-        detailView.setDataWithModel(handleMoney(selectedModel))
-        comparisonView.setDataWithModel(selectedModel)
+        detailView.setData(stampdutyEnum[selectedIndex])
+        comparisonView.setDatas(stampdutyEnum, selectedAtIndex: selectedIndex)
     }
 }
 
@@ -211,7 +223,7 @@ extension StampDutyViewController: UITableViewDelegate, UITableViewDataSource {
         cell = cellAtIndex(indexPath.row)!
         switch indexPath.row {
             case 0:
-                cell.detailTextLabel??.text = pickerTitle[selectedStateIndex]
+                cell.detailTextLabel??.text = stampdutyEnum[selectedIndex].pickerTitle
             case 1:
                 (cell as! TextFieldTableViewCell).setTextFieldText("$600,000")
                 (cell as! TextFieldTableViewCell).textFinished({ (money) -> Void in

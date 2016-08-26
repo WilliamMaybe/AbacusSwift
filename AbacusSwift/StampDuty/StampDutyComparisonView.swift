@@ -17,9 +17,12 @@ class StampDutyComparisonView: UIView {
         return lazyLabel
     }()
     
+    let lineCount: Int
+    
 // MARK: - Life Cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(lineCount: Int) {
+        self.lineCount = lineCount
+        super.init(frame: CGRect.zero)
         backgroundColor = UIColor.themeGray()
         
         addSubview(titleLabel)
@@ -35,9 +38,8 @@ class StampDutyComparisonView: UIView {
         }
         
         var lastView:UIView?
-        for i in 0..<stampDutyPickerCount {
+        for _ in 0..<lineCount {
             let perLine = stampDutyPerLine()
-            perLine.tag = i
             addSubview(perLine)
             lineArray.append(perLine)
             
@@ -60,7 +62,7 @@ class StampDutyComparisonView: UIView {
         })
         
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -70,38 +72,26 @@ class StampDutyComparisonView: UIView {
         let lazyLabel = UILabel()
         lazyLabel.font = UIFont.font_hn_bold(12)
         lazyLabel.textColor = UIColor.themeGreen()
-        lazyLabel.text = localStringFromKey(STAMPDUTY_GRAPH_2_SUBTITLE)
+        lazyLabel.text = STAMPDUTY_GRAPH_2_SUBTITLE()
         return lazyLabel
     }()
     
     private lazy var lineArray: [stampDutyPerLine] = [stampDutyPerLine]()
-    /// 初始值
-    private var initialModel: stampDutyModel?
 }
 
 // MARK: - Interface Method
 extension StampDutyComparisonView {
-    func setDataWithModel(initialModel: stampDutyModel) {
-        titleLabel.text = initialModel.fullStateName
-        self.initialModel = initialModel
+    func setDatas(datas: [stampDutyType], selectedAtIndex: Int) {
+        titleLabel.text = datas[selectedAtIndex].pickerFullTitle
         
-        // 计算出每个的价值
-        let resultArray = lineArray.map { (line) -> stampDutyResultModel in
-            let tag = line.tag
-            let model = stampDutyModel()
-            model.type = stampDutyType(rawValue: tag)!
-            model.money = initialModel.money
-            model.isLive = initialModel.isLive
-            model.isFirstBuy = initialModel.isFirstBuy
-            
-            line.lineColor((tag == initialModel.type.rawValue) ? UIColor.themeYellow() : UIColor.themeGreen())
-            
-            return handleMoney(model)
-        }
+        let maxData = datas.maxElement { $0.total < $1.total } as stampDutyType!
         
-        let maxTotalModel = resultArray.maxElement { $0.total < $1.total}!
-        for line in lineArray {
-            line.setData(resultArray[line.tag], biggest: maxTotalModel.total)
+        for i in 0..<datas.count {
+            let line = lineArray[i]
+            let data = datas[i]
+            
+            line.lineColor((i == selectedAtIndex) ? UIColor.themeYellow() : UIColor.themeGreen())
+            line.setData(data, biggest: maxData.total)
         }
     }
 }
@@ -142,13 +132,13 @@ private class stampDutyPerLine: UIView {
     }
     
 // MARK: - Interface Method
-    func setData(resultModel: stampDutyResultModel, biggest: Double) {
-        titleLabel.text = resultModel.stateName
-        moneyLabel.text = formatterMoney(resultModel.total)
+    func setData(result: stampDutyType, biggest: Double) {
+        titleLabel.text = result.pickerTitle
+        moneyLabel.text = formatterMoney(result.total)
         
         lineView.snp_remakeConstraints { (make) -> Void in
             make.left.top.bottom.equalTo(contentView)
-            make.width.equalTo(contentView).multipliedBy(resultModel.total / biggest)
+            make.width.equalTo(contentView).multipliedBy(result.total / biggest)
         }
         
         UIView.animateWithDuration(0.2) { () -> Void in

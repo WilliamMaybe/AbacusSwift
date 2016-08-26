@@ -29,7 +29,7 @@ class BaseNavigationViewController: UINavigationController {
     }
     
     override func pushViewController(viewController: UIViewController, animated: Bool) {
-        viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: localStringFromKey(BACK), style: .Plain, target: nil, action: nil)
+        viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: BACK(), style: .Plain, target: nil, action: nil)
         super.pushViewController(viewController, animated: true)
     }
     /*

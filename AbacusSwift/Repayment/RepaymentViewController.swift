@@ -13,14 +13,14 @@ class RepaymentViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = localStringFromKey(REPAYMENT)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(RESET), style: .Plain, target: self, action: #selector(RepaymentViewController.clickToReset))
+        title = REPAYMENT()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: RESET(), style: .Plain, target: self, action: #selector(RepaymentViewController.clickToReset))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(RepaymentViewController.clickToMail))
         
-        initComponents()
+        commonInit()
     }
     
-    private func initComponents() {
+    private func commonInit() {
         
     }
     

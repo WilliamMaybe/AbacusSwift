@@ -29,16 +29,13 @@ class PickerStateView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         return lazyToolBar
     }()
     
-    private lazy var pickerArray: [String] = []
+    let pickerArray: [stampDutyType]
     private var selectedClosure: ((Int) -> Void)?
     
 // MARK: - Life Cycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        for i in 1...stampDutyPickerCount {
-            pickerArray.append(stampDutyPickerTitle(i))
-        }
+    init(pickers: [stampDutyType]) {
+        self.pickerArray = pickers
+        super.init(frame: CGRect.zero)
         
         backgroundColor = UIColor.whiteColor()
         
@@ -80,6 +77,6 @@ class PickerStateView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerArray[row]
+        return pickerArray[row].pickerFullTitle
     }
 }

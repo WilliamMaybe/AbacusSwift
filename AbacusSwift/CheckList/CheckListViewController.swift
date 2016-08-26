@@ -11,15 +11,15 @@ import UIKit
 class CheckListViewController: UITableViewController {
     
     private let titleArray = [
-        localStringFromKey(CHECKLIST_TITLE_1),
-        localStringFromKey(CHECKLIST_TITLE_2),
-        localStringFromKey(CHECKLIST_TITLE_3)
+        CHECKLIST_TITLE_1(),
+        CHECKLIST_TITLE_2(),
+        CHECKLIST_TITLE_3()
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = localStringFromKey(CHECKLIST)
+        title = CHECKLIST()
     }
 }
 

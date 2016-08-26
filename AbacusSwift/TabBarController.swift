@@ -23,11 +23,11 @@ class TabBarController: UITabBarController {
     
     private func initTab() {
         let arrayTitle = [
-            localStringFromKey(ABACUS),
-            localStringFromKey(REPAYMENT),
-            localStringFromKey(STAMPDUTY),
-            localStringFromKey(CHECKLIST),
-            localStringFromKey(CONTACTUS)
+            ABACUS(),
+            REPAYMENT(),
+            STAMPDUTY(),
+            CHECKLIST(),
+            CONTACTUS()
         ]
         
         let arrayImageName = ["tabbar_home",  "tabbar_repayment", "tabbar_stampDuty", "tabbar_checkList", "tabbar_contactUs"]

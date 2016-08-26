@@ -11,6 +11,15 @@ import SafariServices
 
 public enum LoanTypes: Int {
     case Residential, Commercial
+    
+    var title: String {
+        get {
+            switch self {
+            case .Residential: return ABACUS_LOAN_TITLE_1()
+            case.Commercial:   return ABACUS_LOAN_TITLE_2()
+            }
+        }
+    }
 }
 
 class AbacusHomeLoanTypeViewController: UITableViewController {
@@ -40,18 +49,13 @@ class AbacusHomeLoanTypeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var titleTranslate = ""
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(AbacusHomeLoanTypeViewController.pullToRefresh), forControlEvents: .ValueChanged)
         
         tableView.backgroundColor = UIColor.themeGray()
         
-        switch loanType {
-            case .Residential : titleTranslate = ABACUS_LOAN_TITLE_1
-            case .Commercial : titleTranslate = ABACUS_LOAN_TITLE_2
-        }
-        title = localStringFromKey(titleTranslate)
+        title = loanType.title
         
         pullToRefresh()
     }

@@ -47,12 +47,12 @@ extension Loan: serviceConvertible {
             case .Success(let value):
                 
                 guard let _ = value["Data"] else {
-                    failure(localStringFromKey(LOADFAIL))
+                    failure(LOADFAIL())
                     return
                 }
                 
                 guard let _ = value["Total"] else {
-                    failure(localStringFromKey(LOADFAIL))
+                    failure(LOADFAIL())
                     return
                 }
                 
@@ -71,7 +71,7 @@ extension Loan: serviceConvertible {
                 success(resultList, total: total)
                 
             case .Failure(_):
-                failure(localStringFromKey(LOADFAIL))
+                failure(LOADFAIL())
             }
         }
     }

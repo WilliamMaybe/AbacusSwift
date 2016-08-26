@@ -31,9 +31,9 @@ class AbacusHomeViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: localStringFromKey(ABACUS_BUTTON_TEXT), style: .Plain, target: self, action: #selector(AbacusHomeViewController.clickToChangeLanguage))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: ABACUS_BUTTON_TEXT(), style: .Plain, target: self, action: #selector(AbacusHomeViewController.clickToChangeLanguage))
         
-        navigationItem.titleView = UIImageView(image: UIImage(named: localStringFromKey(HOMELOGO)))
+        navigationItem.titleView = UIImageView(image: UIImage(named: HOMELOGO()))
         
         initComponents()
     }
@@ -71,9 +71,9 @@ class AbacusHomeViewController: BaseViewController {
 
     // MARK: - Button Click
     @objc private func clickToChangeLanguage() {
-        let alertVC = UIAlertController(title: localStringFromKey(REMIND), message: localStringFromKey(CONTENT), preferredStyle: .Alert)
-        alertVC.addAction(UIAlertAction(title: localStringFromKey(CANCEL), style: .Cancel, handler: nil))
-        alertVC.addAction(UIAlertAction(title: localStringFromKey(DONE), style: .Default, handler: { (action) -> Void in
+        let alertVC = UIAlertController(title: REMIND(), message: CONTENT(), preferredStyle: .Alert)
+        alertVC.addAction(UIAlertAction(title: CANCEL(), style: .Cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: DONE(), style: .Default, handler: { (action) -> Void in
             InternationalControl.changeLanguage()
             let delegate = UIApplication.sharedApplication().delegate
             delegate?.window??.rootViewController = TabBarController()
@@ -106,7 +106,7 @@ extension AbacusHomeViewController: UITableViewDelegate, UITableViewDataSource {
         headerView.backgroundColor = UIColor.whiteColor()
         
         let headerLabel = UILabel()
-        headerLabel.text = localStringFromKey(ABACUS_TITLE)
+        headerLabel.text = ABACUS_TITLE()
         headerLabel.font = UIFont.boldSystemFontOfSize(17)
         headerLabel.textColor = UIColor.themeGreen()
         headerLabel.textAlignment = .Center
@@ -128,7 +128,7 @@ extension AbacusHomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell!.textLabel!.textColor = UIColor.themeGreen()
         }
         
-        cell!.textLabel?.text = localStringFromKey((indexPath.row == 0 ? ABACUS_LOAN_TITLE_1 : ABACUS_LOAN_TITLE_2))
+        cell!.textLabel?.text = indexPath.row == 0 ? ABACUS_LOAN_TITLE_1() : ABACUS_LOAN_TITLE_2()
         return cell!
     }
     

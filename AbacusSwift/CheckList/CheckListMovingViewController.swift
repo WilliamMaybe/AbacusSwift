@@ -12,7 +12,7 @@ import UIKit
  *  一个提供enum存储变量的protocol
  */
 private protocol CheckListMovingMessage {
-    var message: String { set get }
+    var message: String { get }
 }
 
 /**
@@ -32,13 +32,6 @@ private enum CheckListMovingContentMode: CheckListMovingMessage {
             case let .Title(string):  return string
             }
         }
-        
-        set {
-            switch self {
-            case .Select(_): self = .Select(newValue)
-            case .Title(_):  self = .Title(newValue)
-            }
-        }
     }
     
     func selectable() -> Bool {
@@ -55,67 +48,67 @@ class CheckListMovingViewController: UITableViewController {
     
     // MARK: - Variables
     private let titleArray = [
-        localStringFromKey(CHECKLIST_MOVING_TITLE_1),
-        localStringFromKey(CHECKLIST_MOVING_TITLE_2),
-        localStringFromKey(CHECKLIST_MOVING_TITLE_3),
-        localStringFromKey(CHECKLIST_MOVING_TITLE_4),
-        localStringFromKey(CHECKLIST_MOVING_TITLE_5),
-        localStringFromKey(CHECKLIST_MOVING_TITLE_6)]
+        CHECKLIST_MOVING_TITLE_1(),
+        CHECKLIST_MOVING_TITLE_2(),
+        CHECKLIST_MOVING_TITLE_3(),
+        CHECKLIST_MOVING_TITLE_4(),
+        CHECKLIST_MOVING_TITLE_5(),
+        CHECKLIST_MOVING_TITLE_6()]
     
     private let contentArray: [[CheckListMovingContentMode]] = [
         [
-            .Title(localStringFromKey(CHECKLIST_MOVING_QUESTION_1)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_1_1)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_1_2)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_1_3)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_1_4))
+            .Title(CHECKLIST_MOVING_QUESTION_1()),
+            .Select(CHECKLIST_MOVING_SELECT_1_1()),
+            .Select(CHECKLIST_MOVING_SELECT_1_2()),
+            .Select(CHECKLIST_MOVING_SELECT_1_3()),
+            .Select(CHECKLIST_MOVING_SELECT_1_4())
         ],
         [
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_2_1)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_2_2)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_2_3)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_2_4))
+            .Select(CHECKLIST_MOVING_SELECT_2_1()),
+            .Select(CHECKLIST_MOVING_SELECT_2_2()),
+            .Select(CHECKLIST_MOVING_SELECT_2_3()),
+            .Select(CHECKLIST_MOVING_SELECT_2_4())
         ],
         [
-            .Title(localStringFromKey(CHECKLIST_MOVING_QUESTION_3)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_1)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_2)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_3)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_4)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_5)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_6)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_7)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_8)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_9)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_10)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_11)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_12)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_3_13)),
+            .Title(CHECKLIST_MOVING_QUESTION_3()),
+            .Select(CHECKLIST_MOVING_SELECT_3_1()),
+            .Select(CHECKLIST_MOVING_SELECT_3_2()),
+            .Select(CHECKLIST_MOVING_SELECT_3_3()),
+            .Select(CHECKLIST_MOVING_SELECT_3_4()),
+            .Select(CHECKLIST_MOVING_SELECT_3_5()),
+            .Select(CHECKLIST_MOVING_SELECT_3_6()),
+            .Select(CHECKLIST_MOVING_SELECT_3_7()),
+            .Select(CHECKLIST_MOVING_SELECT_3_8()),
+            .Select(CHECKLIST_MOVING_SELECT_3_9()),
+            .Select(CHECKLIST_MOVING_SELECT_3_10()),
+            .Select(CHECKLIST_MOVING_SELECT_3_11()),
+            .Select(CHECKLIST_MOVING_SELECT_3_12()),
+            .Select(CHECKLIST_MOVING_SELECT_3_13()),
         ],
         [
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_1)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_2)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_3)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_4)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_5)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_6)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_7)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_8)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_9)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_10)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_4_11))
+            .Select(CHECKLIST_MOVING_SELECT_4_1()),
+            .Select(CHECKLIST_MOVING_SELECT_4_2()),
+            .Select(CHECKLIST_MOVING_SELECT_4_3()),
+            .Select(CHECKLIST_MOVING_SELECT_4_4()),
+            .Select(CHECKLIST_MOVING_SELECT_4_5()),
+            .Select(CHECKLIST_MOVING_SELECT_4_6()),
+            .Select(CHECKLIST_MOVING_SELECT_4_7()),
+            .Select(CHECKLIST_MOVING_SELECT_4_8()),
+            .Select(CHECKLIST_MOVING_SELECT_4_9()),
+            .Select(CHECKLIST_MOVING_SELECT_4_10()),
+            .Select(CHECKLIST_MOVING_SELECT_4_11())
         ],
         [
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_5_1)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_5_2)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_5_3)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_5_4))
+            .Select(CHECKLIST_MOVING_SELECT_5_1()),
+            .Select(CHECKLIST_MOVING_SELECT_5_2()),
+            .Select(CHECKLIST_MOVING_SELECT_5_3()),
+            .Select(CHECKLIST_MOVING_SELECT_5_4())
         ],
         [
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_6_1)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_6_2)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_6_3)),
-            .Select(localStringFromKey(CHECKLIST_MOVING_SELECT_6_4))
+            .Select(CHECKLIST_MOVING_SELECT_6_1()),
+            .Select(CHECKLIST_MOVING_SELECT_6_2()),
+            .Select(CHECKLIST_MOVING_SELECT_6_3()),
+            .Select(CHECKLIST_MOVING_SELECT_6_4())
         ]
     ]
     
@@ -139,8 +132,8 @@ class CheckListMovingViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = localStringFromKey(CHECKLIST_TITLE_2)
-        resetButtonItem.title = localStringFromKey(RESET)
+        title = CHECKLIST_TITLE_2()
+        resetButtonItem.title = RESET()
         
         tableView.registerHeaderFooterViewClass(CheckListHeaderView.self)
         
