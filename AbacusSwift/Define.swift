@@ -23,9 +23,11 @@ func marginYFrom320() -> CGFloat {
 /**
  *  格式化金钱，四舍五入不保留小数，$123,456显示
  */
-func formatterMoney(money: Double) -> String {
-    let formatter = NSNumberFormatter()
-    formatter.locale = NSLocale(localeIdentifier: "en-AU")
-    formatter.numberStyle = .DecimalStyle
-    return "$" + formatter.stringFromNumber(Int(money + 0.5))!
+extension Double {
+    func moneyFormatter() -> String {
+        let formatter = NSNumberFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "en-AU")
+        formatter.numberStyle = .DecimalStyle
+        return "$" + formatter.stringFromNumber(Int(self + 0.5))!
+    }
 }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-public enum TextFieldCellMode: Int {
-    case money = 0
+public enum TextFieldCellMode {
+    case money
     case rate
     case term
 }
@@ -17,10 +17,10 @@ public enum TextFieldCellMode: Int {
 class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     class func identifier() -> String {
-        return NSStringFromClass(self)
+        return String(self)
     }
     
-    var mode: TextFieldCellMode?
+    var mode = TextFieldCellMode.money
     
     lazy var titleLabel: UILabel = {
        let lazyLabel = UILabel()
@@ -83,7 +83,7 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     
 // MARK: - UITextField Delegate
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        if TextFieldCellMode(rawValue: tag) != .money {
+        if mode != .money {
             return true
         }
         
@@ -116,7 +116,7 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
         let number = NSNumber(longLong: Int64(finalString) ?? 0)
         finalString = numberFormatter.stringFromNumber(number)!
         
-        textField.text = "$"+finalString
+        textField.text = "$" + finalString
         
         return false
     }
@@ -125,7 +125,7 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
         var data: Double = 0
         let text = textField.text ?? ""
 
-        switch TextFieldCellMode(rawValue: tag)! {
+        switch mode {
         case .money:
             if text.characters.count == 0 {
                 textField.text = "$0"
@@ -139,7 +139,7 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
             data = data / 100
         case .term:
             data = Double(text) ?? 0
-            textField.text = "\(Int(data)) \(YEARS)))"
+            textField.text = "\(Int(data)) \(YEARS())"
         }
         
         finishedClosure?(data)

@@ -40,19 +40,20 @@ class InternationalControl {
         initLanguage()
         return "en" == userDefault.objectForKey(languageKey) as! String
     }
+}
+
+// MARK: - Private Method
+private extension InternationalControl {
     
     class func currentBundle() -> NSBundle {
         initLanguage()
         return bundle!
     }
-}
-
-// MARK: - Private Method
-extension InternationalControl {
+    
     /**
      初始化语言
      */
-    private class func initLanguage() {
+    class func initLanguage() {
         var language = userDefault.valueForKey(languageKey) as? String
         if language != nil {
             if bundle == nil {
@@ -76,7 +77,7 @@ extension InternationalControl {
         userDefault.synchronize()
     }
     
-    private class func configureBundle(name: String) {
+    class func configureBundle(name: String) {
         let path = NSBundle.mainBundle().pathForResource(name, ofType: "lproj")
         bundle = NSBundle(path: path!)
     }

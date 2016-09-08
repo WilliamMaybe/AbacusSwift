@@ -56,6 +56,10 @@ extension UIColor {
     class func themeYellow() ->UIColor {
         return UIColor.color(red: 235, green: 182, blue: 68)
     }
+    
+    class func themeFont() -> UIColor {
+        return UIColor.color(w: 93)
+    }
     /**************** 本产品使用  ******************/
 
 }

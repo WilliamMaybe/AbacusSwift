@@ -134,7 +134,7 @@ private class stampDutyPerLine: UIView {
 // MARK: - Interface Method
     func setData(result: stampDutyType, biggest: Double) {
         titleLabel.text = result.pickerTitle
-        moneyLabel.text = formatterMoney(result.total)
+        moneyLabel.text = result.total.moneyFormatter()
         
         lineView.snp_remakeConstraints { (make) -> Void in
             make.left.top.bottom.equalTo(contentView)

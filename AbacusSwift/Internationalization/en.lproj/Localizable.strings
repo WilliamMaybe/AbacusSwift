@@ -262,7 +262,7 @@
 "ContactUs_Title_1" = "Tel";
 "ContactUs_Title_2" = "Fax";
 "ContactUs_Title_3" = "Email";
-"ContactUs_Title_4" = "Follow Us";
+"ContactUs_Title_4" = "Follow\nUs";
 
 // contact us 标题栏内容
 "ContactUs_Content_1" = "1300 26 8686";
@@ -280,9 +280,9 @@
 "ContactUs_Map_Phone_3" = "(02) 6176 0303";
 
 // contact us 地图界面地址
-"ContactUs_Map_Address_1" = "Suite 502   Level 5 451 Pitt Street  SYDNEY NSW 2000";
-"ContactUs_Map_Address_2" = "Suite 3   Level 1  190 Queen Street  MELBOURNE VIC 3000";
-"ContactUs_Map_Address_3" = "Suite 2  Dickson Chambers  25 Dickson Place DICKSON ACT 2602";
+"ContactUs_Map_Address_1" = "Suite 502   Level 5 451 Pitt Street \nSYDNEY NSW 2000";
+"ContactUs_Map_Address_2" = "Suite 3   Level 1  190 Queen Street \nMELBOURNE VIC 3000";
+"ContactUs_Map_Address_3" = "Suite 2  Dickson Chambers  25 Dickson\nPlace DICKSON ACT 2602";
 
 // APP评分
 "If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!" = "If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!";

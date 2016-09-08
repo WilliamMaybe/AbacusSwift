@@ -141,10 +141,10 @@ class StampDutyDetailView: UIView {
         grant.addAttribute(NSFontAttributeName, value: UIFont.font_hn_regular(13)!, range: range)
         grantButton.setAttributedTitle(grant, forState: .Normal)
         
-        stampDutyMoneyLabel.text = formatterMoney(result.stampduty)
-        transferMoneyLabel.text  = formatterMoney(result.transfer)
-        registMoneyLabel.text    = formatterMoney(result.regist)
-        totalMoneyLabel.text     = formatterMoney(result.total)
+        stampDutyMoneyLabel.text = result.stampduty.moneyFormatter()
+        transferMoneyLabel.text  = result.transfer.moneyFormatter()
+        registMoneyLabel.text    = result.regist.moneyFormatter()
+        totalMoneyLabel.text     = result.total.moneyFormatter()
     }
     
 // MARK: - Private Method

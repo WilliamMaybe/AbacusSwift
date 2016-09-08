@@ -150,6 +150,6 @@ extension AbacusHomeLoanTypeViewController {
         }
     
         let safariVC = SFSafariViewController(URL: url)
-        self.presentViewController(safariVC, animated: true, completion: nil)
+        presentViewController(safariVC, animated: true, completion: nil)
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8265C353A6207276B413912B /* Pods_AbacusSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3195AA27E0044402D16F4 /* Pods_AbacusSwift.framework */; };
+		ACA577401D81BA9A00A9DDF1 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5773F1D81BA9A00A9DDF1 /* PageControl.swift */; };
+		ACA577421D81C3ED00A9DDF1 /* ContactUsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA577411D81C3ED00A9DDF1 /* ContactUsDetailView.swift */; };
 		C504CB1F1D29397400E86C8E /* CheckListPreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504CB1E1D29397400E86C8E /* CheckListPreTableViewCell.swift */; };
 		C504CB621D2AB89D00E86C8E /* CheckListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504CB611D2AB89D00E86C8E /* CheckListManager.swift */; };
 		C5053DDE1C0734230019EF9F /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5053DDD1C0734230019EF9F /* Define.swift */; };
@@ -22,11 +24,16 @@
 		C542C77D1BF2224500C3AA35 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C542C77C1BF2224500C3AA35 /* SwitchTableViewCell.swift */; };
 		C542C7801BF2299600C3AA35 /* PickerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C542C77F1BF2299600C3AA35 /* PickerStateView.swift */; };
 		C54B596E1D6B500F00BDC127 /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54B596D1D6B500F00BDC127 /* UITableView+Util.swift */; };
+		C5537C2C1D7D542800CE576C /* ContactFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5537C2A1D7D542800CE576C /* ContactFollowTableViewCell.swift */; };
+		C5537C2D1D7D542800CE576C /* ContactUsNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5537C2B1D7D542800CE576C /* ContactUsNormalCell.swift */; };
+		C5537C351D7DB66B00CE576C /* ContactUsQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5537C341D7DB66B00CE576C /* ContactUsQRView.swift */; };
+		C5537C371D7DC23800CE576C /* ContactUsFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5537C361D7DC23800CE576C /* ContactUsFooter.swift */; };
 		C571E4FD1C42BA8200D82E31 /* Dictionary+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C571E4FC1C42BA8200D82E31 /* Dictionary+Category.swift */; };
 		C58197101C87441200A871A8 /* CheckListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581970F1C87441200A871A8 /* CheckListHeaderView.swift */; };
 		C58A584F1C82F24900550BB0 /* CheckListRDCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A584E1C82F24900550BB0 /* CheckListRDCViewController.swift */; };
 		C58A58511C82F25500550BB0 /* CheckListMovingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A58501C82F25500550BB0 /* CheckListMovingViewController.swift */; };
 		C58A58531C82F26900550BB0 /* CheckListPreSettleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58A58521C82F26900550BB0 /* CheckListPreSettleViewController.swift */; };
+		C599A04B1D7BFF56008ABD5A /* RepayHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C599A04A1D7BFF56008ABD5A /* RepayHandler.swift */; };
 		C59C2B441BE8B29F0040855F /* UIImage+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B431BE8B29F0040855F /* UIImage+Util.swift */; };
 		C59C2B461BE8B89B0040855F /* AbacusHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B451BE8B89B0040855F /* AbacusHomeViewController.swift */; };
 		C59C2B481BE8B8B40040855F /* RepaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B471BE8B8B40040855F /* RepaymentViewController.swift */; };
@@ -34,7 +41,6 @@
 		C59C2B4C1BE8B8CE0040855F /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B4B1BE8B8CE0040855F /* CheckListViewController.swift */; };
 		C59C2B4E1BE8B8DA0040855F /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C2B4D1BE8B8DA0040855F /* ContactUsViewController.swift */; };
 		C5B50D8A1BE88E04007DB454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50D891BE88E04007DB454 /* AppDelegate.swift */; };
-		C5B50D8C1BE88E04007DB454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B50D8B1BE88E04007DB454 /* ViewController.swift */; };
 		C5B50D8F1BE88E04007DB454 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B50D8D1BE88E04007DB454 /* Main.storyboard */; };
 		C5B50D911BE88E04007DB454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B50D901BE88E04007DB454 /* Assets.xcassets */; };
 		C5B50D941BE88E04007DB454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B50D921BE88E04007DB454 /* LaunchScreen.storyboard */; };
@@ -70,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		92F120514D3682B065D7FC03 /* Pods-AbacusSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		ACA5773F1D81BA9A00A9DDF1 /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		ACA577411D81C3ED00A9DDF1 /* ContactUsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsDetailView.swift; sourceTree = "<group>"; };
 		B5064017118B5AE9CAD1D384 /* Pods-AbacusSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift.release.xcconfig"; sourceTree = "<group>"; };
 		C504CB1E1D29397400E86C8E /* CheckListPreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListPreTableViewCell.swift; sourceTree = "<group>"; };
 		C504CB611D2AB89D00E86C8E /* CheckListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListManager.swift; sourceTree = "<group>"; };
@@ -86,11 +94,16 @@
 		C542C77C1BF2224500C3AA35 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		C542C77F1BF2299600C3AA35 /* PickerStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerStateView.swift; sourceTree = "<group>"; };
 		C54B596D1D6B500F00BDC127 /* UITableView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Util.swift"; sourceTree = "<group>"; };
+		C5537C2A1D7D542800CE576C /* ContactFollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactFollowTableViewCell.swift; sourceTree = "<group>"; };
+		C5537C2B1D7D542800CE576C /* ContactUsNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsNormalCell.swift; sourceTree = "<group>"; };
+		C5537C341D7DB66B00CE576C /* ContactUsQRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsQRView.swift; sourceTree = "<group>"; };
+		C5537C361D7DC23800CE576C /* ContactUsFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsFooter.swift; sourceTree = "<group>"; };
 		C571E4FC1C42BA8200D82E31 /* Dictionary+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Category.swift"; sourceTree = "<group>"; };
 		C581970F1C87441200A871A8 /* CheckListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListHeaderView.swift; sourceTree = "<group>"; };
 		C58A584E1C82F24900550BB0 /* CheckListRDCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListRDCViewController.swift; sourceTree = "<group>"; };
 		C58A58501C82F25500550BB0 /* CheckListMovingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListMovingViewController.swift; sourceTree = "<group>"; };
 		C58A58521C82F26900550BB0 /* CheckListPreSettleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListPreSettleViewController.swift; sourceTree = "<group>"; };
+		C599A04A1D7BFF56008ABD5A /* RepayHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepayHandler.swift; sourceTree = "<group>"; };
 		C59C2B431BE8B29F0040855F /* UIImage+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Util.swift"; sourceTree = "<group>"; };
 		C59C2B451BE8B89B0040855F /* AbacusHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbacusHomeViewController.swift; sourceTree = "<group>"; };
 		C59C2B471BE8B8B40040855F /* RepaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepaymentViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +112,6 @@
 		C59C2B4D1BE8B8DA0040855F /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		C5B50D861BE88E04007DB454 /* AbacusSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbacusSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B50D891BE88E04007DB454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C5B50D8B1BE88E04007DB454 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C5B50D8E1BE88E04007DB454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5B50D901BE88E04007DB454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5B50D931BE88E04007DB454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -190,6 +202,26 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		C5537C291D7D540300CE576C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C5537C2A1D7D542800CE576C /* ContactFollowTableViewCell.swift */,
+				C5537C2B1D7D542800CE576C /* ContactUsNormalCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C5537C331D7DB63500CE576C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5537C341D7DB66B00CE576C /* ContactUsQRView.swift */,
+				C5537C361D7DC23800CE576C /* ContactUsFooter.swift */,
+				ACA5773F1D81BA9A00A9DDF1 /* PageControl.swift */,
+				ACA577411D81C3ED00A9DDF1 /* ContactUsDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C571E4F91C42B9D100D82E31 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +236,13 @@
 				C581970F1C87441200A871A8 /* CheckListHeaderView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		C599A04C1D7C0A1D008ABD5A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C5B50D7D1BE88E04007DB454 = {
@@ -233,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				C5B50D891BE88E04007DB454 /* AppDelegate.swift */,
-				C5B50D8B1BE88E04007DB454 /* ViewController.swift */,
 				C5B50DB91BE88EE4007DB454 /* TabBarController.swift */,
 				C5053DDD1C0734230019EF9F /* Define.swift */,
 				C5BD06641BE8BB8A006AC24A /* Internationalization */,
@@ -292,7 +330,9 @@
 		C5B50DBD1BE88FEA007DB454 /* Repayment */ = {
 			isa = PBXGroup;
 			children = (
+				C599A04C1D7C0A1D008ABD5A /* View */,
 				C59C2B471BE8B8B40040855F /* RepaymentViewController.swift */,
+				C599A04A1D7BFF56008ABD5A /* RepayHandler.swift */,
 			);
 			path = Repayment;
 			sourceTree = "<group>";
@@ -326,6 +366,8 @@
 		C5B50DC01BE89000007DB454 /* ContactUs */ = {
 			isa = PBXGroup;
 			children = (
+				C5537C331D7DB63500CE576C /* Views */,
+				C5537C291D7D540300CE576C /* Cells */,
 				C59C2B4D1BE8B8DA0040855F /* ContactUsViewController.swift */,
 			);
 			path = ContactUs;
@@ -447,7 +489,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "William Zhang";
+				ORGANIZATIONNAME = Money;
 				TargetAttributes = {
 					C5B50D851BE88E04007DB454 = {
 						CreatedOnToolsVersion = 7.1;
@@ -569,27 +611,33 @@
 				C59C2B481BE8B8B40040855F /* RepaymentViewController.swift in Sources */,
 				C59C2B4C1BE8B8CE0040855F /* CheckListViewController.swift in Sources */,
 				C542C7801BF2299600C3AA35 /* PickerStateView.swift in Sources */,
+				C5537C2C1D7D542800CE576C /* ContactFollowTableViewCell.swift in Sources */,
 				C504CB621D2AB89D00E86C8E /* CheckListManager.swift in Sources */,
 				C54B596E1D6B500F00BDC127 /* UITableView+Util.swift in Sources */,
 				C5B50DCC1BE89EB5007DB454 /* UIView+Util.swift in Sources */,
 				C58A58511C82F25500550BB0 /* CheckListMovingViewController.swift in Sources */,
+				C5537C2D1D7D542800CE576C /* ContactUsNormalCell.swift in Sources */,
 				C5053DDE1C0734230019EF9F /* Define.swift in Sources */,
 				C5053DE01C074A3E0019EF9F /* HandleManager.swift in Sources */,
 				C51814871C665D2300BC9A7A /* LoanService.swift in Sources */,
 				C51EBBC51BEF2E3A00FA0BC1 /* TextFieldTableViewCell.swift in Sources */,
 				C51EBBCB1BEF4A9000FA0BC1 /* String+Util.swift in Sources */,
+				C5537C371D7DC23800CE576C /* ContactUsFooter.swift in Sources */,
 				C542C77D1BF2224500C3AA35 /* SwitchTableViewCell.swift in Sources */,
 				C5E7E4811BE8EAB500F26D69 /* README.md in Sources */,
 				C5B50DC41BE89051007DB454 /* BaseViewController.swift in Sources */,
+				C599A04B1D7BFF56008ABD5A /* RepayHandler.swift in Sources */,
+				C5537C351D7DB66B00CE576C /* ContactUsQRView.swift in Sources */,
 				C5BD06661BE8BC0E006AC24A /* MyLocalDefine.swift in Sources */,
 				C5B50DBA1BE88EE4007DB454 /* TabBarController.swift in Sources */,
-				C5B50D8C1BE88E04007DB454 /* ViewController.swift in Sources */,
 				C50BD5191C03606E001938FC /* UIFont+Util.swift in Sources */,
 				C58197101C87441200A871A8 /* CheckListHeaderView.swift in Sources */,
 				C58A58531C82F26900550BB0 /* CheckListPreSettleViewController.swift in Sources */,
 				C5B50D8A1BE88E04007DB454 /* AppDelegate.swift in Sources */,
 				C58A584F1C82F24900550BB0 /* CheckListRDCViewController.swift in Sources */,
 				C50BD5171C035E94001938FC /* StampDutyDetailView.swift in Sources */,
+				ACA577401D81BA9A00A9DDF1 /* PageControl.swift in Sources */,
+				ACA577421D81C3ED00A9DDF1 /* ContactUsDetailView.swift in Sources */,
 				C50C66581C32D495000CDF4E /* StampDutyComparisonView.swift in Sources */,
 				C59C2B4E1BE8B8DA0040855F /* ContactUsViewController.swift in Sources */,
 				C571E4FD1C42BA8200D82E31 /* Dictionary+Category.swift in Sources */,
