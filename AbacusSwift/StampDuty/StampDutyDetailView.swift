@@ -17,78 +17,79 @@ class StampDutyDetailView: UIView {
         backgroundColor = UIColor.themeGray()
         
         addSubview(titleLabel)
-        titleLabel.snp_makeConstraints { (make) -> Void in
+        titleLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self).offset(20)
             make.top.equalTo(self).offset(10 + marginYFrom320() / 2)
         }
         
         addSubview(subTitleLabel)
-        subTitleLabel.snp_makeConstraints { (make) -> Void in
+        subTitleLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(titleLabel)
-            make.top.equalTo(titleLabel.snp_bottom).offset(12)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
         }
         
         addSubview(grantButton)
-        grantButton.snp_makeConstraints { (make) -> Void in
+        grantButton.snp.makeConstraints { (make) -> Void in
             make.bottom.equalTo(self).offset(-30)
             make.left.equalTo(self).offset(20)
             make.right.equalTo(self).offset(-15)
         }
         
-        (
-            addSubview(stampDutyLabel),addSubview(transferLabel),addSubview(registLabel),addSubview(totalLabel),
-            stampDutyLabel.snp_makeConstraints { (make) -> Void in
-                make.top.equalTo(subTitleLabel.snp_bottom)
-                make.left.equalTo(subTitleLabel)
-            },
-            transferLabel.snp_makeConstraints { (make) -> Void in
-                make.top.equalTo(stampDutyLabel.snp_bottom)
-                make.left.height.width.equalTo(stampDutyLabel)
-            },
-            registLabel.snp_makeConstraints { (make) -> Void in
-                make.top.equalTo(transferLabel.snp_bottom)
-                make.left.height.width.equalTo(stampDutyLabel)
-            },
-            totalLabel.snp_makeConstraints(closure: { (make) -> Void in
-                make.top.equalTo(registLabel.snp_bottom)
-                make.left.height.width.equalTo(stampDutyLabel)
-                make.bottom.equalTo(grantButton.snp_top).offset(-25)
-            })
-        )
+        
+        addSubview(stampDutyLabel); addSubview(transferLabel); addSubview(registLabel); addSubview(totalLabel)
+        stampDutyLabel.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(subTitleLabel.snp.bottom)
+            make.left.equalTo(subTitleLabel)
+        }
+        
+        transferLabel.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(stampDutyLabel.snp.bottom)
+            make.left.height.width.equalTo(stampDutyLabel)
+        }
+        
+        registLabel.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(transferLabel.snp.bottom)
+            make.left.height.width.equalTo(stampDutyLabel)
+        }
+        
+        totalLabel.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(registLabel.snp.bottom)
+            make.left.height.width.equalTo(stampDutyLabel)
+            make.bottom.equalTo(grantButton.snp.top).offset(-25)
+        }
         
         addSubview(disclaimerButton)
-        disclaimerButton.snp_makeConstraints { (make) -> Void in
+        disclaimerButton.snp.makeConstraints { (make) -> Void in
             make.centerY.equalTo(titleLabel)
             make.right.equalTo(grantButton)
         }
         
-        (
-            addSubview(stampDutyMoneyLabel),addSubview(transferMoneyLabel),addSubview(registMoneyLabel),addSubview(totalMoneyLabel),
-            stampDutyMoneyLabel.snp_makeConstraints(closure: { (make) -> Void in
-                make.centerY.equalTo(stampDutyLabel)
-                make.right.equalTo(disclaimerButton)
-                make.left.greaterThanOrEqualTo(stampDutyLabel.snp_right).offset(10)
-            }),
-            transferMoneyLabel.snp_makeConstraints(closure: { (make) -> Void in
-                make.centerY.equalTo(transferLabel)
-                make.right.left.equalTo(stampDutyMoneyLabel)
-            }),
-            registMoneyLabel.snp_makeConstraints(closure: { (make) -> Void in
-                make.centerY.equalTo(registLabel)
-                make.left.right.equalTo(stampDutyMoneyLabel)
-            }),
-            totalMoneyLabel.snp_makeConstraints(closure: { (make) -> Void in
-                make.centerY.equalTo(totalLabel)
-                make.left.right.equalTo(stampDutyMoneyLabel)
-            })
-        )
+    
+        addSubview(stampDutyMoneyLabel); addSubview(transferMoneyLabel); addSubview(registMoneyLabel); addSubview(totalMoneyLabel);
+        stampDutyMoneyLabel.snp.makeConstraints( { (make) -> Void in
+            make.centerY.equalTo(stampDutyLabel)
+            make.right.equalTo(disclaimerButton)
+            make.left.greaterThanOrEqualTo(stampDutyLabel.snp.right).offset(10)
+        })
+        transferMoneyLabel.snp.makeConstraints( { (make) -> Void in
+            make.centerY.equalTo(transferLabel)
+            make.right.left.equalTo(stampDutyMoneyLabel)
+        })
+        registMoneyLabel.snp.makeConstraints({ (make) -> Void in
+            make.centerY.equalTo(registLabel)
+            make.left.right.equalTo(stampDutyMoneyLabel)
+        })
+        totalMoneyLabel.snp.makeConstraints({ (make) -> Void in
+            make.centerY.equalTo(totalLabel)
+            make.left.right.equalTo(stampDutyMoneyLabel)
+        })
     
         let seperatorContentView: UIView = {
             let view = UIView()
             let seperatorLine = UIView()
             seperatorLine.backgroundColor = UIColor.themeGreen()
             view.addSubview(seperatorLine)
-            seperatorLine.snp_makeConstraints { (make) -> Void in
+            seperatorLine.snp.makeConstraints { (make) -> Void in
                 make.left.right.centerY.equalTo(view)
                 make.height.equalTo(1.5)
             }
@@ -96,11 +97,11 @@ class StampDutyDetailView: UIView {
         }()
         
         addSubview(seperatorContentView)
-        seperatorContentView.snp_makeConstraints { (make) -> Void in
+        seperatorContentView.snp.makeConstraints { (make) -> Void in
             make.right.equalTo(disclaimerButton)
             make.width.equalTo(135)
-            make.top.equalTo(registMoneyLabel.snp_bottom)
-            make.bottom.equalTo(totalMoneyLabel.snp_top)
+            make.top.equalTo(registMoneyLabel.snp.bottom)
+            make.bottom.equalTo(totalMoneyLabel.snp.top)
         }
     }
 
@@ -109,37 +110,37 @@ class StampDutyDetailView: UIView {
     }
     
 // MARK: - Button Click
-    @objc private func clickToDisclaimer() {
-        let appDelegate = UIApplication.sharedApplication().delegate
+    @objc fileprivate func clickToDisclaimer() {
+        let appDelegate = UIApplication.shared.delegate
         
-        let alertVC = UIAlertController(title: nil, message: STAMPDUTY_GRAPH_1_DISCLAIMER_CONTENT(), preferredStyle: .Alert)
-        alertVC.addAction(UIAlertAction(title: DONE(), style: .Default, handler: nil))
-        appDelegate?.window??.rootViewController?.presentViewController(alertVC, animated: true, completion: nil)
+        let alertVC = UIAlertController(title: nil, message: STAMPDUTY_GRAPH_1_DISCLAIMER_CONTENT(), preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: DONE(), style: .default, handler: nil))
+        appDelegate?.window??.rootViewController?.present(alertVC, animated: true, completion: nil)
     }
     
-    @objc private func clickToGrant() {
-        let appDelegate = UIApplication.sharedApplication().delegate
+    @objc fileprivate func clickToGrant() {
+        let appDelegate = UIApplication.shared.delegate
         
-        let url = NSURL(string:grantURL!)!
-        let safariVC = SFSafariViewController(URL: url)
-        appDelegate?.window??.rootViewController?.presentViewController(safariVC, animated: true, completion: nil)
+        let url = URL(string:grantURL!)!
+        let safariVC = SFSafariViewController(url: url)
+        appDelegate?.window??.rootViewController?.present(safariVC, animated: true, completion: nil)
     }
     
 // MARK: - Interface Method
-    func setData(result: stampDutyType) {
+    func setData(_ result: stampDutyType) {
         titleLabel.text = result.pickerFullTitle
         
         let dict = [
             NSFontAttributeName:UIFont.font_hn_regular(15)!,
             NSForegroundColorAttributeName:UIColor.themeGreen(),
-            NSUnderlineStyleAttributeName:NSUnderlineStyle.StyleSingle .rawValue
-        ]
+            NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle .rawValue
+        ] as [String : Any]
         
         let grant = NSMutableAttributedString(string: STAMPDUTY_GRAPH_1_CONCESSION() + "\n" + result.url, attributes: dict)
         
         let range = NSMakeRange(0, STAMPDUTY_GRAPH_1_CONCESSION().characters.count)
         grant.addAttribute(NSFontAttributeName, value: UIFont.font_hn_regular(13)!, range: range)
-        grantButton.setAttributedTitle(grant, forState: .Normal)
+        grantButton.setAttributedTitle(grant, for: UIControlState())
         
         stampDutyMoneyLabel.text = result.stampduty.moneyFormatter()
         transferMoneyLabel.text  = result.transfer.moneyFormatter()
@@ -148,7 +149,7 @@ class StampDutyDetailView: UIView {
     }
     
 // MARK: - Private Method
-    private func createLabel(title: String) -> UILabel {
+    fileprivate func createLabel(_ title: String) -> UILabel {
         let label = UILabel()
         label.font = UIFont.font_hn_bold(20)
         label.textColor = UIColor.themeGreen()
@@ -156,37 +157,37 @@ class StampDutyDetailView: UIView {
         return label
     }
     
-    private func createMoneyLabel() -> UILabel {
+    fileprivate func createMoneyLabel() -> UILabel {
         let label = UILabel()
         label.font = UIFont.font_hn_medium(24)
         label.textColor = UIColor.themeGreen()
         label.adjustsFontSizeToFitWidth = true
-        label.textAlignment = .Right
+        label.textAlignment = .right
         return label
     }
 // MARK: - Initializer
-    private lazy var titleLabel: UILabel = {
+    fileprivate lazy var titleLabel: UILabel = {
         let lazyLabel = UILabel()
         lazyLabel.font = UIFont.font_hn_ultralight(21)
         lazyLabel.textColor = UIColor.themeGreen()
         return lazyLabel
     }()
     
-    private lazy var disclaimerButton: UIButton = {
+    fileprivate lazy var disclaimerButton: UIButton = {
         let lazyButton = UIButton()
         let attriString = NSAttributedString(
             string: STAMPDUTY_GRAPH_1_DISCLAIMER(),
             attributes: [
                 NSFontAttributeName:UIFont.font_hn_light(12)!,
                 NSForegroundColorAttributeName:UIColor.themeGreen(),
-                NSUnderlineStyleAttributeName:NSUnderlineStyle.StyleSingle.rawValue
+                NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue
             ])
-        lazyButton.setAttributedTitle(attriString, forState: .Normal)
-        lazyButton.addTarget(self, action: #selector(StampDutyDetailView.clickToDisclaimer), forControlEvents: .TouchUpInside)
+        lazyButton.setAttributedTitle(attriString, for: UIControlState())
+        lazyButton.addTarget(self, action: #selector(StampDutyDetailView.clickToDisclaimer), for: .touchUpInside)
         return lazyButton
     }()
     
-    private lazy var subTitleLabel: UILabel = {
+    fileprivate lazy var subTitleLabel: UILabel = {
         let lazyLabel = UILabel()
         lazyLabel.font = UIFont.font_hn_bold(12)
         lazyLabel.textColor = UIColor.themeGreen()
@@ -194,22 +195,22 @@ class StampDutyDetailView: UIView {
         return lazyLabel
     }()
     
-    private lazy var grantButton: UIButton = {
+    fileprivate lazy var grantButton: UIButton = {
         let lazyButton = UIButton()
         lazyButton.titleLabel?.numberOfLines = 0
-        lazyButton.addTarget(self, action: #selector(StampDutyDetailView.clickToGrant), forControlEvents: .TouchUpInside)
+        lazyButton.addTarget(self, action: #selector(StampDutyDetailView.clickToGrant), for: .touchUpInside)
         return lazyButton
     }()
     
-    private lazy var stampDutyLabel: UILabel = self.createLabel(STAMPDUTY_GRAPH_1_STAMPDUTY())
-    private lazy var transferLabel: UILabel  = self.createLabel(STAMPDUTY_GRAPH_1_TRANSFERFEE())
-    private lazy var registLabel: UILabel    = self.createLabel(STAMPDUTY_GRAPH_1_REGISTRATION())
-    private lazy var totalLabel: UILabel     = self.createLabel(STAMPDUTY_GRAPH_1_TOTAL())
+    fileprivate lazy var stampDutyLabel: UILabel = self.createLabel(STAMPDUTY_GRAPH_1_STAMPDUTY())
+    fileprivate lazy var transferLabel: UILabel  = self.createLabel(STAMPDUTY_GRAPH_1_TRANSFERFEE())
+    fileprivate lazy var registLabel: UILabel    = self.createLabel(STAMPDUTY_GRAPH_1_REGISTRATION())
+    fileprivate lazy var totalLabel: UILabel     = self.createLabel(STAMPDUTY_GRAPH_1_TOTAL())
     
-    private lazy var stampDutyMoneyLabel: UILabel = self.createMoneyLabel()
-    private lazy var transferMoneyLabel: UILabel  = self.createMoneyLabel()
-    private lazy var registMoneyLabel: UILabel    = self.createMoneyLabel()
-    private lazy var totalMoneyLabel: UILabel     = self.createMoneyLabel()
+    fileprivate lazy var stampDutyMoneyLabel: UILabel = self.createMoneyLabel()
+    fileprivate lazy var transferMoneyLabel: UILabel  = self.createMoneyLabel()
+    fileprivate lazy var registMoneyLabel: UILabel    = self.createMoneyLabel()
+    fileprivate lazy var totalMoneyLabel: UILabel     = self.createMoneyLabel()
     
-    private var grantURL: String?
+    fileprivate var grantURL: String?
 }

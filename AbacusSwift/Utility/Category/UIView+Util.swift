@@ -13,49 +13,45 @@ extension UIView {
     public var expandSize: CGSize {
         get {
             if let value: NSValue = objc_getAssociatedObject(self, &AssociatedKeys.expandSizeKey) as? NSValue {
-                return value.CGSizeValue()
+                return value.cgSizeValue
             }
             self.expandSize = CGSize.zero
             return CGSize.zero
         }
         
         set {
-            objc_setAssociatedObject(self, &AssociatedKeys.expandSizeKey, NSValue(CGSize: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.expandSizeKey, NSValue(cgSize: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     };
 }
 
+private let once: Void = {
+    let originalSelector = #selector(getter: UIView.intrinsicContentSize)
+    let swizzledSelector = #selector(UIView.wz_intrinsicContentSize)
+    
+    let originalMethod = class_getClassMethod(UIView.self, originalSelector)
+    let swizzledMethod = class_getClassMethod(UIView.self, swizzledSelector)
+    
+    if class_addMethod(UIView.self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod)) {
+        class_replaceMethod(UIView.self, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod)
+    }
+}()
+
 extension UIView {
-    private struct AssociatedKeys {
+    fileprivate struct AssociatedKeys {
         static var expandSizeKey = "wz_expandSize"
     }
     
-    public override class func initialize() {
-        struct Static {
-            static var token: dispatch_once_t = 0
-        }
-        
+    open override class func initialize() {
         if self != UIView.self {
             return
         }
-        
-        dispatch_once(&Static.token) {
-            let originalSelector = #selector(UIView.intrinsicContentSize)
-            let swizzledSelector = #selector(UIView.wz_intrinsicContentSize)
-            
-            let originalMethod = class_getClassMethod(self, originalSelector)
-            let swizzledMethod = class_getClassMethod(self, swizzledSelector)
-            
-            if class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod)) {
-                class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
-            } else {
-                method_exchangeImplementations(originalMethod, swizzledMethod)
-            }
-        }
+        _ = once
     }
     
-    
-    @objc private func wz_intrinsicContentSize() -> CGSize {
+    @objc fileprivate func wz_intrinsicContentSize() -> CGSize {
         var size = self.wz_intrinsicContentSize();
         size.width += self.expandSize.width
         size.height += self.expandSize.height

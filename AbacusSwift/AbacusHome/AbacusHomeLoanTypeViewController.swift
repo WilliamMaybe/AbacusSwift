@@ -10,13 +10,13 @@ import UIKit
 import SafariServices
 
 public enum LoanTypes: Int {
-    case Residential, Commercial
+    case residential, commercial
     
     var title: String {
         get {
             switch self {
-            case .Residential: return ABACUS_LOAN_TITLE_1()
-            case.Commercial:   return ABACUS_LOAN_TITLE_2()
+            case .residential: return ABACUS_LOAN_TITLE_1()
+            case.commercial:   return ABACUS_LOAN_TITLE_2()
             }
         }
     }
@@ -24,16 +24,16 @@ public enum LoanTypes: Int {
 
 class AbacusHomeLoanTypeViewController: UITableViewController {
     
-    private var loanType = LoanTypes.Residential
-    private var dataArray = [LoanModel]()
-    private var page = 0 // API use
+    fileprivate var loanType = LoanTypes.residential
+    fileprivate var dataArray = [LoanModel]()
+    fileprivate var page = 0 // API use
     
-    private lazy var moreButton: UIButton = {
+    fileprivate lazy var moreButton: UIButton = {
         let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: self.view.frame.width, height: 50)))
         
-        button.addTarget(self, action: #selector(AbacusHomeLoanTypeViewController.loadNextPage), forControlEvents: .TouchUpInside)
-        button.setTitleColor(UIColor.grayColor(), forState: .Normal)
-        button.titleLabel?.font = UIFont.systemFontOfSize(14)
+        button.addTarget(self, action: #selector(loadNextPage), for: .touchUpInside)
+        button.setTitleColor(UIColor.gray, for: UIControlState())
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         
         return button
     }()
@@ -51,8 +51,7 @@ class AbacusHomeLoanTypeViewController: UITableViewController {
         super.viewDidLoad()
         
         refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(AbacusHomeLoanTypeViewController.pullToRefresh), forControlEvents: .ValueChanged)
-        
+        refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         tableView.backgroundColor = UIColor.themeGray()
         
         title = loanType.title
@@ -65,29 +64,29 @@ class AbacusHomeLoanTypeViewController: UITableViewController {
 extension AbacusHomeLoanTypeViewController {
     func pullToRefresh() {
         refreshControl?.beginRefreshing()
-        moreButton.enabled = false
+        moreButton.isEnabled = false
         request(0)
     }
     
     func loadNextPage() {
-        moreButton.setTitle("loading...", forState: .Normal)
-        moreButton.enabled = false
+        moreButton.setTitle("loading...", for: UIControlState())
+        moreButton.isEnabled = false
         request(self.page)
     }
     
-    func handleButtonState(total: Int) {
+    func handleButtonState(_ total: Int) {
         if (dataArray.count >= total) {
             tableView.tableFooterView = nil
         } else {
             tableView.tableFooterView = moreButton
-            moreButton.setTitle("read more", forState: .Normal)
-            moreButton.enabled = true
+            moreButton.setTitle("read more", for: UIControlState())
+            moreButton.isEnabled = true
         }
     }
     
     // MARK: - Request API
-    private func request(page: Int) {
-        let requestType = (loanType == .Residential) ? Loan.Residential(page) : .Commercial(page)
+    fileprivate func request(_ page: Int) {
+        let requestType = (loanType == .residential) ? Loan.residential(page) : .commercial(page)
         
         requestType.request(success: { (loanArray, total) -> Void in
             self.page += 1
@@ -98,7 +97,7 @@ extension AbacusHomeLoanTypeViewController {
             self.dataArray += loanArray
             self.tableView.reloadData()
             
-            if (self.refreshControl?.refreshing == true) {
+            if (self.refreshControl?.isRefreshing == true) {
                 self.refreshControl?.endRefreshing()
             }
             
@@ -107,49 +106,49 @@ extension AbacusHomeLoanTypeViewController {
             }, failure: {(errorMessage) -> Void in
                 print(errorMessage)
                 self.refreshControl?.endRefreshing()
-                self.moreButton.enabled = true
+                self.moreButton.isEnabled = true
         })
     }
 }
 
 // MARK: - UITableView Delegate & DataSource
 extension AbacusHomeLoanTypeViewController {
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell")
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         if cell == nil  {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
-            cell?.accessoryType = .DisclosureIndicator
+            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+            cell?.accessoryType = .disclosureIndicator
             cell?.textLabel!.textColor = UIColor.themeGreen()
         }
         
-        let model = dataArray[indexPath.row]
+        let model = dataArray[(indexPath as NSIndexPath).row]
         cell?.textLabel?.text = model.title
         
         return cell!
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView .deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView .deselectRow(at: indexPath, animated: true)
     
-        let model = dataArray[indexPath.row]
+        let model = dataArray[(indexPath as NSIndexPath).row]
     
-        guard let url = NSURL(string: Loan.Residential(0).baseURL + "/html/NewDetail.html?id=" + model.newsId) else {
+        guard let url = URL(string: Loan.residential(0).baseURL + "/html/NewDetail.html?id=" + model.newsId) else {
             return
         }
     
-        let safariVC = SFSafariViewController(URL: url)
-        presentViewController(safariVC, animated: true, completion: nil)
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true, completion: nil)
     }
 }

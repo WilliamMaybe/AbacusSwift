@@ -17,7 +17,7 @@ public enum TextFieldCellMode {
 class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     class func identifier() -> String {
-        return String(self)
+        return String(describing: self)
     }
     
     var mode = TextFieldCellMode.money
@@ -25,46 +25,46 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     lazy var titleLabel: UILabel = {
        let lazyLabel = UILabel()
         lazyLabel.textColor = UIColor.themeGreen()
-        lazyLabel.setContentCompressionResistancePriority(UILayoutPriorityRequired, forAxis: .Vertical)
+        lazyLabel.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .vertical)
         return lazyLabel
     }()
     
-    private lazy var textField: UITextField = {
+    fileprivate lazy var textField: UITextField = {
         let lazyTextField = UITextField()
         lazyTextField.textColor = UIColor.themeGreen()
         lazyTextField.font = UIFont.font_hn_light(17)
-        lazyTextField.textAlignment = .Right
-        lazyTextField.keyboardType = .NumberPad
+        lazyTextField.textAlignment = .right
+        lazyTextField.keyboardType = .numberPad
         lazyTextField.delegate = self
-        lazyTextField.clearButtonMode = .WhileEditing
+        lazyTextField.clearButtonMode = .whileEditing
         
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(self.frame), height: 40))
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: lazyTextField, action: #selector(UIResponder.resignFirstResponder))
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 40))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: lazyTextField, action: #selector(UIResponder.resignFirstResponder))
         doneButton.tintColor = UIColor.themeGreen()
-        toolBar.items = [UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil), doneButton]
+        toolBar.items = [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton]
         
         lazyTextField.inputAccessoryView = toolBar
         
         return lazyTextField
     }()
     
-    private var finishedClosure :((Double)->Void)?
+    fileprivate var finishedClosure :((Double)->Void)?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        selectionStyle = .None
-        accessoryType = .DisclosureIndicator
+        selectionStyle = .none
+        accessoryType = .disclosureIndicator
         
         contentView.addSubview(titleLabel)
-        titleLabel.snp_makeConstraints { (make) -> Void in
+        titleLabel.snp.makeConstraints { (make) -> Void in
             make.centerY.equalTo(contentView)
             make.left.equalTo(contentView).offset(15)
         }
         
         contentView.addSubview(textField)
-        textField.snp_makeConstraints { (make) -> Void in
+        textField.snp.makeConstraints { (make) -> Void in
             make.top.bottom.right.equalTo(contentView)
-            make.left.equalTo(titleLabel.snp_right).offset(10)
+            make.left.equalTo(titleLabel.snp.right).offset(10)
         }
     }
 
@@ -73,25 +73,24 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
 // MARK: - Interface Method
-    func textFinished(finished: (Double)->Void) {
+    func textFinished(_ finished: @escaping (Double)->Void) {
         finishedClosure = finished
     }
     
-    func setTextFieldText(text: String) {
+    func setTextFieldText(_ text: String) {
         textField.text = text
     }
     
 // MARK: - UITextField Delegate
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if mode != .money {
             return true
         }
         
-        var finalString = textField.text!
+        var nsString = textField.text! as NSString
+        nsString = nsString.replacingCharacters(in: range, with: string) as NSString
         
-        if let swRange = finalString.rangeFromNSRange(range) {
-            finalString = finalString.stringByReplacingCharactersInRange(swRange, withString: string)
-        }
+        var finalString = String(nsString)
         
         if finalString == "" {
             return false
@@ -105,23 +104,23 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
             finalString = "$" + finalString
         }
         
-        finalString = finalString.substringFromIndex(finalString.startIndex.advancedBy(1))
-        finalString = finalString.stringByReplacingOccurrencesOfString(",", withString: "")
+        finalString = finalString.substring(from: finalString.characters.index(finalString.startIndex, offsetBy: 1))
+        finalString = finalString.replacingOccurrences(of: ",", with: "")
         
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.locale = NSLocale(localeIdentifier: "en-AU")
-        numberFormatter.numberStyle = .DecimalStyle
-        numberFormatter.roundingMode = .RoundDown
+        let numberFormatter = NumberFormatter()
+        numberFormatter.locale = Locale(identifier: "en-AU")
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.roundingMode = .down
         
-        let number = NSNumber(longLong: Int64(finalString) ?? 0)
-        finalString = numberFormatter.stringFromNumber(number)!
+        let number = NSNumber(value: Int64(finalString) ?? 0 as Int64)
+        finalString = numberFormatter.string(from: number)!
         
         textField.text = "$" + finalString
         
         return false
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         var data: Double = 0
         let text = textField.text ?? ""
 
@@ -130,8 +129,8 @@ class TextFieldTableViewCell: UITableViewCell, UITextFieldDelegate {
             if text.characters.count == 0 {
                 textField.text = "$0"
             } else {
-                let tmp = (text as NSString).substringFromIndex(1)
-                data = Double(tmp.stringByReplacingOccurrencesOfString(",", withString: "")) ?? 0
+                let tmp = (text as NSString).substring(from: 1)
+                data = Double(tmp.replacingOccurrences(of: ",", with: "")) ?? 0
             }
         case .rate:
             data = Double(text) ?? 0

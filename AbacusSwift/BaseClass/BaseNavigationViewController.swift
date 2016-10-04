@@ -14,13 +14,13 @@ class BaseNavigationViewController: UINavigationController {
         super.viewDidLoad()
 
         navigationBar.barTintColor = UIColor.themeGreen()
-        navigationBar.tintColor = UIColor.whiteColor()
+        navigationBar.tintColor = UIColor.white
         
         navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName:UIColor.whiteColor(),
+            NSForegroundColorAttributeName:UIColor.white,
             NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 22)!]
         
-        navigationBar.translucent = false
+        navigationBar.isTranslucent = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,8 +28,8 @@ class BaseNavigationViewController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func pushViewController(viewController: UIViewController, animated: Bool) {
-        viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: BACK(), style: .Plain, target: nil, action: nil)
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: BACK(), style: .plain, target: nil, action: nil)
         super.pushViewController(viewController, animated: true)
     }
     /*

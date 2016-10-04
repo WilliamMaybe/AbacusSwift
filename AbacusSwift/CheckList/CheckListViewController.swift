@@ -10,7 +10,7 @@ import UIKit
 
 class CheckListViewController: UITableViewController {
     
-    private let titleArray = [
+    fileprivate let titleArray = [
         CHECKLIST_TITLE_1(),
         CHECKLIST_TITLE_2(),
         CHECKLIST_TITLE_3()
@@ -24,10 +24,10 @@ class CheckListViewController: UITableViewController {
 }
 
 extension CheckListViewController {
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-        cell.textLabel?.text = titleArray[indexPath.item]
+        cell.textLabel?.text = titleArray[(indexPath as NSIndexPath).item]
         
         return cell
     }

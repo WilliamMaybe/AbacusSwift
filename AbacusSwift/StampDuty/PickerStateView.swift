@@ -10,18 +10,18 @@ import UIKit
 
 class PickerStateView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    private lazy var pickerView: UIPickerView = {
+    fileprivate lazy var pickerView: UIPickerView = {
         let lazyPickerView = UIPickerView()
         lazyPickerView.delegate   = self
         lazyPickerView.dataSource = self
         return lazyPickerView
     }()
     
-    private lazy var toolBar: UIToolbar = {
+    fileprivate lazy var toolBar: UIToolbar = {
         let lazyToolBar = UIToolbar()
         
-        let flexible = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(PickerStateView.clickToDone))
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(PickerStateView.clickToDone))
         doneButton.tintColor = UIColor.themeGreen()
         
         lazyToolBar.setItems([flexible ,doneButton], animated: false)
@@ -30,25 +30,25 @@ class PickerStateView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }()
     
     let pickerArray: [stampDutyType]
-    private var selectedClosure: ((Int) -> Void)?
+    fileprivate var selectedClosure: ((Int) -> Void)?
     
 // MARK: - Life Cycle
     init(pickers: [stampDutyType]) {
         self.pickerArray = pickers
         super.init(frame: CGRect.zero)
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
         
         addSubview(toolBar)
         addSubview(pickerView)
-        toolBar.snp_makeConstraints { (make) -> Void in
+        toolBar.snp.makeConstraints { (make) -> Void in
             make.left.right.top.equalTo(self)
             make.height.equalTo(40)
         }
         
-        pickerView.snp_makeConstraints { (make) -> Void in
+        pickerView.snp.makeConstraints { (make) -> Void in
             make.left.right.bottom.equalTo(self)
-            make.top.equalTo(toolBar.snp_bottom)
+            make.top.equalTo(toolBar.snp.bottom)
             make.height.equalTo(216)
         }
     }
@@ -58,25 +58,25 @@ class PickerStateView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
 
 // MARK: - Interface Method
-    func selectedIndex(selectClosure: (index :Int) -> Void) {
+    func selectedIndex(_ selectClosure: @escaping (_ index :Int) -> Void) {
         selectedClosure = selectClosure
     }
 
 // MARK: - Button Click
-    @objc private func clickToDone() {
-        selectedClosure?(pickerView.selectedRowInComponent(0))
+    @objc fileprivate func clickToDone() {
+        selectedClosure?(pickerView.selectedRow(inComponent: 0))
     }
     
 // MARK: - UIPickerView Delegate & DataSource
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerArray.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerArray[row].pickerFullTitle
     }
 }

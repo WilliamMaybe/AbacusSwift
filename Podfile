@@ -5,9 +5,9 @@ use_frameworks!
 
 target 'AbacusSwift' do
 
-pod 'SnapKit', '~> 0.16.0'
-pod 'Alamofire', '~> 3.1.0'
-pod 'SwiftyJSON', '~> 2.3.2'
+pod 'SnapKit', '~> 3.0.0'
+pod 'Alamofire', '~> 4.0.0'
+pod 'SwiftyJSON', '~> 3.1.0'
 
 end
 

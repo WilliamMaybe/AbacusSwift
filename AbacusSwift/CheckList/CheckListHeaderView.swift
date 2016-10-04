@@ -9,7 +9,7 @@
 import UIKit
 
 class CheckListHeaderView: UITableViewHeaderFooterView {
-    private(set) lazy var titleLabel: UILabel = {
+    fileprivate(set) lazy var titleLabel: UILabel = {
         let label = UILabel()
         
         label.textColor = UIColor.themeGreen()
@@ -24,7 +24,7 @@ class CheckListHeaderView: UITableViewHeaderFooterView {
 
         contentView.backgroundColor = UIColor.color(w: 226)
         contentView.addSubview(titleLabel)
-        titleLabel.snp_makeConstraints { (make) -> Void in
+        titleLabel.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15))
         }
     }

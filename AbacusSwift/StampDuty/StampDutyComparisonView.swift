@@ -26,15 +26,15 @@ class StampDutyComparisonView: UIView {
         backgroundColor = UIColor.themeGray()
         
         addSubview(titleLabel)
-        titleLabel.snp_makeConstraints { (make) -> Void in
+        titleLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self).offset(20)
             make.top.equalTo(self).offset(10 + marginYFrom320() / 2)
         }
         
         addSubview(subTitleLabel)
-        subTitleLabel.snp_makeConstraints { (make) -> Void in
+        subTitleLabel.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(titleLabel)
-            make.top.equalTo(titleLabel.snp_bottom).offset(12)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
         }
         
         var lastView:UIView?
@@ -43,13 +43,13 @@ class StampDutyComparisonView: UIView {
             addSubview(perLine)
             lineArray.append(perLine)
             
-            perLine.snp_makeConstraints(closure: { (make) -> Void in
+            perLine.snp.makeConstraints({ (make) -> Void in
                 make.left.equalTo(self)
                 make.right.equalTo(self).offset(-13)
                 if lastView == nil {
-                    make.top.equalTo(subTitleLabel.snp_bottom)
+                    make.top.equalTo(subTitleLabel.snp.bottom)
                 } else {
-                    make.top.equalTo(lastView!.snp_bottom)
+                    make.top.equalTo(lastView!.snp.bottom)
                     make.height.equalTo(lastView!)
                 }
             })
@@ -57,7 +57,7 @@ class StampDutyComparisonView: UIView {
             lastView = perLine
         }
         
-        lastView?.snp_updateConstraints(closure: { (make) -> Void in
+        lastView?.snp.updateConstraints({ (make) -> Void in
             make.bottom.equalTo(self).offset(-10)
         })
         
@@ -68,7 +68,7 @@ class StampDutyComparisonView: UIView {
     }
 
 // MARK: - Initializer
-    private lazy var subTitleLabel: UILabel = {
+    fileprivate lazy var subTitleLabel: UILabel = {
         let lazyLabel = UILabel()
         lazyLabel.font = UIFont.font_hn_bold(12)
         lazyLabel.textColor = UIColor.themeGreen()
@@ -76,22 +76,22 @@ class StampDutyComparisonView: UIView {
         return lazyLabel
     }()
     
-    private lazy var lineArray: [stampDutyPerLine] = [stampDutyPerLine]()
+    fileprivate lazy var lineArray: [stampDutyPerLine] = [stampDutyPerLine]()
 }
 
 // MARK: - Interface Method
 extension StampDutyComparisonView {
-    func setDatas(datas: [stampDutyType], selectedAtIndex: Int) {
+    func setDatas(_ datas: [stampDutyType], selectedAtIndex: Int) {
         titleLabel.text = datas[selectedAtIndex].pickerFullTitle
         
-        let maxData = datas.maxElement { $0.total < $1.total } as stampDutyType!
+        let maxData = datas.max { $0.total < $1.total } as stampDutyType!
         
         for i in 0..<datas.count {
             let line = lineArray[i]
             let data = datas[i]
             
             line.lineColor((i == selectedAtIndex) ? UIColor.themeYellow() : UIColor.themeGreen())
-            line.setData(data, biggest: maxData.total)
+            line.setData(data, biggest: (maxData?.total)!)
         }
     }
 }
@@ -108,19 +108,19 @@ private class stampDutyPerLine: UIView {
         addSubview(contentView)
         contentView.addSubview(lineView)
         
-        titleLabel.snp_makeConstraints { (make) -> Void in
+        titleLabel.snp.makeConstraints { (make) -> Void in
             make.top.bottom.equalTo(self)
             make.left.equalTo(self).offset(10)
             make.width.equalTo(70)
         }
         
-        moneyLabel.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(titleLabel.snp_right).offset(10)
+        moneyLabel.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(titleLabel.snp.right).offset(10)
             make.centerY.equalTo(titleLabel)
             make.width.equalTo(70)
         }
-        contentView.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(moneyLabel.snp_right).offset(15)
+        contentView.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(moneyLabel.snp.right).offset(15)
             make.height.equalTo(16)
             make.centerY.equalTo(self)
             make.right.equalTo(self)
@@ -132,33 +132,33 @@ private class stampDutyPerLine: UIView {
     }
     
 // MARK: - Interface Method
-    func setData(result: stampDutyType, biggest: Double) {
+    func setData(_ result: stampDutyType, biggest: Double) {
         titleLabel.text = result.pickerTitle
         moneyLabel.text = result.total.moneyFormatter()
         
-        lineView.snp_remakeConstraints { (make) -> Void in
+        lineView.snp.remakeConstraints { (make) -> Void in
             make.left.top.bottom.equalTo(contentView)
             make.width.equalTo(contentView).multipliedBy(result.total / biggest)
         }
         
-        UIView.animateWithDuration(0.2) { () -> Void in
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
             self.layoutIfNeeded()
-        }
+        }) 
     }
     
-    func lineColor(color: UIColor) {
+    func lineColor(_ color: UIColor) {
         lineView.backgroundColor = color
     }
     
 // MARK: - Initializer
-    private lazy var titleLabel: UILabel = {
+    fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.font_hn_light(14)
         label.textColor = UIColor.themeGreen()
         return label
     }()
     
-    private lazy var moneyLabel: UILabel = {
+    fileprivate lazy var moneyLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.font_hn_bold(17)
         label.textColor = UIColor.themeGreen()
@@ -166,9 +166,9 @@ private class stampDutyPerLine: UIView {
         return label
     }()
     
-    private lazy var contentView: UIView = UIView()
+    fileprivate lazy var contentView: UIView = UIView()
     
-    private lazy var lineView: UIView = {
+    fileprivate lazy var lineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.themeGreen()
         

@@ -11,15 +11,15 @@ import SnapKit
 
 class StampDutyViewController: BaseViewController {
     
-    private lazy var tableView: UITableView = {
-        let lazyTableView = UITableView(frame: CGRect.zero, style: .Grouped)
+    fileprivate lazy var tableView: UITableView = {
+        let lazyTableView = UITableView(frame: CGRect.zero, style: .grouped)
         lazyTableView.bounces = false
         lazyTableView.delegate = self
         lazyTableView.dataSource = self
         return lazyTableView
     }()
     
-    private lazy var pickerView: PickerStateView = {
+    fileprivate lazy var pickerView: PickerStateView = {
         let lazyPickerView = PickerStateView(pickers: self.stampdutyEnum)
         lazyPickerView.selectedIndex { (index) -> Void in
             self.stateChanged(index)
@@ -27,7 +27,7 @@ class StampDutyViewController: BaseViewController {
         return lazyPickerView
     }()
     
-    private var stampdutyEnum = [stampDutyType.act(stampDutyModel()),
+    fileprivate var stampdutyEnum = [stampDutyType.act(stampDutyModel()),
                                  .nsw(stampDutyModel()),
                                  .nt(stampDutyModel()),
                                  .qld(stampDutyModel()),
@@ -37,9 +37,9 @@ class StampDutyViewController: BaseViewController {
                                  .wa(stampDutyModel())
                                 ]
     
-    private lazy var scrollView: UIScrollView = {
+    fileprivate lazy var scrollView: UIScrollView = {
         let lazyScroll = UIScrollView()
-        lazyScroll.pagingEnabled = true
+        lazyScroll.isPagingEnabled = true
         lazyScroll.showsHorizontalScrollIndicator = false
         lazyScroll.showsVerticalScrollIndicator = false
         lazyScroll.delegate = self
@@ -47,7 +47,7 @@ class StampDutyViewController: BaseViewController {
         return lazyScroll
     }()
     
-    private lazy var pageControl: UIPageControl = {
+    fileprivate lazy var pageControl: UIPageControl = {
         let lazyPageControl = UIPageControl()
         lazyPageControl.numberOfPages = 2
         lazyPageControl.pageIndicatorTintColor = UIColor.themeLightGreen()
@@ -55,61 +55,61 @@ class StampDutyViewController: BaseViewController {
         return lazyPageControl
     }()
     
-    private lazy var detailView: StampDutyDetailView         = StampDutyDetailView()
-    private lazy var comparisonView: StampDutyComparisonView = {
+    fileprivate lazy var detailView: StampDutyDetailView         = StampDutyDetailView()
+    fileprivate lazy var comparisonView: StampDutyComparisonView = {
         return StampDutyComparisonView(lineCount: self.stampdutyEnum.count)
     }()
     
     /// 选中的省份Index(初始化为0)
-    private lazy var selectedIndex = 0
+    fileprivate lazy var selectedIndex = 0
     /// 初始价格
-    private var propertyValue: Double = 600_000
+    fileprivate var propertyValue: Double = 600_000
     /// 是否自住
-    private var isLiveIn = true
+    fileprivate var isLiveIn = true
     
-    private var bottomConstraint :Constraint?
+    fileprivate var bottomConstraint :Constraint?
     
 // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = STAMPDUTY()
-        navigationItem.leftBarButtonItem  = UIBarButtonItem(title: RESET(), style: .Plain, target: self, action: #selector(StampDutyViewController.clickToReset))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(StampDutyViewController.clickToMail))
+        navigationItem.leftBarButtonItem  = UIBarButtonItem(title: RESET(), style: .plain, target: self, action: #selector(StampDutyViewController.clickToReset))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(StampDutyViewController.clickToMail))
         
         initComponents()
     }
     
-    private func initComponents() {
+    fileprivate func initComponents() {
         view.addSubview(tableView)
-        tableView.snp_makeConstraints { (make) -> Void in
+        tableView.snp.makeConstraints { (make) -> Void in
             make.left.right.top.equalTo(view)
-            make.height.equalTo(3 * tableView(tableView, heightForRowAtIndexPath: NSIndexPath()))
+            make.height.equalTo(3 * tableView(tableView, heightForRowAt: IndexPath()))
         }
         
         view.addSubview(scrollView)
-        scrollView.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(tableView.snp_bottom)
+        scrollView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(tableView.snp.bottom)
             make.left.right.equalTo(view)
-            make.bottom.equalTo(snp_bottomLayoutGuideTop)
+            make.bottom.equalTo(bottomLayoutGuide.snp.top)
         }
         
         view.addSubview(pageControl)
-        pageControl.snp_makeConstraints { (make) -> Void in
+        pageControl.snp.makeConstraints { (make) -> Void in
             make.centerX.equalTo(view)
-            make.bottom.equalTo(snp_bottomLayoutGuideTop)
+            make.bottom.equalTo(bottomLayoutGuide.snp.top)
         }
         
         scrollView.addSubview(detailView)
-        detailView.snp_makeConstraints { (make) -> Void in
+        detailView.snp.makeConstraints { (make) -> Void in
             make.left.top.equalTo(scrollView)
-            make.bottom.equalTo(snp_bottomLayoutGuideTop)
+            make.bottom.equalTo(bottomLayoutGuide.snp.top)
             make.width.equalTo(view)
         }
         
         scrollView.addSubview(comparisonView)
-        comparisonView.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(detailView.snp_right)
+        comparisonView.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(detailView.snp.right)
             make.width.bottom.top.equalTo(detailView)
             make.right.equalTo(scrollView)
         }
@@ -117,23 +117,23 @@ class StampDutyViewController: BaseViewController {
         calculator()
         
         view.addSubview(pickerView)
-        pickerView.snp_makeConstraints { (make) -> Void in
+        pickerView.snp.makeConstraints { (make) -> Void in
             make.left.right.equalTo(view)
-            bottomConstraint = make.top.equalTo(self.snp_bottomLayoutGuideBottom).constraint
+            bottomConstraint = make.top.equalTo(bottomLayoutGuide.snp.bottom).constraint
         }
     }
     
 // MARK: - Button Click
-    @objc private func clickToReset() {
+    @objc fileprivate func clickToReset() {
         
     }
     
-    @objc private func clickToMail() {
+    @objc fileprivate func clickToMail() {
         
     }
     
 // MARK: - Private Method
-    private func cellAtIndex(index:Int) -> UITableViewCell? {
+    fileprivate func cellAtIndex(_ index:Int) -> UITableViewCell? {
         
         struct cells {
             static var firstCell: UITableViewCell?
@@ -146,7 +146,7 @@ class StampDutyViewController: BaseViewController {
             var cell = cells.firstCell
             if (cell != nil) { return cell }
             
-            cell = UITableViewCell(style: .Value1, reuseIdentifier: nil)
+            cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
             cell?.textLabel?.textColor = UIColor.themeGreen()
             cell?.textLabel?.text = STAMPDUTY_TITLE_1()
             cell?.detailTextLabel?.textColor = UIColor.themeGreen()
@@ -157,7 +157,7 @@ class StampDutyViewController: BaseViewController {
         case 1:
             var cell = cells.secondCell
             if (cell == nil) {
-                cell = TextFieldTableViewCell(style: .Default, reuseIdentifier: nil)
+                cell = TextFieldTableViewCell(style: .default, reuseIdentifier: nil)
                 cell?.titleLabel.text = STAMPDUTY_TITLE_2()
             }
             return cell
@@ -165,7 +165,7 @@ class StampDutyViewController: BaseViewController {
         case 2:
             var cell = cells.thirdCell
             if (cell == nil) {
-                cell = SwitchTableViewCell(style: .Default, reuseIdentifier: nil)
+                cell = SwitchTableViewCell(style: .default, reuseIdentifier: nil)
                 cell?.textLabel?.text = STAMPDUTY_TITLE_3()
             }
             return cell
@@ -174,27 +174,27 @@ class StampDutyViewController: BaseViewController {
         }
     }
     
-    private func switchClicked() {
+    fileprivate func switchClicked() {
         isLiveIn = !isLiveIn
-        tableView .reloadRowsAtIndexPaths([NSIndexPath(forRow: 2, inSection: 0)], withRowAnimation: .None)
+        tableView .reloadRows(at: [IndexPath(row: 2, section: 0)], with: .none)
         calculator()
     }
-    private func money(money: Double) {
+    fileprivate func money(_ money: Double) {
         propertyValue = money;
         calculator()
     }
     
-    private func stateChanged(index: Int) {
-        bottomConstraint?.updateOffset(0)
-        UIView.animateWithDuration(0.5) { () -> Void in
+    fileprivate func stateChanged(_ index: Int) {
+        bottomConstraint?.update(offset: 0)
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.view.layoutIfNeeded()
-        }
+        }) 
         selectedIndex = index
-        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .None)
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         calculator()
     }
     
-    private func calculator() {
+    fileprivate func calculator() {
         stampdutyEnum.forEach { (body) in
             var tmp = body
             tmp.money  = propertyValue
@@ -209,19 +209,19 @@ class StampDutyViewController: BaseViewController {
 
 // MARK: - UITableView Delegate & DataSource
 extension StampDutyViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return 0.01}
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { return 0.01}
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat { return 45}
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return 0.01}
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { return 0.01}
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return 45}
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: AnyObject
         
-        cell = cellAtIndex(indexPath.row)!
-        switch indexPath.row {
+        cell = cellAtIndex((indexPath as NSIndexPath).row)!
+        switch (indexPath as NSIndexPath).row {
             case 0:
                 cell.detailTextLabel??.text = stampdutyEnum[selectedIndex].pickerTitle
             case 1:
@@ -240,13 +240,13 @@ extension StampDutyViewController: UITableViewDelegate, UITableViewDataSource {
         return cell as! UITableViewCell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView .deselectRowAtIndexPath(indexPath, animated: true)
-        switch indexPath.row {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView .deselectRow(at: indexPath, animated: true)
+        switch (indexPath as NSIndexPath).row {
         case 0:
             view.endEditing(true)
-            bottomConstraint?.updateOffset(-CGRectGetHeight(pickerView.frame))
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
+            bottomConstraint?.update(offset: -pickerView.frame.height)
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
                 self.view.layoutIfNeeded()
             })
         case 2:
@@ -255,7 +255,7 @@ extension StampDutyViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 // MARK: - UIScrollView Delegate
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        pageControl.currentPage = (Int)(scrollView.contentOffset.x / CGRectGetWidth(view.frame))
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = (Int)(scrollView.contentOffset.x / view.frame.width)
     }
 }

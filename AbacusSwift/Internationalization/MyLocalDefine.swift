@@ -8,10 +8,10 @@
 
 import Foundation
 
-private let userDefault = NSUserDefaults.standardUserDefaults()
+private let userDefault = UserDefaults.standard
 private let languageKey = "userLanguageKey"
 
-private var bundle: NSBundle?
+private var bundle: Bundle?
 
 class InternationalControl {
     
@@ -27,7 +27,7 @@ class InternationalControl {
         
         configureBundle(languageWillChange)
         
-        userDefault.setObject(languageWillChange, forKey: languageKey)
+        userDefault.set(languageWillChange, forKey: languageKey)
         userDefault.synchronize()
     }
     
@@ -38,14 +38,14 @@ class InternationalControl {
      */
     class func checkIfIsEnglish() -> Bool {
         initLanguage()
-        return "en" == userDefault.objectForKey(languageKey) as! String
+        return "en" == userDefault.object(forKey: languageKey) as! String
     }
 }
 
 // MARK: - Private Method
 private extension InternationalControl {
     
-    class func currentBundle() -> NSBundle {
+    class func currentBundle() -> Bundle {
         initLanguage()
         return bundle!
     }
@@ -54,7 +54,7 @@ private extension InternationalControl {
      初始化语言
      */
     class func initLanguage() {
-        var language = userDefault.valueForKey(languageKey) as? String
+        var language = userDefault.value(forKey: languageKey) as? String
         if language != nil {
             if bundle == nil {
                 configureBundle(language!)
@@ -63,32 +63,32 @@ private extension InternationalControl {
             return
         }
         
-        let languages = userDefault.objectForKey("AppleLanguages") as? Array <String>
+        let languages = userDefault.object(forKey: "AppleLanguages") as? Array <String>
         language = languages![0]
         
         var current = "en"
-        if language!.containsString("zh") {
+        if language!.contains("zh") {
             current = "zh-Hant"
         }
         
         configureBundle(current)
         
-        userDefault.setObject(current, forKey: languageKey)
+        userDefault.set(current, forKey: languageKey)
         userDefault.synchronize()
     }
     
-    class func configureBundle(name: String) {
-        let path = NSBundle.mainBundle().pathForResource(name, ofType: "lproj")
-        bundle = NSBundle(path: path!)
+    class func configureBundle(_ name: String) {
+        let path = Bundle.main.path(forResource: name, ofType: "lproj")
+        bundle = Bundle(path: path!)
     }
 }
 
-private func localStringFromKey(key: String) -> String {
-    return InternationalControl.currentBundle().localizedStringForKey(key, value: "", table: nil)
+private func localStringFromKey(_ key: String) -> String {
+    return InternationalControl.currentBundle().localizedString(forKey: key, value: "", table: nil)
 }
 
 /// 返回一个方法
-private func magicString(key: String) -> () -> String {
+private func magicString(_ key: String) -> () -> String {
     return { return localStringFromKey(key) }
 }
 

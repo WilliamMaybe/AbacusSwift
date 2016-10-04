@@ -21,7 +21,7 @@ class TabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func initTab() {
+    fileprivate func initTab() {
         let arrayTitle = [
             ABACUS(),
             REPAYMENT(),
@@ -39,10 +39,10 @@ class TabBarController: UITabBarController {
             
             let item = UITabBarItem(
                 title: arrayTitle[i],
-                image: UIImage(named: imageName)?.imageWithRenderingMode(.AlwaysOriginal),
-                selectedImage: UIImage(named: imageSelectName)?.imageWithRenderingMode(.AlwaysOriginal)
+                image: UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal),
+                selectedImage: UIImage(named: imageSelectName)?.withRenderingMode(.alwaysOriginal)
             )
-            item.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.themeGreen()], forState: .Selected)
+            item.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.themeGreen()], for: .selected)
             
             arrayItem.append(item)
         }
@@ -63,9 +63,9 @@ class TabBarController: UITabBarController {
 }
 
 extension TabBarController {
-    private func checkListNaviVC() -> UIViewController {
+    fileprivate func checkListNaviVC() -> UIViewController {
         let sb = UIStoryboard(name: "CheckList", bundle: nil)
-        let vc = sb.instantiateViewControllerWithIdentifier("CheckListNaviVC")
+        let vc = sb.instantiateViewController(withIdentifier: "CheckListNaviVC")
         return vc
     }
 }

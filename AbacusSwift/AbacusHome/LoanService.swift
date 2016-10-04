@@ -20,57 +20,59 @@ protocol serviceConvertible {
     var baseURL: String { get }
     var path: String { get }
     
-    func request(success success: ([LoanModel], total: Int) -> Void, failure:(String) -> Void)
+    func request(success:@escaping ([LoanModel], _ total: Int) -> Void, failure:@escaping (String) -> Void)
 }
 
 public enum Loan {
-    case Residential(Int)
-    case Commercial(Int)
+    case residential(Int)
+    case commercial(Int)
 }
 
 extension Loan: serviceConvertible {
+    
     var baseURL: String { return "http://52.64.87.191:8011" }
     var path: String {
         let language = InternationalControl.checkIfIsEnglish() ? 0 : 1
         switch self {
-        case .Residential(let page):
+        case .residential(let page):
             return "/api/abacus/loansNew/getlist?LoansType=1&indexPage=\(page)&pageSize=2&keyWord&Lang=\(language)"
-        case .Commercial(let page):
+        case .commercial(let page):
             return "/api/abacus/loansNew/getlist?LoansType=0&indexPage=\(page)&pageSize=10&keyWord&Lang=\(language)"
         }
     }
     
-    func request(success success: ([LoanModel], total: Int) -> Void, failure:(String) -> Void) {
-        Alamofire.request(.GET, (baseURL + path))
-        .responseJSON { response -> Void in
+    func request(success:@escaping ([LoanModel], Int) -> Void, failure: @escaping (String) -> Void) {
+        Alamofire.request(baseURL + path).responseJSON { (response) in
             switch response.result {
-            case .Success(let value):
-                
-                guard let _ = value["Data"] else {
+            case .success(let value):
+                guard let dict = (value as? Dictionary<String, String>) else {
                     failure(LOADFAIL())
                     return
                 }
                 
-                guard let _ = value["Total"] else {
+                guard let _ = dict["Data"] else {
                     failure(LOADFAIL())
                     return
                 }
                 
-                let list = JSON(value)["Data"]
+                guard let _ = dict["Total"] else {
+                    failure(LOADFAIL())
+                    return
+                }
+                
+                let list = JSON(dict)["Data"]
                 var resultList = [LoanModel]()
-
-                for (_, subJson):(String, JSON) in list {
-                    let newsId = subJson["NewId"].stringValue
-                    let title = subJson["Title"].stringValue
-                    let model = LoanModel(newsId: newsId, title: title)
+                for (_, subJSON) in list {
+                    let newsId = subJSON["NewId"].stringValue
+                    let title  = subJSON["Title"].stringValue
+                    let model  = LoanModel(newsId: newsId, title: title)
                     resultList.append(model)
                 }
                 
-                let total = JSON(value)["Total"].intValue
+                let total = JSON(dict)["Total"].intValue
+                success(resultList, total)
                 
-                success(resultList, total: total)
-                
-            case .Failure(_):
+            case .failure(_):
                 failure(LOADFAIL())
             }
         }

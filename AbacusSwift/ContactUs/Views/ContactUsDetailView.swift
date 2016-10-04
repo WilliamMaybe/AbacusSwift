@@ -20,26 +20,26 @@ class ContactUsDetailView: UIView {
         }
     }
     
-    private lazy var titleLabel: UILabel = {
+    fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
         return label
     }()
     
-    private lazy var phoneButton: ButtonView = {
+    fileprivate lazy var phoneButton: ButtonView = {
         return self.createButton {
             $0.imageView.image = UIImage(named: "ContactUs_phone")
             $0.tag = 101
         }
     }()
     
-    private lazy var addressButton: ButtonView = {
+    fileprivate lazy var addressButton: ButtonView = {
         return self.createButton {
             $0.imageView.image = UIImage(named: "ContactUs_address")
             $0.tag = 102
         }
     }()
     
-    private lazy var imageView = UIImageView()
+    fileprivate lazy var imageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,28 +48,28 @@ class ContactUsDetailView: UIView {
         addSubview(phoneButton)
         addSubview(addressButton)
         addSubview(imageView)
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         
-        titleLabel.snp_makeConstraints { (make) in
+        titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(15)
             make.top.equalTo(self).offset(5)
         }
         
-        phoneButton.snp_makeConstraints { (make) in
+        phoneButton.snp.makeConstraints { (make) in
             make.left.right.equalTo(self)
-            make.top.equalTo(titleLabel.snp_bottom).offset(5)
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.height.equalTo(21)
         }
         
-        addressButton.snp_makeConstraints { (make) in
-            make.top.equalTo(phoneButton.snp_bottom)
+        addressButton.snp.makeConstraints { (make) in
+            make.top.equalTo(phoneButton.snp.bottom)
             make.left.right.equalTo(self)
             make.height.equalTo(40)
         }
         
-        imageView.snp_makeConstraints { (make) in
-            make.top.equalTo(addressButton.snp_bottom).offset(5)
+        imageView.snp.makeConstraints { (make) in
+            make.top.equalTo(addressButton.snp.bottom).offset(5)
             make.left.right.bottom.equalTo(self)
         }
     }
@@ -79,9 +79,9 @@ class ContactUsDetailView: UIView {
     }
     
     // MARK: - ButtonView
-    private class ButtonView: UIControl {
+    fileprivate class ButtonView: UIControl {
         
-        private lazy var label: UILabel = {
+        fileprivate lazy var label: UILabel = {
             let label = UILabel()
             label.font = UIFont.font_hn_light(15)
             label.textColor = UIColor.themeFont()
@@ -89,7 +89,7 @@ class ContactUsDetailView: UIView {
             return label
         }()
         
-        private lazy var imageView = UIImageView()
+        fileprivate lazy var imageView = UIImageView()
         
         override init(frame: CGRect) {
             super.init(frame: frame)
@@ -97,12 +97,12 @@ class ContactUsDetailView: UIView {
             addSubview(imageView)
             addSubview(label)
             
-            label.snp_makeConstraints { (make) in
+            label.snp.makeConstraints { (make) in
                 make.centerY.equalTo(self)
                 make.left.equalTo(self).offset(15)
             }
             
-            imageView.snp_makeConstraints { (make) in
+            imageView.snp.makeConstraints { (make) in
                 make.centerY.equalTo(self)
                 make.right.equalTo(self).offset(-13)
             }
@@ -116,20 +116,20 @@ class ContactUsDetailView: UIView {
 
 
 private extension ContactUsDetailView {
-    func createButton(closure: ((ButtonView) -> ())? ) -> ButtonView {
+    func createButton(_ closure: ((ButtonView) -> ())? ) -> ButtonView {
         let button = ButtonView()
         closure?(button)
-        button.addTarget(self, action: #selector(buttonClicked), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         return button
     }
     
-    @objc func buttonClicked(button: ButtonView) {
+    @objc func buttonClicked(_ button: ButtonView) {
         if button.tag == 101 {
 
-            let url = NSURL(string: "telprompt://\(cEnum?.phone.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()))")
+            let url = URL(string: "telprompt://\(cEnum?.phone.trimmingCharacters(in: CharacterSet.whitespaces))")
             if let trueUrl = url {
-                if UIApplication.sharedApplication().canOpenURL(trueUrl) {
-                    UIApplication.sharedApplication().openURL(trueUrl)
+                if UIApplication.shared.canOpenURL(trueUrl) {
+                    UIApplication.shared.openURL(trueUrl)
                 }
             }
             
@@ -139,8 +139,8 @@ private extension ContactUsDetailView {
         if button.tag == 102 {
             let destPlaceMark = MKPlacemark(coordinate: cEnum!.location, addressDictionary: nil)
             let destMapItem = MKMapItem(placemark: destPlaceMark)
-            let currentMapItem = MKMapItem.mapItemForCurrentLocation()
-            MKMapItem.openMapsWithItems([currentMapItem, destMapItem], launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
+            let currentMapItem = MKMapItem.forCurrentLocation()
+            MKMapItem.openMaps(with: [currentMapItem, destMapItem], launchOptions: [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving])
         }
     }
 }

@@ -10,14 +10,14 @@ import UIKit
 
 class SwitchTableViewCell: UITableViewCell {
     
-    private lazy var aswitch: UISwitch = {
+    fileprivate lazy var aswitch: UISwitch = {
         let lazySwitch = UISwitch()
         lazySwitch.onTintColor = UIColor.themeGreen()
-        lazySwitch.addTarget(self, action: #selector(SwitchTableViewCell.clickToSwitch), forControlEvents: .TouchUpInside)
+        lazySwitch.addTarget(self, action: #selector(SwitchTableViewCell.clickToSwitch), for: .touchUpInside)
         return lazySwitch
     }()
     
-    private var switchClosure: (() -> Void)?
+    fileprivate var switchClosure: (() -> Void)?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,16 +30,16 @@ class SwitchTableViewCell: UITableViewCell {
     }
     
     // MARK: - Interface Method
-    func switchOn(isOn: Bool) {
-        aswitch.on = isOn
+    func switchOn(_ isOn: Bool) {
+        aswitch.isOn = isOn
     }
     
-    func switchDidClicked(clickedClosure: () -> Void) {
+    func switchDidClicked(_ clickedClosure: @escaping () -> Void) {
         switchClosure = clickedClosure
     }
     
     // MARK: - Button Click
-    @objc private func clickToSwitch() {
+    @objc fileprivate func clickToSwitch() {
         switchClosure?()
     }
 

@@ -9,47 +9,48 @@
 import UIKit
 
 protocol UITableViewRegisterProtocol {
-    func registerHeaderFooterViewClass(aClass: AnyClass)
-    func registerCellClass(aClass: AnyClass)
-    func dequeueReusableCellClass(aClass: AnyClass) -> UITableViewCell?
+    func registerHeaderFooterViewClass(_ aClass: AnyClass)
+    func registerCellClass(_ aClass: AnyClass)
+    func dequeueReusableCellClass(_ aClass: AnyClass) -> UITableViewCell?
 }
 
 extension UITableView: UITableViewRegisterProtocol {
   
-    func registerHeaderFooterViewClass(aClass: AnyClass) {
-        self.registerClass(aClass, forHeaderFooterViewReuseIdentifier: String(aClass))
+    func registerHeaderFooterViewClass(_ aClass: AnyClass) {
+        self.register(aClass, forHeaderFooterViewReuseIdentifier: String(describing: aClass))
     }
     
-    func registerCellClass(aClass: AnyClass) {
-        self.registerClass(aClass, forCellReuseIdentifier: String(aClass))
+    func registerCellClass(_ aClass: AnyClass) {
+        self.register(aClass, forCellReuseIdentifier: String(describing: aClass))
     }
     
-    func dequeueReusableCellClass(aClass: AnyClass) -> UITableViewCell? {
-        return self.dequeueReusableCellWithIdentifier(String(aClass))
+    func dequeueReusableCellClass(_ aClass: AnyClass) -> UITableViewCell? {
+        return self.dequeueReusableCell(withIdentifier: String(describing: aClass))
     }
 }
 
-private var staticToken: dispatch_once_t = 0
+private let once: Void = {
+    let originalSel = #selector(UITableView.init(frame:style:))
+    let swizzledSel = #selector(UITableView.init(wz_frame:style:))
+    
+    let originalMethod = class_getInstanceMethod(UITableView.self, originalSel)
+    let swizzledMethod = class_getInstanceMethod(UITableView.self, swizzledSel)
+    
+    method_exchangeImplementations(originalMethod, swizzledMethod)
+}()
+
 extension UITableView {
-    public override class func initialize() {
-        dispatch_once(&staticToken) { 
-            let originalSel = #selector(UITableView.init(frame:style:))
-            let swizzledSel = #selector(UITableView.init(wz_frame:style:))
-            
-            let originalMethod = class_getInstanceMethod(self, originalSel)
-            let swizzledMethod = class_getInstanceMethod(self, swizzledSel)
-            
-            method_exchangeImplementations(originalMethod, swizzledMethod)
-        }
+    open override class func initialize() {
+        _ = once
     }
     
     public convenience init(wz_frame: CGRect, style: UITableViewStyle) {
         self.init(wz_frame: wz_frame, style: style)
-        if respondsToSelector(Selector("setSeparatorInset:")) {
+        if responds(to: #selector(setter: UITableViewCell.separatorInset)) {
             separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         }
         
-        if respondsToSelector(Selector("setLayoutMargins:")) {
+        if responds(to: #selector(setter: UIView.layoutMargins)) {
             layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         }
     }

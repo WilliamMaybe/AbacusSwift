@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8265C353A6207276B413912B /* Pods_AbacusSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD3195AA27E0044402D16F4 /* Pods_AbacusSwift.framework */; };
+		A6F28D8AA4574CCF216897FC /* Pods_AbacusSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A37C11079ADD94A94FD0CB5 /* Pods_AbacusSwiftUITests.framework */; };
+		ABA0A892AB3F34A44BD8195C /* Pods_AbacusSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3883BBBAF8F07C33C5573EA5 /* Pods_AbacusSwiftTests.framework */; };
 		ACA577401D81BA9A00A9DDF1 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5773F1D81BA9A00A9DDF1 /* PageControl.swift */; };
 		ACA577421D81C3ED00A9DDF1 /* ContactUsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA577411D81C3ED00A9DDF1 /* ContactUsDetailView.swift */; };
 		C504CB1F1D29397400E86C8E /* CheckListPreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504CB1E1D29397400E86C8E /* CheckListPreTableViewCell.swift */; };
@@ -19,7 +20,6 @@
 		C50C66581C32D495000CDF4E /* StampDutyComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50C66571C32D495000CDF4E /* StampDutyComparisonView.swift */; };
 		C51814871C665D2300BC9A7A /* LoanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51814861C665D2300BC9A7A /* LoanService.swift */; };
 		C51EBBC51BEF2E3A00FA0BC1 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51EBBC41BEF2E3A00FA0BC1 /* TextFieldTableViewCell.swift */; };
-		C51EBBCB1BEF4A9000FA0BC1 /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51EBBCA1BEF4A9000FA0BC1 /* String+Util.swift */; };
 		C5224A191C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5224A181C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift */; };
 		C542C77D1BF2224500C3AA35 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C542C77C1BF2224500C3AA35 /* SwitchTableViewCell.swift */; };
 		C542C7801BF2299600C3AA35 /* PickerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C542C77F1BF2299600C3AA35 /* PickerStateView.swift */; };
@@ -55,6 +55,7 @@
 		C5BD06691BE8BC21006AC24A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5BD066B1BE8BC21006AC24A /* Localizable.strings */; };
 		C5E7E4811BE8EAB500F26D69 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C5E7E4801BE8EAB500F26D69 /* README.md */; };
 		C5FF43161C8C60C4006ECF7D /* CheckList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FF43141C8C60C4006ECF7D /* CheckList.storyboard */; };
+		EAC407BE5CB939EEFF64875E /* Pods_AbacusSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40F295598DB09E73C997DA7 /* Pods_AbacusSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,10 +76,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		92F120514D3682B065D7FC03 /* Pods-AbacusSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		3883BBBAF8F07C33C5573EA5 /* Pods_AbacusSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbacusSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A8CD5DECC8B6BED9B3C1D2 /* Pods-AbacusSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift.release.xcconfig"; sourceTree = "<group>"; };
+		4C7E872167F9685FDC82D2C8 /* Pods-AbacusSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwiftTests/Pods-AbacusSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		51DCDAA4DF319F840AFDC551 /* Pods-AbacusSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwiftTests/Pods-AbacusSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		8880FE1E7623D613BB99FBA8 /* Pods-AbacusSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwiftUITests/Pods-AbacusSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9A37C11079ADD94A94FD0CB5 /* Pods_AbacusSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbacusSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F8A79D808C52C5710B54E9 /* Pods-AbacusSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		A40F295598DB09E73C997DA7 /* Pods_AbacusSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbacusSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA5773F1D81BA9A00A9DDF1 /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		ACA577411D81C3ED00A9DDF1 /* ContactUsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsDetailView.swift; sourceTree = "<group>"; };
-		B5064017118B5AE9CAD1D384 /* Pods-AbacusSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift.release.xcconfig"; sourceTree = "<group>"; };
+		B5015F2A83C46CDC8DE3B599 /* Pods-AbacusSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbacusSwiftUITests/Pods-AbacusSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C504CB1E1D29397400E86C8E /* CheckListPreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListPreTableViewCell.swift; sourceTree = "<group>"; };
 		C504CB611D2AB89D00E86C8E /* CheckListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListManager.swift; sourceTree = "<group>"; };
 		C5053DDD1C0734230019EF9F /* Define.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Define.swift; sourceTree = "<group>"; };
@@ -88,7 +96,6 @@
 		C50C66571C32D495000CDF4E /* StampDutyComparisonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampDutyComparisonView.swift; sourceTree = "<group>"; };
 		C51814861C665D2300BC9A7A /* LoanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanService.swift; sourceTree = "<group>"; };
 		C51EBBC41BEF2E3A00FA0BC1 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
-		C51EBBCA1BEF4A9000FA0BC1 /* String+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		C5224A181C42A80400AB3162 /* AbacusHomeLoanTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbacusHomeLoanTypeViewController.swift; sourceTree = "<group>"; };
 		C52703561C8F069D009C870F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/CheckList.storyboard; sourceTree = "<group>"; };
 		C542C77C1BF2224500C3AA35 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -131,7 +138,6 @@
 		C5BD066C1BE8BC2D006AC24A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C5BD066D1BE8BC3B006AC24A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C5E7E4801BE8EAB500F26D69 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		EAD3195AA27E0044402D16F4 /* Pods_AbacusSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbacusSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8265C353A6207276B413912B /* Pods_AbacusSwift.framework in Frameworks */,
+				EAC407BE5CB939EEFF64875E /* Pods_AbacusSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA0A892AB3F34A44BD8195C /* Pods_AbacusSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,18 +161,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F28D8AA4574CCF216897FC /* Pods_AbacusSwiftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BAF9B4CCCFEA5F4018E24C13 /* Frameworks */ = {
+		76C93261F6F255A634906A40 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EAD3195AA27E0044402D16F4 /* Pods_AbacusSwift.framework */,
+				A1F8A79D808C52C5710B54E9 /* Pods-AbacusSwift.debug.xcconfig */,
+				48A8CD5DECC8B6BED9B3C1D2 /* Pods-AbacusSwift.release.xcconfig */,
+				4C7E872167F9685FDC82D2C8 /* Pods-AbacusSwiftTests.debug.xcconfig */,
+				51DCDAA4DF319F840AFDC551 /* Pods-AbacusSwiftTests.release.xcconfig */,
+				8880FE1E7623D613BB99FBA8 /* Pods-AbacusSwiftUITests.debug.xcconfig */,
+				B5015F2A83C46CDC8DE3B599 /* Pods-AbacusSwiftUITests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		C504CB1D1D29392900E86C8E /* Cell */ = {
@@ -253,8 +266,8 @@
 				C5B50D9D1BE88E04007DB454 /* AbacusSwiftTests */,
 				C5B50DA81BE88E04007DB454 /* AbacusSwiftUITests */,
 				C5B50D871BE88E04007DB454 /* Products */,
-				D0AB2C63351B35FCEAACBEDD /* Pods */,
-				BAF9B4CCCFEA5F4018E24C13 /* Frameworks */,
+				76C93261F6F255A634906A40 /* Pods */,
+				F508C9D8A90ADAA027F063C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -388,7 +401,6 @@
 				C5B50DC91BE891F8007DB454 /* UIColor+Util.swift */,
 				C5B50DCB1BE89EB5007DB454 /* UIView+Util.swift */,
 				C59C2B431BE8B29F0040855F /* UIImage+Util.swift */,
-				C51EBBCA1BEF4A9000FA0BC1 /* String+Util.swift */,
 				C50BD5181C03606E001938FC /* UIFont+Util.swift */,
 				C571E4FC1C42BA8200D82E31 /* Dictionary+Category.swift */,
 				C54B596D1D6B500F00BDC127 /* UITableView+Util.swift */,
@@ -413,13 +425,14 @@
 			path = Internationalization;
 			sourceTree = "<group>";
 		};
-		D0AB2C63351B35FCEAACBEDD /* Pods */ = {
+		F508C9D8A90ADAA027F063C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				92F120514D3682B065D7FC03 /* Pods-AbacusSwift.debug.xcconfig */,
-				B5064017118B5AE9CAD1D384 /* Pods-AbacusSwift.release.xcconfig */,
+				A40F295598DB09E73C997DA7 /* Pods_AbacusSwift.framework */,
+				3883BBBAF8F07C33C5573EA5 /* Pods_AbacusSwiftTests.framework */,
+				9A37C11079ADD94A94FD0CB5 /* Pods_AbacusSwiftUITests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,12 +442,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5B50DAE1BE88E04007DB454 /* Build configuration list for PBXNativeTarget "AbacusSwift" */;
 			buildPhases = (
-				34BA7EAE14B7773DA211747E /* Check Pods Manifest.lock */,
+				706FC919EBCAA2B636234292 /* 📦 Check Pods Manifest.lock */,
 				C5B50D821BE88E04007DB454 /* Sources */,
 				C5B50D831BE88E04007DB454 /* Frameworks */,
 				C5B50D841BE88E04007DB454 /* Resources */,
-				4CEE38D1BC000AA7468CF42A /* Embed Pods Frameworks */,
-				60BD6EBA35592F7CECF66510 /* Copy Pods Resources */,
+				C88BA1E0FDAB6D137ED4A08D /* 📦 Embed Pods Frameworks */,
+				894F67795730D4B07109DEBF /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,9 +462,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5B50DB11BE88E04007DB454 /* Build configuration list for PBXNativeTarget "AbacusSwiftTests" */;
 			buildPhases = (
+				57D49305D44F53753FDE04E6 /* 📦 Check Pods Manifest.lock */,
 				C5B50D961BE88E04007DB454 /* Sources */,
 				C5B50D971BE88E04007DB454 /* Frameworks */,
 				C5B50D981BE88E04007DB454 /* Resources */,
+				3CA64FB1EDDC5AB6901C7580 /* 📦 Embed Pods Frameworks */,
+				2B8A6514CA442C669EF4EF5F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -467,9 +483,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5B50DB41BE88E04007DB454 /* Build configuration list for PBXNativeTarget "AbacusSwiftUITests" */;
 			buildPhases = (
+				32B750763369988580F0922B /* 📦 Check Pods Manifest.lock */,
 				C5B50DA11BE88E04007DB454 /* Sources */,
 				C5B50DA21BE88E04007DB454 /* Frameworks */,
 				C5B50DA31BE88E04007DB454 /* Resources */,
+				ECAE784E761B5CB200FCED29 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -488,18 +506,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Money;
 				TargetAttributes = {
 					C5B50D851BE88E04007DB454 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					C5B50D991BE88E04007DB454 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = C5B50D851BE88E04007DB454;
 					};
 					C5B50DA41BE88E04007DB454 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = C5B50D851BE88E04007DB454;
 					};
 				};
@@ -555,14 +576,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		34BA7EAE14B7773DA211747E /* Check Pods Manifest.lock */ = {
+		2B8A6514CA442C669EF4EF5F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbacusSwiftTests/Pods-AbacusSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32B750763369988580F0922B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,14 +606,74 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4CEE38D1BC000AA7468CF42A /* Embed Pods Frameworks */ = {
+		3CA64FB1EDDC5AB6901C7580 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbacusSwiftTests/Pods-AbacusSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57D49305D44F53753FDE04E6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		706FC919EBCAA2B636234292 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		894F67795730D4B07109DEBF /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C88BA1E0FDAB6D137ED4A08D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,19 +681,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		60BD6EBA35592F7CECF66510 /* Copy Pods Resources */ = {
+		ECAE784E761B5CB200FCED29 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbacusSwift/Pods-AbacusSwift-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbacusSwiftUITests/Pods-AbacusSwiftUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -621,7 +717,6 @@
 				C5053DE01C074A3E0019EF9F /* HandleManager.swift in Sources */,
 				C51814871C665D2300BC9A7A /* LoanService.swift in Sources */,
 				C51EBBC51BEF2E3A00FA0BC1 /* TextFieldTableViewCell.swift in Sources */,
-				C51EBBCB1BEF4A9000FA0BC1 /* String+Util.swift in Sources */,
 				C5537C371D7DC23800CE576C /* ContactUsFooter.swift in Sources */,
 				C542C77D1BF2224500C3AA35 /* SwitchTableViewCell.swift in Sources */,
 				C5E7E4811BE8EAB500F26D69 /* README.md in Sources */,
@@ -722,6 +817,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -731,8 +827,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -760,6 +858,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -767,6 +866,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -776,8 +876,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -797,14 +899,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		C5B50DAF1BE88E04007DB454 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92F120514D3682B065D7FC03 /* Pods-AbacusSwift.debug.xcconfig */;
+			baseConfigurationReference = A1F8A79D808C52C5710B54E9 /* Pods-AbacusSwift.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -813,13 +918,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.abacus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C5B50DB01BE88E04007DB454 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5064017118B5AE9CAD1D384 /* Pods-AbacusSwift.release.xcconfig */;
+			baseConfigurationReference = 48A8CD5DECC8B6BED9B3C1D2 /* Pods-AbacusSwift.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -828,40 +935,47 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.abacus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		C5B50DB21BE88E04007DB454 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C7E872167F9685FDC82D2C8 /* Pods-AbacusSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AbacusSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AbacusSwift.app/AbacusSwift";
 			};
 			name = Debug;
 		};
 		C5B50DB31BE88E04007DB454 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51DCDAA4DF319F840AFDC551 /* Pods-AbacusSwiftTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AbacusSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AbacusSwift.app/AbacusSwift";
 			};
 			name = Release;
 		};
 		C5B50DB51BE88E04007DB454 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8880FE1E7623D613BB99FBA8 /* Pods-AbacusSwiftUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AbacusSwiftUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwiftUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AbacusSwift;
 				USES_XCTRUNNER = YES;
 			};
@@ -869,11 +983,13 @@
 		};
 		C5B50DB61BE88E04007DB454 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5015F2A83C46CDC8DE3B599 /* Pods-AbacusSwiftUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = AbacusSwiftUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.williamzhang.AbacusSwiftUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AbacusSwift;
 				USES_XCTRUNNER = YES;
 			};

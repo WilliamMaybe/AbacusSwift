@@ -12,7 +12,7 @@ private let cell_height = 45
 
 class RepaymentViewController: BaseViewController {
     
-    private let titleList = [REPAYMENT_TITLE_1(),
+    fileprivate let titleList = [REPAYMENT_TITLE_1(),
                              REPAYMENT_TITLE_2(),
                              REPAYMENT_TITLE_3(),
                              REPAYMENT_TITLE_4(),
@@ -25,8 +25,8 @@ class RepaymentViewController: BaseViewController {
         super.viewDidLoad()
 
         title = REPAYMENT()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: RESET(), style: .Plain, target: self, action: #selector(clickToReset))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(clickToMail))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: RESET(), style: .plain, target: self, action: #selector(clickToReset))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(clickToMail))
         
         commonInit()
     }
@@ -35,19 +35,19 @@ class RepaymentViewController: BaseViewController {
         view = UIScrollView()
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         tableView.bounces    = false
         tableView.delegate   = self
         tableView.dataSource = self
         view.addSubview(tableView)
-        tableView.snp_makeConstraints { (make) in
+        tableView.snp.makeConstraints { (make) in
             make.top.leading.width.equalTo(view)
             make.height.equalTo(cell_height * titleList.count)
         }
         
         view.addSubview(scrollView)
-        scrollView.snp_makeConstraints { (make) in
-            make.top.equalTo(tableView.snp_bottom)
+        scrollView.snp.makeConstraints { (make) in
+            make.top.equalTo(tableView.snp.bottom)
             make.left.right.bottom.equalTo(view)
         }
     }
@@ -56,28 +56,28 @@ class RepaymentViewController: BaseViewController {
 }
 
 extension RepaymentViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titleList.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(cell_height)
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let normalIdentifier = "normal"
 
-        if indexPath.row < 3 {
+        if (indexPath as NSIndexPath).row < 3 {
             var cell: TextFieldTableViewCell
             if let tmp = tableView.dequeueReusableCellClass(TextFieldTableViewCell.self) as! TextFieldTableViewCell? {
                 cell = tmp
             } else {
-                cell = TextFieldTableViewCell(style: .Default, reuseIdentifier: String(TextFieldTableViewCell))
+                cell = TextFieldTableViewCell(style: .default, reuseIdentifier: String(describing: TextFieldTableViewCell.self))
                 
             }
             
-            cell.titleLabel.text = titleList[indexPath.row]
-            switch indexPath.row {
+            cell.titleLabel.text = titleList[(indexPath as NSIndexPath).row]
+            switch (indexPath as NSIndexPath).row {
             case 0:
                 cell.mode = .money
             case 1:
@@ -94,9 +94,9 @@ extension RepaymentViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier(normalIdentifier) {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: normalIdentifier) {
             
-            cell.textLabel?.text = titleList[indexPath.row]
+            cell.textLabel?.text = titleList[(indexPath as NSIndexPath).row]
 //            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
 //            [cell.textLabel setText:[_arrayTitle objectAtIndex:indexPath.row]];
 //            [cell.textLabel setTextColor:COLOR_THEME_GREEN];
@@ -115,14 +115,14 @@ extension RepaymentViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
-        let cell = UITableViewCell(style: .Value1, reuseIdentifier: normalIdentifier)
-        cell.textLabel?.text = titleList[indexPath.row]
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: normalIdentifier)
+        cell.textLabel?.text = titleList[(indexPath as NSIndexPath).row]
         cell.textLabel?.textColor = UIColor.themeGreen()
         
         cell.detailTextLabel?.textColor = UIColor.themeGreen()
         cell.detailTextLabel?.font = UIFont.font_hn_light(15)
         
-        cell.accessoryType = .DisclosureIndicator
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }
@@ -132,11 +132,11 @@ extension RepaymentViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Responses
 extension RepaymentViewController {
     
-    @objc private func clickToReset() {
+    @objc fileprivate func clickToReset() {
         
     }
     
-    @objc private func clickToMail() {
+    @objc fileprivate func clickToMail() {
         
     }
 }

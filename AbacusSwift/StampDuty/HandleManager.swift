@@ -190,7 +190,7 @@ private extension stampDutyType {
             model.stampduty = (money / 100 * rate[0]) > 20 ? (money / 100 * rate[0]) : 20
         }
         else {
-            for i in (0...4).reverse() {
+            for i in (0...4).reversed() {
                 if money <= amount[i] {
                     continue
                 }
@@ -218,7 +218,7 @@ private extension stampDutyType {
             return
         }
         
-        for i in (0...5).reverse() {
+        for i in (0...5).reversed() {
             if money <= amount[i] {
                 continue
             }
@@ -286,7 +286,7 @@ private extension stampDutyType {
             return
         }
         
-        for i in (0..<amount.count).reverse() {
+        for i in (0..<amount.count).reversed() {
             if (money <= amount[i]) {
                 continue
             }
@@ -323,7 +323,7 @@ private extension stampDutyType {
             return
         }
         
-        for i in (0...7).reverse() {
+        for i in (0...7).reversed() {
             if (money <= amount[i]) {
                 continue
             }
@@ -348,7 +348,7 @@ private extension stampDutyType {
             model.stampduty = 50
             return
         }
-        for i in (0...5).reverse() {
+        for i in (0...5).reversed() {
             if (money <= amount[i]) {
                 continue
             }
@@ -363,7 +363,7 @@ private extension stampDutyType {
         
         model.transfer = min((131 + money / 1000 * 2.46) ,1362)
         
-        func noLive(_money: Double) -> Double {
+        func noLive(_ _money: Double) -> Double {
             let amount = [25000.0,130000.0,960000.0]
             let rate = [1.4,2.4,6.0,5.5]
             var tmpPlus = [amount[0] * rate[0] / 100]
@@ -377,7 +377,7 @@ private extension stampDutyType {
             }
         }
         
-        func live(_money: Double) -> Double {
+        func live(_ _money: Double) -> Double {
             if (!isLive) {
                 return noLive(_money)
             }
@@ -413,7 +413,7 @@ private extension stampDutyType {
             return
         }
         
-        for i in (0..<amount.count).reverse() {
+        for i in (0..<amount.count).reversed() {
             if (money <= amount[i]) {
                 continue
             }

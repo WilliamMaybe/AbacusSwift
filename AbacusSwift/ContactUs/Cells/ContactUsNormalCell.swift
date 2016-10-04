@@ -11,7 +11,7 @@ import UIKit
 class ContactUsNormalCell: UITableViewCell {
     
     // MARK: - variables
-    private(set) lazy var contentLabel: UILabel = {
+    fileprivate(set) lazy var contentLabel: UILabel = {
         let label = UILabel()
         label.font      = UIFont.font_hn_light(15)
         label.textColor = UIColor.themeFont()
@@ -22,11 +22,11 @@ class ContactUsNormalCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        textLabel?.font = UIFont.systemFontOfSize(17)
+        textLabel?.font = UIFont.systemFont(ofSize: 17)
         textLabel?.textColor = UIColor.themeGreen()
         
         contentView.addSubview(contentLabel)
-        contentLabel.snp_makeConstraints { (make) in
+        contentLabel.snp.makeConstraints { (make) in
             make.left.equalTo(contentView).offset(65)
             make.centerY.equalTo(contentView)
         }

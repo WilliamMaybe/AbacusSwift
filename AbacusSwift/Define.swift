@@ -12,7 +12,7 @@ import UIKit
  得到相对于3.5寸屏的高度差值
  */
 func marginYFrom320() -> CGFloat {
-    let screenHeight = UIScreen.mainScreen().bounds.height
+    let screenHeight = UIScreen.main.bounds.height
     if screenHeight > 568 {
         return (screenHeight - 568) / 2
     }
@@ -25,9 +25,9 @@ func marginYFrom320() -> CGFloat {
  */
 extension Double {
     func moneyFormatter() -> String {
-        let formatter = NSNumberFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "en-AU")
-        formatter.numberStyle = .DecimalStyle
-        return "$" + formatter.stringFromNumber(Int(self + 0.5))!
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en-AU")
+        formatter.numberStyle = .decimal
+        return "$" + formatter.string(from: NSNumber(value: Int(self + 0.5)))!
     }
 }

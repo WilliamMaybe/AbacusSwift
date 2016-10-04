@@ -12,7 +12,7 @@ extension UIImage {
     /**
      获取纯背景色图片 大小1*1
      */
-    public class func imageColor(color: UIColor) -> UIImage {
+    public class func imageColor(_ color: UIColor) -> UIImage {
         return UIImage.imageColor(color, size: CGSize(width: 1, height: 1))
     }
     
@@ -24,14 +24,14 @@ extension UIImage {
      
      - returns: 纯背景色图片
      */
-    public class func imageColor(color: UIColor, size: CGSize) -> UIImage {
-        let adjustedSize = CGSizeEqualToSize(size, CGSizeZero) ? CGSize(width: 1, height: 1) : size
+    public class func imageColor(_ color: UIColor, size: CGSize) -> UIImage {
+        let adjustedSize = size.equalTo(CGSize.zero) ? CGSize(width: 1, height: 1) : size
         
-        UIGraphicsBeginImageContextWithOptions(adjustedSize, false, UIScreen.mainScreen().scale)
+        UIGraphicsBeginImageContextWithOptions(adjustedSize, false, UIScreen.main.scale)
         color.set()
         UIRectFill(CGRect(origin: CGPoint.zero, size: adjustedSize))
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
 }
