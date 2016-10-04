@@ -115,13 +115,13 @@ class CheckListMovingViewController: UITableViewController {
     fileprivate var selectedData = [Int]() {
         willSet {
             for index in selectedData {
-                self.tableView.deselectRow(at: IndexPath(item: index % 10, section: index / 10), animated: false)
+                self.tableView.deselectRow(at: IndexPath(item: index % 100, section: index / 100), animated: false)
             }
         }
         
         didSet {
             for index in selectedData {
-                self.tableView.selectRow(at: IndexPath(item: index % 10, section: index / 10), animated: false, scrollPosition: .none)
+                self.tableView.selectRow(at: IndexPath(item: index % 100, section: index / 100), animated: false, scrollPosition: .none)
             }
         }
     }
@@ -167,7 +167,7 @@ extension CheckListMovingViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CheckListMoveCell.self)) as! CheckListMoveCell
         
-        let message = contentArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
+        let message = contentArray[indexPath.section][indexPath.row]
         
         cell.contentLabel.text = message.message
         
@@ -179,7 +179,7 @@ extension CheckListMovingViewController {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return contentArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row].selectable()
+        return contentArray[indexPath.section][indexPath.row].selectable()
     }
 }
 
@@ -202,13 +202,13 @@ extension CheckListMovingViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedData.append((indexPath as NSIndexPath).row + (indexPath as NSIndexPath).section * 10)
-        dataHandle.addOrDeleteIdentifier((indexPath as NSIndexPath).row + (indexPath as NSIndexPath).section * 10)
+        selectedData.append(indexPath.row + indexPath.section * 100)
+        dataHandle.addOrDeleteIdentifier(indexPath.row + indexPath.section * 100)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        selectedData = selectedData.filter { $0 != (indexPath as NSIndexPath).row + (indexPath as NSIndexPath).section * 10 }
-        dataHandle.addOrDeleteIdentifier((indexPath as NSIndexPath).row + (indexPath as NSIndexPath).section * 10)
+        selectedData = selectedData.filter { $0 != indexPath.row + indexPath.section * 100 }
+        dataHandle.addOrDeleteIdentifier(indexPath.row + indexPath.section * 100)
     }
 }
 

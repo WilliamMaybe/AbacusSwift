@@ -102,7 +102,7 @@ extension CheckListRDCViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CheckListRDCCell.self)) as! CheckListRDCCell
         
-        cell.contentLabel.text = contentArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
+        cell.contentLabel.text = contentArray[indexPath.section][indexPath.row]
         
         return cell
     }
@@ -128,13 +128,13 @@ extension CheckListRDCViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedData.append((indexPath as NSIndexPath).row + (indexPath as NSIndexPath).section * 10)
-        dataHandle.addOrDeleteIdentifier((indexPath as NSIndexPath).row + (indexPath as NSIndexPath).section * 10)
+        selectedData.append(indexPath.row + indexPath.section * 10)
+        dataHandle.addOrDeleteIdentifier(indexPath.row + indexPath.section * 10)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        selectedData = selectedData.filter { $0 != (indexPath as NSIndexPath).row + (indexPath as NSIndexPath).section * 10 }
-        dataHandle.addOrDeleteIdentifier((indexPath as NSIndexPath).row + (indexPath as NSIndexPath).section * 10)
+        selectedData = selectedData.filter { $0 != indexPath.row + indexPath.section * 10 }
+        dataHandle.addOrDeleteIdentifier(indexPath.row + indexPath.section * 10)
     }
 }
 

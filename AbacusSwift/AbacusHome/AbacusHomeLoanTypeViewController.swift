@@ -133,7 +133,7 @@ extension AbacusHomeLoanTypeViewController {
             cell?.textLabel!.textColor = UIColor.themeGreen()
         }
         
-        let model = dataArray[(indexPath as NSIndexPath).row]
+        let model = dataArray[indexPath.row]
         cell?.textLabel?.text = model.title
         
         return cell!
@@ -142,7 +142,7 @@ extension AbacusHomeLoanTypeViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView .deselectRow(at: indexPath, animated: true)
     
-        let model = dataArray[(indexPath as NSIndexPath).row]
+        let model = dataArray[indexPath.row]
     
         guard let url = URL(string: Loan.residential(0).baseURL + "/html/NewDetail.html?id=" + model.newsId) else {
             return

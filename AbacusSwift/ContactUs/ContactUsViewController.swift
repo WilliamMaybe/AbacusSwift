@@ -68,14 +68,14 @@ extension ContactUsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath as NSIndexPath).row < titles.count {
+        if indexPath.row < titles.count {
             let cell = tableView.dequeueReusableCellClass(ContactUsNormalCell.self) as! ContactUsNormalCell
             
-            cell.textLabel?.text = titles[(indexPath as NSIndexPath).row].0
-            cell.contentLabel.text = titles[(indexPath as NSIndexPath).row].1
-            cell.accessoryView = UIImageView(image: UIImage(named: titles[(indexPath as NSIndexPath).row].2))
+            cell.textLabel?.text = titles[indexPath.row].0
+            cell.contentLabel.text = titles[indexPath.row].1
+            cell.accessoryView = UIImageView(image: UIImage(named: titles[indexPath.row].2))
             
-            switch (indexPath as NSIndexPath).row {
+            switch indexPath.row {
             case 0:  cell.contentLabel.font = UIFont.font_hn_bold(15)
             default: cell.contentLabel.font = UIFont.font_hn_light(15)
             }
@@ -84,7 +84,7 @@ extension ContactUsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         // follow us
-        if (indexPath as NSIndexPath).row == titles.count {
+        if indexPath.row == titles.count {
             let cell = tableView.dequeueReusableCellClass(ContactFollowTableViewCell.self) as! ContactFollowTableViewCell
             
             cell.delegate = self

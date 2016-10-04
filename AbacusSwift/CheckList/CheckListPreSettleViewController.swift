@@ -63,7 +63,7 @@ extension CheckListPreSettleViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CheckListPreTableViewCell.self)) as! CheckListPreTableViewCell
         
-        cell.dataWithTitle(datas[(indexPath as NSIndexPath).section][titleKey]!, describe: datas[(indexPath as NSIndexPath).section][describeKey]!)
+        cell.dataWithTitle(datas[indexPath.section][titleKey]!, describe: datas[indexPath.section][describeKey]!)
         
         return cell
     }

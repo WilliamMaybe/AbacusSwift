@@ -12,7 +12,7 @@ import SnapKit
 class StampDutyViewController: BaseViewController {
     
     fileprivate lazy var tableView: UITableView = {
-        let lazyTableView = UITableView(frame: CGRect.zero, style: .grouped)
+        let lazyTableView = UITableView()
         lazyTableView.bounces = false
         lazyTableView.delegate = self
         lazyTableView.dataSource = self
@@ -77,13 +77,14 @@ class StampDutyViewController: BaseViewController {
         navigationItem.leftBarButtonItem  = UIBarButtonItem(title: RESET(), style: .plain, target: self, action: #selector(StampDutyViewController.clickToReset))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(StampDutyViewController.clickToMail))
         
-        initComponents()
+        commonInit()
     }
-    
-    fileprivate func initComponents() {
+     
+    fileprivate func commonInit() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) -> Void in
-            make.left.right.top.equalTo(view)
+            make.top.equalTo(topLayoutGuide.snp.bottom)
+            make.left.right.equalTo(view)
             make.height.equalTo(3 * tableView(tableView, heightForRowAt: IndexPath()))
         }
         
@@ -220,8 +221,8 @@ extension StampDutyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: AnyObject
         
-        cell = cellAtIndex((indexPath as NSIndexPath).row)!
-        switch (indexPath as NSIndexPath).row {
+        cell = cellAtIndex(indexPath.row)!
+        switch indexPath.row {
             case 0:
                 cell.detailTextLabel??.text = stampdutyEnum[selectedIndex].pickerTitle
             case 1:
@@ -242,7 +243,7 @@ extension StampDutyViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView .deselectRow(at: indexPath, animated: true)
-        switch (indexPath as NSIndexPath).row {
+        switch indexPath.row {
         case 0:
             view.endEditing(true)
             bottomConstraint?.update(offset: -pickerView.frame.height)

@@ -37,7 +37,7 @@ class StampDutyComparisonView: UIView {
             make.top.equalTo(titleLabel.snp.bottom).offset(12)
         }
         
-        var lastView:UIView?
+        var lastView: UIView?
         for _ in 0..<lineCount {
             let perLine = stampDutyPerLine()
             addSubview(perLine)
@@ -57,7 +57,7 @@ class StampDutyComparisonView: UIView {
             lastView = perLine
         }
         
-        lastView?.snp.updateConstraints({ (make) -> Void in
+        lastView?.snp.makeConstraints({ (make) -> Void in
             make.bottom.equalTo(self).offset(-10)
         })
         

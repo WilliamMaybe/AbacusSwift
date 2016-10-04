@@ -67,7 +67,7 @@ extension RepaymentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let normalIdentifier = "normal"
 
-        if (indexPath as NSIndexPath).row < 3 {
+        if indexPath.row < 3 {
             var cell: TextFieldTableViewCell
             if let tmp = tableView.dequeueReusableCellClass(TextFieldTableViewCell.self) as! TextFieldTableViewCell? {
                 cell = tmp
@@ -76,8 +76,8 @@ extension RepaymentViewController: UITableViewDelegate, UITableViewDataSource {
                 
             }
             
-            cell.titleLabel.text = titleList[(indexPath as NSIndexPath).row]
-            switch (indexPath as NSIndexPath).row {
+            cell.titleLabel.text = titleList[indexPath.row]
+            switch indexPath.row {
             case 0:
                 cell.mode = .money
             case 1:
@@ -96,7 +96,7 @@ extension RepaymentViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: normalIdentifier) {
             
-            cell.textLabel?.text = titleList[(indexPath as NSIndexPath).row]
+            cell.textLabel?.text = titleList[indexPath.row]
 //            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
 //            [cell.textLabel setText:[_arrayTitle objectAtIndex:indexPath.row]];
 //            [cell.textLabel setTextColor:COLOR_THEME_GREEN];
@@ -116,7 +116,7 @@ extension RepaymentViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let cell = UITableViewCell(style: .value1, reuseIdentifier: normalIdentifier)
-        cell.textLabel?.text = titleList[(indexPath as NSIndexPath).row]
+        cell.textLabel?.text = titleList[indexPath.row]
         cell.textLabel?.textColor = UIColor.themeGreen()
         
         cell.detailTextLabel?.textColor = UIColor.themeGreen()

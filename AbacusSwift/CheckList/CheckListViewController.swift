@@ -27,7 +27,7 @@ extension CheckListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-        cell.textLabel?.text = titleArray[(indexPath as NSIndexPath).item]
+        cell.textLabel?.text = titleArray[indexPath.item]
         
         return cell
     }

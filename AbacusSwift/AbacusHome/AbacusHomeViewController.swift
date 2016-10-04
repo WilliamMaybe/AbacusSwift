@@ -11,7 +11,7 @@ import SnapKit
 
 class AbacusHomeViewController: BaseViewController {
 
-    fileprivate lazy var scrollView: UIScrollView     = {
+    fileprivate lazy var scrollView: UIScrollView = {
         let lazyScrollView = UIScrollView()
         lazyScrollView.backgroundColor = UIColor.white
         
@@ -19,7 +19,7 @@ class AbacusHomeViewController: BaseViewController {
     }()
     fileprivate lazy var headerImageView: UIImageView = { return UIImageView(image: UIImage(named: "home_header")) }()
     fileprivate lazy var tableView: UITableView = {
-        let lazyTableView = UITableView(frame: CGRect.zero, style: .grouped)
+        let lazyTableView = UITableView(frame: CGRect.zero, style: .plain)
         lazyTableView.backgroundColor = UIColor.white
         lazyTableView.bounces = false
         lazyTableView.delegate = self
@@ -128,13 +128,13 @@ extension AbacusHomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell!.textLabel!.textColor = UIColor.themeGreen()
         }
         
-        cell!.textLabel?.text = (indexPath as NSIndexPath).row == 0 ? ABACUS_LOAN_TITLE_1() : ABACUS_LOAN_TITLE_2()
+        cell!.textLabel?.text = indexPath.row == 0 ? ABACUS_LOAN_TITLE_1() : ABACUS_LOAN_TITLE_2()
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let loanVC = AbacusHomeLoanTypeViewController(loanTypes:LoanTypes(rawValue: (indexPath as NSIndexPath).row)!)
+        let loanVC = AbacusHomeLoanTypeViewController(loanTypes:LoanTypes(rawValue: indexPath.row)!)
         loanVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(loanVC, animated: true)
     }
